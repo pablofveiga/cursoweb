@@ -1,0 +1,121 @@
+.responsive-menu {
+  display: none;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  .rwd-icon {
+    line-height: 54px;
+    padding-left: 16px;
+  }
+}
+
+.rwm-text, .menu-icon i {
+  color: #fff;
+}
+
+.responsive-menu {
+  .rwm-text {
+    
+  }
+  ul li {
+    .menu-text {
+      display: inline-block;
+      vertical-align: middle;
+      text-indent: 3px;
+      color: #fff;
+     
+      font-size: 14px;
+    }
+    .menu-flag {
+      display: inline-block;
+      vertical-align: middle;
+      img {
+        display: block;
+      }
+    }
+  }
+  .menu-trigger {
+    cursor: pointer;
+    height: 54px;
+    box-shadow: 0 3px 26px 0 rgba(0, 83, 118, 0.65);
+    background: linear-gradient(to bottom, #08abf0 0%, #08a7e9 2%, #19afef 25%, #019ee0 98%, #03a4e7 100%);
+    position: relative;
+  }
+
+  .menu-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    span {
+      background: url(../pics/menu-logo.png) 0 center no-repeat transparent;
+      display: block;
+      width: 73px;
+      height: 54px;
+      margin: 0 auto;
+      background-size: 100%;
+    }
+  }
+}
+
+.rwd-menu-list {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
+
+li.primary {
+  background-color: #00AEEF;
+  text-indent: 7px;
+}
+
+.responsive-menu {
+  li {
+    padding-top: 8px;
+    box-shadow: 0 1px 0 #048ec8 inset, 0 2px 0 #33c1ff inset;
+    line-height: 33px;
+    a {
+      display: block;
+      i {
+        color: #fff;
+      }
+    }
+  }
+  ul.seccondary {
+    display: none;
+  }
+  .fa-arrow-right {
+    transition: all 0.6s ease;
+    &.flipped {
+      transform: rotate(90deg);
+      transition: all 0.6s ease;
+    }
+  }
+  ul.seccondary {
+    li {
+      box-shadow: 0 1px 0 #048ec8 inset, 0 2px 0 #1a739a inset;
+      background-color: #0086b8;
+      text-indent: 17px;
+    }
+    &.visible {
+      display: block;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .responsive-menu {
+    display: block;
+  }
+
+  // WATCH THE CLASS OF THE SLIDERS
+  .home-slider-container {
+    margin-top: 54px;
+  }
+  .top-bar {
+    display: none;
+  }
+}

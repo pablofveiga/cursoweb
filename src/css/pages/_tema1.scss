@@ -1,0 +1,38 @@
+#tema1 {
+	.main-header {
+		margin: 36px auto 0;
+	}
+
+	.main-header span {
+		padding: 0 5%; 
+	}
+
+	a {
+		// color: #30713b;
+	}
+	section {
+		margin-top: 1.3em;
+		padding: 0.5em 1em;
+	}
+	article {
+		margin-top: 1.3em;
+		padding: 0.5em 1em;
+	}
+	.ejercicio1 {
+		background: url(../pics/libreta.png);		
+	}
+
+	.hannibal {
+		border-radius: 150px 150px 34px 34px;
+	}
+}
+
+.codigo {
+	margin: 11px 0;
+}
+.masinfo {
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}

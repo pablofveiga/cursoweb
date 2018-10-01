@@ -1,0 +1,52 @@
+table.standard-table {
+	border: 2px solid #fff;
+
+	th {
+		border: 2px solid #fff;
+	    border-bottom: 2px solid #d4dde4;
+	    background: #eaeef2;
+	    background: rgba(212,221,228,.5);
+	    padding: 2px 8px 4px;
+	}
+}
+
+
+
+table.standard-table:not(.learn-box) {
+     border: 2px solid #fff
+ }
+
+table.standard-table:not(.learn-box) td {
+     background-color: #f9fafb;
+     background-color: rgba(212, 221, 228, .15);
+     border: 2px solid #fff;
+     box-shadow: inset 0 -1px 0 0 rgba(212, 221, 228, .5);
+     padding: 8px 0;
+     vertical-align: middle;
+ }
+
+table.standard-table:not(.learn-box):not(.nostripe) tr:nth-child(odd) td {
+     background-color: #f4f7f8;
+     background-color: rgba(212, 221, 228, .25)
+ }
+
+table.standard-table:not(.learn-box) td.header,
+table.standard-table:not(.learn-box) th {
+     border: 2px solid #fff;
+     border-bottom: 2px solid #d4dde4;
+     background: #eaeef2;
+     background: rgba(212, 221, 228, .5);
+     padding: 2px 8px 4px;
+     vertical-align: middle;
+     // font-family: x-locale-heading-primary, zillaslab, Palatino, "Palatino Linotype", x-locale-heading-secondary, serif;
+     // font-weight: 700
+ }
+
+ table.standard-table:not(.learn-box) td.header,
+ table.standard-table:not(.learn-box) th {
+    // font-family: Palatino, "Palatino Linotype", x-locale-heading-secondary, serif
+ }
+
+table.standard-table:not(.learn-box).fullwidth {
+     width: 100%
+ }

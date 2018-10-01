@@ -1,0 +1,128 @@
+header.main-header {
+	//background: url(../pics/hackerman.jpg) 0 0 no-repeat transparent;
+
+	// min-height: 300px;
+	text-align: center;
+	position: relative;
+	max-width: 1280px;
+	margin: 36px auto 0;
+
+	h1 {
+		font-size: 3em;
+	    color: #fff;
+	    width: 17em;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    margin: auto;
+	    left: 0;
+	    right: 0;
+	    height: 96px;
+	    text-shadow: 0 0 3px #000;
+	    padding: 0 5%;
+
+	    @media all and (max-width: 848px) {
+			position: relative;
+			width: auto;
+			background-color: #525252;
+			font-size: 1.3em;
+			height: auto;
+			padding: 20px 5%;
+	    }
+	}
+	img {
+		display: block;
+	}
+}
+
+
+#home-page {
+
+	section.contenidos {
+		ul {
+			padding-left: 2em;
+			list-style-type: disc;
+			margin-bottom: 1.5em;
+
+			li {
+				margin: 4px 0;
+			}
+		}		  	
+	}
+
+	.logos li {
+		display: inline-block;
+
+		img {
+			width: 136px;
+		}
+	}
+
+	section.temario {
+		ol {
+			padding-left: 2em;
+			// list-style-type: disc;
+			// margin-bottom: 1.5em;
+			counter-reset: item;
+			color: #993333;
+
+			li {
+				margin: 4px 0;
+
+				&:before {
+					content: counters(item, ".") " "; 
+					counter-increment: item;
+					color: #993333;
+				}
+
+				&:hover:before {
+					color: #196120;
+				}
+
+				span.visits {
+					display: inline-block;
+					background: url(../pics/ojos.png) 0 0 no-repeat transparent;
+					width: 25px;
+					height: 16px;
+					vertical-align: middle;
+
+					@media all and (max-width: 600px) {
+						display: none;
+					}
+				}
+
+				a:link {
+					color: #993333;
+					display: inline-block;
+					vertical-align: middle;
+
+
+					&:hover{
+						color: #196120;
+
+						+ span.visits {
+							background-position: -25px 0;
+						}
+
+					} 
+
+					&:visited {
+						font-weight: bold;
+					}
+				}
+
+				a:visited {
+					font-weight: bold;
+						+ span.visits {
+							background-position: -25px 0;
+						}
+
+				}				
+
+			}
+		}	
+		.section-content>ol>li {
+			margin-bottom: 1.5em;
+		}
+	}
+}

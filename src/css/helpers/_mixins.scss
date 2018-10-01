@@ -1,0 +1,24 @@
+@mixin normal-list {
+	ul {
+		padding-left: 2em;
+		list-style-type: disc;
+		margin-bottom: 1.5em;
+
+		li {
+			margin: 4px 0;
+		}
+	}	
+}
+
+
+@mixin numeric-list {
+	ol {
+		padding-left: 2em;
+		// list-style-type: disc;
+		margin-bottom: 1.5em;
+
+		li {
+			margin: 4px 0;
+		}
+	}	
+}

@@ -1,0 +1,71 @@
+// ========= MANDATORY =========
+@import "base/_reset.scss";
+@import "base/_fonts.scss";
+
+// // ========= HELPERS (utils) =========
+@import "helpers/_variables.scss";
+@import "helpers/_mixins.scss"; 
+
+// // ==== COMPONENTS ====
+@import "components/_responsive-menu.scss";
+// @import "components/_language-dropdown.scss";
+@import "components/_top_menu.scss";
+@import "components/_flecha_subir.scss";
+@import "components/_lista_de_atributos.scss";
+// @import "components/_lobby-world-lottos.scss";
+// @import "components/_lobby-results.scss";
+
+
+// // ==== LAYOUT ====
+// @import "layout/_header.scss"; 
+// @import "layout/_lobby-head-rotator.scss"; 
+// @import "layout/_footer.scss"; 
+@import "layout/_grid.scss"; 
+
+
+// // ==== PAGES ====
+@import "pages/_home.scss"; 
+@import "pages/_tema1.scss"; 
+@import "pages/_tema2.scss"; 
+
+
+// // ==== VENDORS ====
+// @import "vendors/_jquery-ui.scss"; 
+// @import "vendors/_jquery.bxslider.scss"; 
+// @import "vendors/_sss.scss"; 
+
+
+/* CONVENTIONS */
+strong { font-family: 'Roboto-Bold'; }
+a { text-decoration: none; }
+
+
+.clear { clear: both; }
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+img {
+	max-width: 100%;
+}
+
+.cursiva {
+	font-style: oblique;
+	font-style: italic;
+}
+
+.superindice {
+  
+}
+.subindice {
+  
+}
+
+.ejercicio {
+    background: url(../pics/libreta.png);
+    padding: 0.5em 1em;
+}

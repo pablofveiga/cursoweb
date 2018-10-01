@@ -1,0 +1,14 @@
+#subir {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    z-index: 1000;
+    // display: none;
+}
+
+#subir span {
+width: 60px; /* Ancho del botÃ³n */
+height: 60px; /* Alto del botÃ³n */
+display: block;
+background: url(../pics/up-arrow.png) no-repeat center center;
+}
