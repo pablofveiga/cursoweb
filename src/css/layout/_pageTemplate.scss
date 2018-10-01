@@ -1,0 +1,27 @@
+.mainHeader {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 54px;
+
+    &__title {
+        font-size: 3em;
+
+    }
+}
+
+// HEADERS
+h2 { font: 600 2em/2.15em $font-medium;  }
+h3 { font: 600 1.65em/1.8em $font-medium;  }
+h4 { font: 400 1.5em/1.75em $font-medium; }
+h5 { font-size: 1.3em; }
+
+
+// SECTIONS ~ ARTICLE
+article {
+    margin: 0 0 1.85em;
+}
+
+// paragraphs and text

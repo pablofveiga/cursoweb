@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Indoloro</title>
+
+
+        <!-- OG -->
+    <meta property="og:title" content="Curso Web Peibol" />
+    <meta property="og:description" content="Tema 1 - Introducción a la web" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.pablofv.com/cursoweb/tema1/" />
+    <meta property="og:image" content="http://www.pablofv.com/cursoweb/pics/og-tema1.jpg" />
+	<meta property="og:image:type" content="image/jpeg" /> 
+	<meta property="og:image:width" content="200" /> 
+	<meta property="og:image:height" content="200" />    
+    <meta property="og:locale" content="es" />
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../css/styles.css?v=1.1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="js-page">
+    
+    <div class="wrapper">
+        <nav class="topMenu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="tema1/">HTML</a></li>
+                <li><a href="tema2/">CSS</a></li>
+                <li><a href="tema3/">JavaScript</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="mainHeader">
+        <h1 class="mainHeader__title">JavaScript Indoloro</h1>
+    </header>
+    
+    <div class="wrapper">
+
+        <article class="sectionIntro">
+            <header>
+                <h2>JavaScript sin morir en el intento.</h2>
+            </header>
+
+            <div class="sectionContent">
+                <p>En este tema abracaremos el truculento mundo del JavaScript</p>
+            </div>           
+        </article>
+
+        <article class="sectionIndex">
+            <header>
+                <h2>Índice de contenidos</h2>
+            </header>
+            <div class="section__content">
+                <ul class="normal-list">
+                    <li><a href="#">1.- Introducción histórica</a></li>
+                    <li>
+                        <a href="#js2">2.- Variables</a>
+                        <ul>
+                            <li><a href="#js2.1">2.1- Declaración de Variables</a></li>
+                            <li>
+                                <a href="#js2.2">2.2- Tipos de Variables y sus Métodos</a>
+                                <ul>
+                                    <li><a href="#js2.2.1">2.2.1- String</a></li>
+                                    <li><a href="#js2.2.2">2.2.2- Number</a></li>
+                                    <li><a href="#js2.2.3">2.2.3- Operaciones entre String y Number</a></li>
+                                    <li><a href="#js2.2.4">2.2.4- Boolean</a></li>
+                                    <li><a href="#js2.2.5">2.2.5- Array</a></li>
+                                    <li><a href="#js2.2.6">2.2.6- Object</a></li>                            
+                                </ul>
+                            </li>
+                            <li><a href="#js2.3">2.3- Scope de las varibles</strong></a></li>
+                            <li><a href="#js2.4">2.4- Asignación de valores por <strong>Destructuring</strong></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Funciones</a></li>
+                    <li><a href="#">Manejo de errores con try cath</a></li>
+                    <li><a href="#">Objeto Date()</a></li>
+                    <li>
+                        <a href="#">Estructuras de contol</a>
+                        <ul>
+                            <li><a href="#">IF...ELSE</a></li>
+                            <li><a href="#">Switch</a></li>
+                            <li><a href="#">FOR</a></li>
+                            <li><a href="#">While y Do While</a></li>
+                            <li><a href="#">ForEach</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Objeto Window</a></li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="sectionHistoria">
+            <header>
+                <h3>Introducción histórica.</h3>
+            </header>
+
+            <div class="sectionContent">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, repellat. Laboriosam, maxime. Dicta laudantium sapiente minus! A ab dolore enim sapiente molestiae explicabo nihil cumque quae quidem! Nemo, necessitatibus suscipit.</p>
+            </div>           
+        </article>
+
+        <!-- Variables -->
+        <article id="js2">
+            <header>
+                <h3>Variables</h3>
+            </header>
+
+            <!-- Declaración de variables -->
+            <section>
+                <header>
+                    <h4>Declaración de variables</h4>
+                </header>
+
+                <div class="articleContent">
+                    <p>En ES6 tenemos nuevos modos de definir variables:</p>
+                    <pre class="language-javascript line-numbers">
+<code>// Variables
+var antiguo = "cosa";    // método viejo
+let nuevaVariable = true;
+const constante = 256;</code></pre>
+
+                    <h5>LET</h5>
+                    <p>
+                        La declaración con <strong>let</strong> es igual que con var, pero tienen diferencas.
+                    </p>
+                    <pre class="language-javascript line-numbers">
+<code>// LET
+let nombre = "Pepe",
+    nombre2 = "juan";
+</code></pre>        
+                    <p>A diferencia de <strong>var</strong>, a <strong>let</strong> no le podemos re-declarar la variable del mismo modo.</p>            
+                </div>
+                <pre class="language-javascript line-numbers">
+<code>// VAR
+var color = "rojo";
+var color = "verde";
+console.log(color); // devolverá "verde";
+// LET
+let animal = "perro";
+let animal = "gato"
+console.log(animal);    // ERROR!!: Uncaught SyntaxError: Identifier 'animal' has already been declared</code></pre> 
+
+                <p>Lo que podemos hacer, es reasignarle un valor:</p>
+                <pre class="language-javascript line-numbers">
+<code>let animal = "perro";
+animal = "gato"
+console.log(animal);    // devuelve gato</code></pre> 
+
+
+                <h5>CONST</h5>
+                <p>La variable de tipo <strong>const</strong> tiene un valor constante y no cambia.</p>
+                <p>Han de usarse para variables cuyo valor sabemos que no va a cambiar.</p>
+                <p>Debe inicializarse al principio, no se puede inicializar vacía.</p>
+                <pre class="language-javascript line-numbers">
+<code>let animal;
+animal = "loro"
+console.log(animal);    // devuelve loro
+
+const profesion;    //  ERROR!!: Uncaught SyntaxError: Missing initializer in const declaration
+
+const transporte = "tren";
+console.log(transporte)     // devuelve tren</code></pre>
+
+                <p>Tampoco se le puede cambiar el valor asignado:</p>
+                <pre class="language-javascript line-numbers">
+<code>const ciudad = "Berlin";
+ciudad = "Roma";    // ERROR!! Uncaught TypeError: Assignment to constant variable.</code></pre>
+
+                <p><strong>En resumen:</strong></p>
+                <p><strong>VAR</strong> es el método antiguo, admite cualquier pillería.</p>
+                <p><strong>LET</strong> la usamos cuando la variable no tiene asignado ningún valor, o su valor va a cambiar.</p>
+                <p><strong>CONST</strong> la usamos cuando sabemos que la variable no va a cambiar de valor.</p>
+
+            </section>
+
+            <!-- Tipos de Variables y sus Métdos -->
+            <section>
+                <header>
+                    <h4>Tipos de Variables y sus Métdos</h4>
+                </header>
+
+                <div class="section__content">
+                    <p>
+                        En JavaScript tenemos diferentes tipos de datos, o variables. Los datos se los asignamos a las variables, así una variable puede ser de tipo string, numérica, booleana, etc...
+                    </p>
+                </div>
+
+                <article>
+                    <header>
+                        <h5>String y sus métodos</h5>
+                    </header>
+
+                    <div class="article__content">
+                        <pre class="language-javascript line-numbers">
+    <code>let txt ="Javascript";
+
+    // .lenght  => devuelve número de caracteres
+    console.log(txt.length);
+
+    // .concat()  para concatenar strings
+    console.log(txt.concat(' ','es genial'))
+
+    // .toUpperCase()  --> transforma en mayúsculas
+    // .toLowerCase()  --> transforma en minúsculas
+
+    // .indexOf("string")  ==>> devuelve la posición del texto dentro del string
+    let mensaje = "Curso de Javascript, HTML y CSS";
+    console.log(mensaje.indexOf("Javascript"));
+    console.log(mensaje.indexOf("PHP")); // devuelve -1 porque no está
+
+
+    // .substring(n,n)  -->> Devuelve el 'recorte' de texto entre dos posiciones
+    console.log(mensaje.substring(7,16));
+
+    // .slice(n)  -->> 
+    console.log("SLICE")
+    console.log(mensaje.slice(-5)); // en negativo, empieza del final al principio
+    console.log(mensaje.slice(7,16)); // así es igual que substring()
+
+    // .split()  -->> trozear string; devuelve un Array
+    console.log("SPLIT: ");
+    console.log(mensaje.split(" "));
+
+    // .replace("str1", "str2"); reemplaza una cadena por otra
+    console.log("REPLACE: ")
+    console.log(mensaje.replace("CSS","PHP"));
+
+
+    // .includes("str")  -->> comprueba si existe una cadena dentro del string. Devuelve true o false
+    console.log(mensaje.includes("CSS"));
+
+    // .repeat(n)  --> repite n veces un string
+    console.log("REPEAT: ")
+    console.log(mensaje.repeat(2));
+
+    // String Literal (o template literal)
+    let nombre = "pepe";
+    let edad = 66;
+    console.log(`Bienvenido ${nombre} de ${edad} años`);
+
+    // Template Literal (Ejemplo)
+    const prod1 = "Pizza",
+        precio1 = 30,
+        prod2 = "Hamburguesa",
+        precio2 = 40;
+
+    // Versión vieja
+    let html;
+    html = '&lt;ul&gt;'+
+            '&lt;li&gt;Orden: '+prod1+'&lt;/li&gt;'+
+            '&lt;li&gt;Precio: '+precio1+'&lt;/li&gt;'+
+            '&lt;li&gt;Orden: '+prod2+'&lt;/li&gt;'+
+            '&lt;li&gt;Precio: '+precio2+'&lt;/li&gt;'+
+            '&lt;li&gt;Total: ' +(precio1+precio2)+'&lt;/li&gt;'+
+            '&lt;/ul&gt;';
+    document.getElementById("app").innerHTML = html;
+
+    // VERsioN MODERNA
+    let html2;
+    html2 = `
+        &lt;ul&gt;
+            &lt;li&gt;Orden: ${prod1} &lt;/li&gt;
+            &lt;li&gt;Precio: ${precio1} &lt;/li&gt;
+            &lt;li&gt;Orden: ${prod2} &lt;/li&gt;
+            &lt;li&gt;Precio: ${precio2} &lt;/li&gt;
+            &lt;li&gt;Total: ${total(precio1,precio2)} &lt;/li&gt;
+        &lt;/ul&gt;
+    `;
+
+    function total(precio1,precio2) {
+        return precio1 + precio2;
+    }
+
+
+    document.getElementById("app").innerHTML = html;</code></pre>
+
+                    </div>
+                </article>
+
+                <article>
+                    <header>
+                        <h5>Number y sus métodos</h5>
+                    </header>
+
+                    <div class="article__content">
+                        <pre class="language-javascript line-numbers">
+    <code>const number1 = 30,
+        number2 = 20,
+        number3 = 20.20,
+        number4 = .1020,
+        number5 = -43;
+
+
+    let resultado;
+
+    // suma
+    resultado = number1 + number2;
+    // resta
+    resultado = number1 + number2;
+    // multiplicación
+    resultado = number1 * number2;
+    // division 
+    resultado = number1 / number2;
+    // módulo
+    resultado = number1 % number2;
+
+
+    // PI
+    resultado = Math.PI;
+
+    // redondeo
+    resultado = Math.round(2.5)	// da 3
+    resultado = Math.round(2.4)	// da 2
+
+    // redondeo hacia Arriba
+    resultado = Math.ceil(2.1) // da 3
+
+    // redondeo hacia abajo
+    resultado = Math.floor(2.999) // da 2
+
+    // Raiz Cuadrada
+    resultado = Math.sqrt(25);
+
+    // Número absoluto
+    resultado = Math.abs(-34);
+
+    // Exponenciales
+    resultado = Math.pow(2,8);
+
+    // Mínimo
+    resultado = Math.min(3,654,12,64,123,76,12,-65,9,0.45);
+
+    // Maximo
+    resultado = Math.max(3,654,12,64,123,76,12,-65,9,0.45);
+
+    // Aleatria
+    resultado = Math.random();
+
+    // toFixed()  Elegir decimales
+    let numeroLargo = 242645532432.765763223
+    resultado = numeroLargo.toFixed();	// redondea
+    resultado = numeroLargo.toFixed(4);	// lo corta hasta 4 decimales
+
+
+    console.log(resultado);
+
+
+    // PASAR STRING A NUMBER
+
+    const n1 = "50",
+        n2 = 10,
+        n3 = "tres";
+
+    console.log(n1 + n2);	// 5010
+    console.log(typeof(n1 + n2));	// String
+
+    console.log(Number(n1) + n2);	// 60
+    console.log(parseInt(n1) + n2);	// 60
+
+    // ¡¡Curiosidad!!
+    console.log(n1 - n2);
+    console.log(typeof(n1 - n2));	// number
+
+
+    // parseFloat y parseInt
+    let dato = 45;
+        dato = parseInt('100');
+        dato = parseFloat("100.2040");
+    console.log(dato);
+
+
+    // CONVERTIR NÚMERO A STRING
+        // ejemplo práctico: nº de caracterers de un código postal
+    let codigoPostal = 28080;
+        // console.log(codigoPostal.lenght)	// Undefined (es un número aun)
+    codigoPostal = String(codigoPostal);
+    console.log(codigoPostal.length);	// 5, ya es un string
+        // .toSting()  (método 2)
+    let cp2 = 90210;
+    cp2 = cp2.toString();
+    console.log(typeof cp2);</code></pre>
+                    </div>
+                </article>
+
+                <article>
+                    <header>
+                        <h5>Array y sus métodos</h5>
+                    </header>
+
+                    <div class="article__content">
+                        <pre class="language-javascript line-numbers">
+    <code>// ARRAYS
+    const numeros = [10,20,30,40,50];
+    console.log(numeros);
+
+    const meses = new Array("enero","febrero","marzo","abril");
+
+    const mix = new Array(342,"Pere",true,undefined,"cas44",null);
+
+    // .length  nº elementos
+    meses.length // 4
+
+    // comprobar si es array
+    console.log(Array.isArray(meses));
+
+    // .push()  AÑADE AL FINAL
+    meses.push("mayo");
+
+    // .unshift()  AÑADE AL PRINCIPIO
+    meses.unshift("mes 0");
+
+    // ELIMINAR ELEMENTO
+    meses.pop();  // ELIMINA EL ÚLTIMO ELEMENTO
+    meses.shift() // ELIMINA EL PRIMER ELEMENTO
+    meses.splice(2,1)	// splice(índice,cantidad)  --> desde la posición "indice" quita "cantidad" elementos
+
+
+    // INVERTIR ARRAY
+    meses.reverse();
+
+    // Encontrar un elemento en el array
+    meses.indexOf("marzo");	// 2
+
+    // unir 2 arrays
+    const arr1 = [1,2,3],
+        arr2 = [7,8,9];
+    console.log(arr1.concat(arr2));
+
+    console.log(meses);
+
+    // ORDENAR ARRAYS
+    const frutas = ["platano","manzan","zanahoria","pera","kiwi","fresa"];
+    frutas.sort();
+    console.log(frutas);	// -->> Orden alfabñetico
+
+    const numeros22 = [1,543,23,75,22,76,346,987,12345,46];
+    numeros22.sort();
+    console.log(numeros22);	// Nos da el orden de MS-Dos
+
+    numeros22.sort(function(x,y){
+        return x - y;
+    });
+    console.log(numeros22);	// Nos da el orden bueno ascendente
+
+    numeros22.sort(function(x,y){
+        return y - x;
+    });
+    console.log(numeros22);	// Nos da el orden bueno descendente
+
+
+    // NOTA
+    /*
+        Un Array definido con const:  
+            const numeros = [1,2,3];
+        NO PUEDE REDEFINIRSE:
+            numeros = [4,6,7] --> DA ERROR
+
+        Sin embargo, se puede modificar con los métodos vistos antes, o reasignando cada elemento
+            numeros[0] = 55;
+    */</code></pre>
+                    </div>
+                </article>
+
+                <article>
+                    <header id="js2.2.6">
+                        <h5>Objeto y sus métodos</h5>
+                        <div class="breadcum">
+                            <ul class="breadcum__list">
+                                <li class="breadcum__list__item"><a href="#">Javascript</a></li>
+                                <li class="breadcum__list__item"><a href="#">Variables</a></li>
+                                <li class="breadcum__list__item"><a href="#">Tipos de variables y sus Métodos</a></li>
+                                <li class="breadcum__list__item"><a href="#">Objeto</a></li>
+                            </ul>
+                        </div>
+                    </header>
+
+                    <div class="article__content">
+                            <pre class="language-javascript line-numbers">
+    <code>const persona = {
+        nombre: "Pablo",
+        edad: 38,
+        profesion: "Front-End",
+        email: "pablofveiga@gmail.com",
+        lenguajes: ["CSS","HTML","JAVASCRIPT"],
+        hogar: {
+            ciudad: "Aviles",
+            casa: "Piso",
+            mascota: false
+        },
+        nacimiento: function(){
+            // return new Date().getFullYear() - persona.edad;	// MAL --> se usa this.
+            return new Date().getFullYear() - this.edad;
+        }
+    }
+
+    persona.lenguajes.push("ES6");
+
+    console.log(persona);
+    console.log(persona.nombre);
+    console.log(persona.hogar.casa);
+    console.log(persona.nacimiento());
+
+    // OBJECT LITERAL
+    const cliente = {
+        nombre : "Pablo",
+        saldo: 600,
+        tipoCliente : function() {
+                let tipo;
+                if ( this.saldo > 1000 ) {
+                    tipo = "Gold";
+                } else if (this.saldo > 500) {
+                    tipo = "Platinum"
+                }
+                else {
+                    tipo = "Normal";
+                }
+                return tipo;
+            }
+    }
+
+    console.log(cliente.tipoCliente());
+
+    // MÉTODO ALTERNATIVO (MEJOR)
+    function Cliente(nombre,saldo) {
+        this.nombre = nombre;
+        this.saldo = saldo;
+
+        this.tipoCliente = function() {
+            let tipo;
+            if ( this.saldo > 1000 ) {
+                tipo = "Gold";
+            } else if (this.saldo > 500) {
+                tipo = "Platinum"
+            }
+            else {
+                tipo = "Normal";
+            }
+            return tipo;
+        }
+    }
+
+    const persona = new Cliente("Pedro",3450);
+    console.log(persona);
+
+
+    // STRING
+    const nombre1 = "Pedro";
+    const nombre2 = new String("Pedro");
+
+    console.log(typeof nombre1);    // devuelve String
+    console.log(typeof nombre2);    // devuelve Object
+    console.log(nombre2);    // devuelve el Objecto con su prototipos y métodos, etc...
+
+    // Comparación:
+    if (nombre1 == nombre2) {
+        console.log(`La comparación == funciona`)
+    } else { console.log("No son iguales ==")}  // falso
+
+    if (nombre1 === nombre2) {
+        console.log(`La comparación === funciona`)  // falso
+    } else { console.log("La comparación estricta === no funciona")}    
+
+
+    // NUMEROS
+    const numero1 = 20;
+    const numero2 = new Number(20);    
+    console.log(numero1);
+    console.log(numero2);   // El _proto_ hereda un montón de métodos
+
+    // BOOLEANOS
+    const boolean1 = true;
+    const boolean2 = new Boolean(true);
+    console.log(boolean1);
+    console.log(boolean2);
+
+    // FUNCIONES
+    const funcion1 = function(a,b) { return a + b; }
+    const funcion2 = new Function("a","b", "return a+b");
+    console.log(funcion1(2,3));
+    console.log(funcion2(2,3));
+    console.log(typeof funcion1);
+    console.log(typeof funcion2);
+
+    // OBJETOS
+    const objeto1 = { nombre: "pepe"}
+    const objeto2 = new Object({nombre: "pepe"});
+    console.log(objeto1);
+    console.log(objeto2);
+
+    // ARRAYS
+    const array1 = [1,2,3,4];
+    const array2 = new Array(1,2,3,4);
+    console.log(array1);
+    console.log(array2);</code></pre>
+                    </div>
+                </article>
+
+            </section>
+        </article>
+
+        <!-- Scope de las variables -->
+        <article>
+            <header>
+                <h3>Scope de las variables</h3>
+            </header>
+            <div class="section__content">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius repellat fugiat, sunt odio exercitationem magni minus ab quaerat quia sequi id ut aspernatur quod incidunt esse dicta quo maiores?
+                </p>
+            </div>    
+        </article>
+        <!-- Asignación de variables por Destructuring -->
+        <article>
+            <header>
+                <h3>Asignación de variables por <strong>Destructuring</strong></h3>
+            </header>
+            <div class="section__content">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius repellat fugiat, sunt odio exercitationem magni minus ab quaerat quia sequi id ut aspernatur quod incidunt esse dicta quo maiores?
+                </p>
+            </div>    
+        </article>
+        
+        <!-- Funciones -->
+        <article>
+            <header>
+                <h3>Funciones</h3>
+            </header>
+            <div class="section__content">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius repellat fugiat, sunt odio exercitationem magni minus ab quaerat quia sequi id ut aspernatur quod incidunt esse dicta quo maiores?
+                </p>
+                <pre class="language-javascript line-numbers">
+<code>// FUNCTION DECLARATION
+function saludar(nombre) {
+
+    // DAR VALOR POR DEFECTO: VERSION VIEJA
+    if (typeof nombre === "undefined" ) {
+        nombre = "Pablo";
+    }
+
+    return `Hola ${nombre}`;
+}
+
+let saludo;
+saludo = saludar();
+console.log(saludo);
+
+
+// NUEVA FORMA DE INICIALIZAR PARÁMETROS
+function saludar2(nombre = "Visitante") {
+    return `Hola de nuevo ${nombre}`;
+}
+let saludo2;
+saludo2 = saludar2();
+console.log(saludo2);
+
+
+// FUNCTION EXPRESSION
+    // Es definirla como una variable
+const suma = function(a=3, b=4){
+    return a + b;
+}
+console.log(suma(3,5));
+console.log(suma(5));
+
+
+
+// FUNCIONES "IIFE" : Se declaran e invocan inmediatamete
+(function(){
+    console.log("Creando un IFFE");
+})();
+
+(function(tecnologia){
+    console.log(`Aprendiendo ${tecnologia}`);
+})("Javascript");
+
+
+// MÉTODOS DE PROPIEDADES
+    // Cuando una función se pone dentro de un objeto. Dichas funciones se conocen como métodos
+const musica =  {
+    reproducir: function(id){
+        console.log(`reproduciendo Música con id ${id}`);
+    },
+    pausa: function(){
+        console.log("Pausando Música");
+    }
+}
+musica.reproducir(45);
+musica.pausa();
+    // Los métodos también pueden guardarse/crearse fuera del objeto
+musica.borrar = function(id){
+    console.log(`Borrando cancion con id ${id}`);
+}
+musica.borrar(2);
+console.log(musica);	// el método borrar se ha añadido al objeto</code>
+                </pre>
+            </div>    
+        </article>
+
+        <!-- Manejo de errores con Try Catch -->
+        <article>
+            <header>
+                <h3>Manejo de errores con Try Catch</h3>
+            </header>
+            <div class="section__content">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius repellat fugiat, sunt odio exercitationem magni minus ab quaerat quia sequi id ut aspernatur quod incidunt esse dicta quo maiores?
+                </p>
+                <pre class="language-javascript line-numbers">
+<code>// funcion que no existe
+try {
+    algo();
+} catch (error) {
+    console.log("error");
+} finally {
+    console.log("Continua, no hay problema. Esto se ejecuta siempre");
+}
+
+function obtenerClientes() {
+    console.log(`Descargando......`);
+    setTimeout(function(){
+        console.log("Finalizado");
+    },1500)
+}
+
+obtenerClientes();</code></pre>
+            </div>    
+        </article>
+
+        <!-- Objeto Date() -->
+        <article>
+            <header>
+                <h3>Objeto Date()</h3>
+            </header>
+            <div class="section__content">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius repellat fugiat, sunt odio exercitationem magni minus ab quaerat quia sequi id ut aspernatur quod incidunt esse dicta quo maiores?
+                </p>
+                <pre class="language-javascript line-numbers">
+<code>// Fecha entera
+const diaHoy = new Date();
+
+// Fecha específica, Navidad 2017
+let navidad2017 = new Date('12-25-2017');
+
+let valor;
+// Año
+year = diaHoy.getFullYear();
+// Mes
+mes = diaHoy.getMonth();
+// Dia de la semana
+diaSemana = diaHoy.getDay();
+// Dia del mes
+diaMes = diaHoy.getDate();
+// Hora
+hora = diaHoy.getHours();
+// Milisegundos desde 1970
+ticks = diaHoy.getTime();
+
+// OJO!!!
+// Observa como se usa el get...
+// Pues también hay set.
+let superFecha = diaHoy.getFullYear();
+superFecha = diaHoy.setFullYear(1492);
+superFecha = diaHoy.getFullYear();
+console.log(`la superfecha es ${superFecha}`);
+
+
+console.log(diaHoy);
+console.log(navidad2017);
+console.log(`año: ${year}`);
+console.log(`mes: ${mes}`);
+console.log(`dia de la semana: ${diaSemana}`);
+console.log(`dia del mes: ${diaMes}`);
+console.log(`hora: ${hora}`);
+console.log(`ticks: ${ticks}`);</code></pre>
+            </div>    
+        </article>
+        
+        <!-- Estructuras de Control -->
+        <article>
+            <header>
+                <h3>Estructuras de Control</h3>
+            </header>
+            <div class="section__content">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius repellat fugiat, sunt odio exercitationem magni minus ab quaerat quia sequi id ut aspernatur quod incidunt esse dicta quo maiores?
+                </p>
+            </div>    
+
+            <!-- IF... ELSE -->
+            <section>
+                <header>
+                    <h4>IF... ELSE</h4>
+                </header>
+
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+               <pre class="language-javascript line-numbers">
+<code>let _time = new Date();
+hora = _time.getHours();
+
+if(hora <= 14) {
+    console.log(`Buenos días, son las ${hora}`);
+} else if (hora >=14) {
+    console.log(`Buenas tardes, son las ${hora}`);
+} else {
+    console.log(`Buenas noches, son las ${hora}`);
+}</code></pre>
+
+                <h4>Operador ternario</h4>
+                <pre class="language-javascript line-numbers">
+<code>// Operador Ternario
+const logeado = true;
+    // version mala
+logeado === true ? console.log("estás online") : console.log("estas offline");
+    // version buena
+console.log(logeado === true ? "estás online": "estas offline" );</code></pre>
+                    
+            </section>
+
+            <!-- Switch -->
+            <section>
+                <header>
+                    <h4>Switch</h4>
+                </header>
+                <div class="article__content">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                    <pre class="language-javascript line-numbers">
+<code>// SWITCH
+    // el case hace una comparación del tipo "==="
+switch(this.marca) {
+case "1": 
+    cantidad = base * 1.15;
+    break;
+case "2": 
+    cantidad = base * 1.05;
+    break;
+case "3": 
+    cantidad = base * 1.35;
+    break;           
+}</code></pre>                
+                </div>
+            </section>
+
+            <!-- FOR -->
+            <section>
+                <header>
+                    <h4>For</h4>
+                </header>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+               
+                    <pre class="language-javascript line-numbers">
+<code>// FOR
+for( let i = 0; i&lt;10; i++) {
+    console.log(`Hola por ${i} vez`);
+}
+    // DETENER UN FOR
+for(let i = 0; i&lt;10; i++) {
+    if(i==5) {
+        console.log("en 4 rompo el bucle");
+        break;
+    }
+    console.log(i);
+}
+    // NUMERO PAR/IMPAR
+for(let i = 0; i&lt;10; i++) {
+    if(i%2==0) {
+        console.log(`${i} es un numero par`);
+    } else {
+        console.log(`${i} es un numero impar`);
+    }
+    
+}</code></pre>
+            </section>
+
+            <!-- While y Do While -->
+            <section>
+                <header>
+                    <h4>While y Do While</h4>
+                </header>
+                <div class="article__content">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+               
+                    <pre class="language-javascript line-numbers">
+<code>        // WHILE
+let i = 0;
+while (i &lt;10) {
+    if(i===5) {
+        console.log("Sale cinco en letra, y me salto lo de debajo para reiniciar el while");
+        i++;
+        continue;
+        
+    }
+    console.log(i);
+    i++;
+}
+
+// DO WHILE
+    // Ejecuta el código al menos una vez, independientemente de si la condición se cumple
+let u = 120;
+do {
+    console.log(`Do while ${u}`);
+    u++;
+} while(u&lt;10);</code></pre>
+                </div>
+            </section>
+
+            <!-- forEach -->
+            <section>
+                    <header>
+                        <h4>forEach</h4>
+                    </header>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                    
+                    <pre class="language-javascript line-numbers">
+<code>// FOREACH
+    // podemos utilizar index para obtener el índice
+tareas.forEach(function(tarea, index){
+    console.log(`${index}:  ${tarea}`);
+});
+
+// MAP para recorrer arrays
+const carrito = [
+    {id: 1, producto: "coche"},
+    {id: 2, producto: "libro"},
+    {id: 3, producto: "vaca"},
+    {id: 4, producto: "misil"}
+];
+
+const nombreProducto = carrito.map(function(carrito){
+    return carrito.producto;
+})
+
+console.log(nombreProducto);</code></pre>
+                </section>            
+
+            <!-- for... in -->
+            <section>
+                <header>
+                    <h4>for... in</h4>
+                </header>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                
+                <pre class="language-javascript line-numbers">
+<code>// FOR IN
+const automovil = {
+    marca: "renault",
+    modelo: "cinco",
+    anio: 1987
+}
+for (let auto in automovil) {
+    console.log(`${auto} : ${automovil[auto]}`)
+}</code></pre>
+            </section>
+        </article>        
+
+        <article>
+            <header>
+                <h4>Objeto Window</h4>
+            </header>
+            <div class="article__content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+            </div>
+        </article>
+
+        <hr>
+        <article>
+            <header><h3>OTRO!! .. Notaciones (reeditar en el futuro)</h3></header>
+            <div class="sectionContent">
+                <pre class="language-javascript line-numbers">
+<code>var primerNombre;   // Camelcase
+var primer_nombre;  // Underscore
+var PrimerNombre;   // Pascal Case
+var primernombre;   // dirty</code></pre>
+            </div>
+        </article>
+
+
+
+    </div><!--   END OF WRAPPER -->
+
+
+    <script src="../js/prism.js"></script>
+    <script src="../js/interface.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

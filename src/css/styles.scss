@@ -9,30 +9,32 @@
 // // ==== COMPONENTS ====
 @import "components/_responsive-menu.scss";
 // @import "components/_language-dropdown.scss";
-@import "components/_top_menu.scss";
+@import "components/_topMenu.scss";
 @import "components/_flecha_subir.scss";
 @import "components/_lista_de_atributos.scss";
+@import "components/_breadcums.scss";
 // @import "components/_lobby-world-lottos.scss";
 // @import "components/_lobby-results.scss";
 
 
 // // ==== LAYOUT ====
 // @import "layout/_header.scss"; 
-// @import "layout/_lobby-head-rotator.scss"; 
 // @import "layout/_footer.scss"; 
 @import "layout/_grid.scss"; 
+@import "layout/_pageTemplate.scss"; 
 
 
 // // ==== PAGES ====
 @import "pages/_home.scss"; 
 @import "pages/_tema1.scss"; 
 @import "pages/_tema2.scss"; 
+@import "pages/_javascript.scss"; 
 
 
 // // ==== VENDORS ====
 // @import "vendors/_jquery-ui.scss"; 
 // @import "vendors/_jquery.bxslider.scss"; 
-// @import "vendors/_sss.scss"; 
+@import "vendors/_prism.scss"; 
 
 
 /* CONVENTIONS */
