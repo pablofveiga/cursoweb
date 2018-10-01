@@ -79,18 +79,6 @@ header.main-header {
 					color: #196120;
 				}
 
-				span.visits {
-					display: inline-block;
-					background: url(../pics/ojos.png) 0 0 no-repeat transparent;
-					width: 25px;
-					height: 16px;
-					vertical-align: middle;
-
-					@media all and (max-width: 600px) {
-						display: none;
-					}
-				}
-
 				a:link {
 					color: #993333;
 					display: inline-block;
@@ -99,11 +87,6 @@ header.main-header {
 
 					&:hover{
 						color: #196120;
-
-						+ span.visits {
-							background-position: -25px 0;
-						}
-
 					} 
 
 					&:visited {
@@ -113,10 +96,6 @@ header.main-header {
 
 				a:visited {
 					font-weight: bold;
-						+ span.visits {
-							background-position: -25px 0;
-						}
-
 				}				
 
 			}
