@@ -25,12 +25,12 @@
 <body id="home-page">
 
 <div class="wrapper">
-	<nav class="top-menu">
+	<nav class="topMenu">
 		<ul>
 			<li><a href="#">Inicio</a></li>
-			<li><a href="tema1/">Tema 1</a></li>
-			<li><a href="tema2/">Tema 2</a></li>
-			<li><a href="tema3/">Tema 3</a></li>
+			<li><a href="tema1/">HTML</a></li>
+			<li><a href="tema2/">CSS</a></li>
+			<li><a href="tema3/">JavaScript</a></li>
 			<li><a href="#">Contacto</a></li>
 		</ul>
 	</nav>
