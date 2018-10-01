@@ -1,0 +1,143 @@
+[
+    {
+        "id": "1",
+        "titulo": "HTML",
+        "subcontenido": true,
+        "temario" : 
+            {
+                "id": "1.1",
+                "titulo": "Introducción a HTML",
+                "subcontenido": false
+            }
+    },
+    {
+        "id": "2",
+        "titulo": "CSS",
+        "subcontenido": true
+    },
+    {
+        "id": "3",
+        "headerId": "js",
+        "titulo": "JavaScript",
+        "subcontenido": true,
+        "temario": 
+            [
+                {
+                    "id": "3.1",
+                    "titulo": "Introducción histórica",
+                    "subcontenido": false
+                },
+                {
+                    "id": "3.2",
+                    "titulo": "Variables",
+                    "subcontenido": true,
+                    "temario": 
+                        [
+                            {
+                                "id": "3.2.1",
+                                "titulo": "Tipos de Variables y sus Métodos",
+                                "subcontenido": true,
+                                "temario":
+                                    [
+                                        {
+                                            "id": "3.2.1.1",
+                                            "titulo": "String",
+                                            "subcontenido": false
+                                        },
+                                        {
+                                            "id": "3.2.1.2",
+                                            "titulo": "Number",
+                                            "subcontenido": false
+                                        },
+                                        {
+                                            "id": "3.2.1.3",
+                                            "titulo": "Operaciones entre String y Number",
+                                            "subcontenido": false
+                                        },
+                                        {
+                                            "id": "3.2.1.4",
+                                            "titulo": "Boolean",
+                                            "subcontenido": false
+                                        },
+                                        {
+                                            "id": "3.2.1.5",
+                                            "titulo": "Array",
+                                            "subcontenido": false
+                                        },
+                                        {
+                                            "id": "3.2.1.6",
+                                            "titulo": "Object",
+                                            "subcontenido": false
+                                        }
+                                    ]
+                            },
+                            {
+                                "id": "3.2.3",
+                                "titulo": "Scope de las variables",
+                                "subcontenido": false
+                            },
+                            {
+                                "id": "3.2.4",
+                                "titulo": "Asignación por Destructuring",
+                                "subcontenido": false
+                            }
+                        ]
+                },
+                {
+                    "id": "3.3",
+                    "titulo": "Funciones",
+                    "subcontenido": false
+                },
+                {
+                    "id": "3.4",
+                    "titulo": "Manejo de errores con try cath",
+                    "subcontenido": false
+                },
+                {
+                    "id": "3.5",
+                    "titulo": "Objeto Date()",
+                    "subcontenido": false
+                },
+                {
+                    "id": "3.6",
+                    "titulo": "Estructuras de contol",
+                    "subcontenido": true,
+                    "temario": 
+                        [
+                            
+                            {
+                                "id": "3.6.1",
+                                "titulo": "IF....ELSE....",
+                                "subcontenido": false
+                            },
+                            {
+                                "id": "3.6.2",
+                                "titulo": "Switch",
+                                "subcontenido": false
+                            },
+                            {
+                                "id": "3.6.3",
+                                "titulo": "FOR",
+                                "subcontenido": false
+                            },
+                            {
+                                "id": "3.6.4",
+                                "titulo": "While y Do While",
+                                "subcontenido": false
+                            },
+                            {
+                                "id": "3.6.5",
+                                "titulo": "ForEach",
+                                "subcontenido": false
+                            }
+                            
+                        ]
+                },
+                {
+                    "id": "3.7",
+                    "titulo": "Objeto Window",
+                    "subcontenido": false
+                }
+            ]
+    }
+]

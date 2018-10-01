@@ -27,7 +27,7 @@
 
 
 <div class="wrapper">
-	<nav class="top-menu">
+	<nav class="topMenu">
 		<ul>
 			<li><a href="../">Inicio</a></li>
 			<li><a href="../tema1/">Tema 1</a></li>

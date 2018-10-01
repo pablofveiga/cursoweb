@@ -1,3 +1,6 @@
+
+
+// OLD functions
 $(document).ready(function(){
 
     // RESPONSIVE MENU

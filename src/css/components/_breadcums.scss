@@ -1,0 +1,25 @@
+.breadcum {
+
+    &__list {
+        display: flex;
+
+        &__item {
+
+            a {
+                font: 100 0.7em/1em $font-light;
+                background-color: #496582;
+                color: white;
+                margin-right: 2px;
+                padding: 1px 6px;
+                border-radius: 6px;
+            }
+            
+            &:last-child {
+
+                a {
+                    background-color: #307330;
+                }
+            }
+        }
+    }
+}
