@@ -48,13 +48,33 @@ cargarJSON();
 
 
 // test accordeon
-// let _titles = document.querySelectorAll("header:not(.notCollapsable h2")
+// let _titles = document.querySelectorAll("header:not(.notCollapsable) h2")
+// let _titles = document.querySelectorAll("header h2");
+// _titles.forEach(function(){
 
+// });
 
 
 
 
 // Pruebas
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("upArrow").style.display = "block";
+    } else {
+        document.getElementById("upArrow").style.display = "none";
+    }
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 
 // AÑADIR CLASES O ID'S A CADA ARTICLE (h2)
 let secciones = document.querySelectorAll(".wrapper>article");
