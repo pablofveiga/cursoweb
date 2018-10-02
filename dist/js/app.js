@@ -78,16 +78,26 @@ function topFunction() {
 
 // AÑADIR CLASES O ID'S A CADA ARTICLE (h2)
 let secciones = document.querySelectorAll(".wrapper>article");
-// console.log(secciones);
+// // console.log(secciones);
 secciones.forEach(function(sec,i=1){
     // sec.classList.add(`js${i}`);
-    console.log(`
-    // SECCIONES (h2)
-    `)   
-    console.log(sec); 
-    sec.id = `js-${i}`;
+    // console.log(`
+    // // SECCIONES (h2)
+    // `)   
+    // console.log(sec); 
+    sec.id = `js-${i-2}`;
     i++;
 });
+
+
+// for (i = 3; i < secciones.length; i++) {
+//     if (i == 3) {
+//         secciones[i].id = `js-${1}`;    
+//     } else {
+//         secciones[i].id = `js-${i-2}`;    
+//     }
+    
+// }
 
 // SUBSECCIONES (h3)
 let subsecciones = document.querySelectorAll("article>.blockContent>section");
