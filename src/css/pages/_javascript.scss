@@ -1,6 +1,11 @@
 #js-page {
 
     .mainHeader {
-        background-color: #fabada;
+        background: url(../pics/javascript.jpg) center center no-repeat transparent;
+
+        h1 {
+            color: #ff00de;
+            text-shadow: 3px -2px 3px #000;
+        }
     }
 }

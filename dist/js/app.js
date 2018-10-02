@@ -43,6 +43,17 @@ function cargarJSON() {
 cargarJSON();
 
 
+
+
+
+
+// test accordeon
+// let _titles = document.querySelectorAll("header:not(.notCollapsable h2")
+
+
+
+
+
 // Pruebas
 
 // AÑADIR CLASES O ID'S A CADA ARTICLE (h2)
@@ -54,17 +65,19 @@ secciones.forEach(function(sec,i=1){
     // SECCIONES (h2)
     `)   
     console.log(sec); 
-    sec.id = `js${i}`;
+    sec.id = `js-${i}`;
     i++;
 });
 
 // SUBSECCIONES (h3)
-let subsecciones = document.querySelectorAll("article>section");
+let subsecciones = document.querySelectorAll("article>.blockContent>section");
 // console.log(subsecciones);
 subsecciones.forEach(function(subsec,i){
-    console.log(`
-    // SUBSECCIONES (h3)
-    `)
+    // console.log(`
+    // // SUBSECCIONES (h3)
+    // `)    
+    let parentID = subsec.parentElement.parentElement.id;
+    subsec.id = `${parentID}.${i}`;
     console.log(subsec);
 })
 
