@@ -90,6 +90,7 @@
                             <li><a href="#">6.3.- FOR</a></li>
                             <li><a href="#">6.4.- While y Do While</a></li>
                             <li><a href="#">6.5.- ForEach</a></li>
+                            <li><a href="#">6.6.- Map</a></li>
                         </ul>
                     </li>
                     <li><a href="#js-7">7.- Objeto Window</a></li>
@@ -641,15 +642,12 @@
                 <pre class="language-javascript line-numbers">
 <code>// FUNCTION DECLARATION
 function saludar(nombre) {
-
     // DAR VALOR POR DEFECTO: VERSION VIEJA
     if (typeof nombre === "undefined" ) {
         nombre = "Pablo";
     }
-
     return `Hola ${nombre}`;
 }
-
 let saludo;
 saludo = saludar();
 console.log(saludo);
@@ -860,6 +858,7 @@ console.log(`ticks: ${ticks}`);</code></pre>
                 
                         <pre class="language-javascript line-numbers">
     <code>// FOR
+    // (índice; condición ; incremento)    
     for( let i = 0; i&lt;10; i++) {
         console.log(`Hola por ${i} vez`);
     }
@@ -892,14 +891,14 @@ console.log(`ticks: ${ticks}`);</code></pre>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
                 
                         <pre class="language-javascript line-numbers">
-    <code>        // WHILE
+    <code>// WHILE
     let i = 0;
     while (i &lt;10) {
         if(i===5) {
             console.log("Sale cinco en letra, y me salto lo de debajo para reiniciar el while");
             i++;
-            continue;
-            
+            continue;   // el "contiue" volvería al bucle while (al principio), por eso usamos el incremento antes
+            // también podemos usar "break" para deteber el while
         }
         console.log(i);
         i++;
@@ -921,30 +920,45 @@ console.log(`ticks: ${ticks}`);</code></pre>
                             <h3>forEach</h3>
                         </header>
                         <div class="blockContent">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                            <p>Para recorrer Arrays.</p>
                         
                             <pre class="language-javascript line-numbers">
-    <code>// FOREACH
-        // podemos utilizar index para obtener el índice
-    tareas.forEach(function(tarea, index){
-        console.log(`${index}:  ${tarea}`);
-    });
+<code>// FOREACH
+const tareas = ["comer","dormir","respirar","volar"];    
+tareas.forEach(function(tarea, index){      // podemos utilizar "index" para obtener el índice
+    console.log(`${index}:  ${tarea}`);
+});
 
-    // MAP para recorrer arrays
-    const carrito = [
-        {id: 1, producto: "coche"},
-        {id: 2, producto: "libro"},
-        {id: 3, producto: "vaca"},
-        {id: 4, producto: "misil"}
-    ];
-
-    const nombreProducto = carrito.map(function(carrito){
-        return carrito.producto;
-    })
-
-    console.log(nombreProducto);</code></pre>
+// El método FOR sería 
+for (let i = 0; i &lt;=tareas.length; i++ ) {
+    console.log(tareas[i]);
+}</code></pre>
                         </div>
-                </section>            
+                </section>   
+                
+                <!-- MAP -->
+                <section>
+                        <header>
+                            <h3>Map</h3>
+                        </header>
+                        <div class="blockContent">
+                            <p>Para recorrer un Array de Objetos.</p>
+                        
+                            <pre class="language-javascript line-numbers">
+<code>const carrito = [
+    {id: 1, producto: "coche"},
+    {id: 2, producto: "libro"},
+    {id: 3, producto: "vaca"},
+    {id: 4, producto: "misil"}
+];
+
+const nombreProducto = carrito.map(function(carrito){
+    return carrito.producto;
+})
+
+console.log(nombreProducto);</code></pre>
+                        </div>
+                </section>                   
 
                 <!-- for... in -->
                 <section>
@@ -952,18 +966,19 @@ console.log(`ticks: ${ticks}`);</code></pre>
                         <h3>for... in</h3>
                     </header>
                     <div class="blockContent">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                        <p>Recorrer un Objeto con un for.</p>
                     
                         <pre class="language-javascript line-numbers">
-    <code>// FOR IN
-    const automovil = {
-        marca: "renault",
-        modelo: "cinco",
-        anio: 1987
-    }
-    for (let auto in automovil) {
-        console.log(`${auto} : ${automovil[auto]}`)
-    }</code></pre>
+<code>// FOR IN
+const automovil = {
+    marca: "renault",
+    modelo: "cinco",
+    anio: 1987
+}
+// for (param in Objeto) { args. }
+for (let auto in automovil) {
+    console.log(`${auto} : ${automovil[auto]}`)
+}</code></pre>
                     </div>
                 </section>
             </div>  
