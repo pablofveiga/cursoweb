@@ -81,7 +81,11 @@ function topFunction() {
 let secciones = document.querySelectorAll(".wrapper>article");
 secciones.forEach(function(sec,i=1){
     // AÑADIR ID (LE RESTAMOS 2 PQ HAY 2 SECCIONES INUTILES ANTES (INDICE E INTRO))
-    sec.id = `js-${i-1}`;
+    if (i == 10) {
+        sec.id = `js-${i-1}`;
+    } else {
+        sec.id = `js-0${i-1}`;
+    }
 
     if (sec.children[1].children[0].nodeName == "SECTION" ) {
         sec.classList.add("putoto");
