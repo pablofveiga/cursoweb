@@ -15,7 +15,7 @@
 // HEADERS
 h2 { font: 600 2em/2.15em $font-medium;  }
 h3 { font: 600 1.65em/1.8em $font-medium;  }
-h4 { font: 400 1.5em/1.75em $font-medium; }
+h4 { font: 400 1.5em/1.1em $font-medium; }
 h5 { font-size: 1.3em; }
 
 
@@ -25,3 +25,29 @@ article {
 }
 
 // paragraphs and text
+
+
+// CODES
+code {
+    font-family: monospace;
+    font-size: 1.1em;
+    background-color: #ffdeb2;
+}
+
+.codeWithImage {    // NOT RESPONSIVE
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px dotted #ccc;
+
+    .sampleImage {
+        width: 40%;
+    }
+
+    div:nth-child(2) {
+        width: 60%;
+        margin-left: 1em;
+    }
+
+}

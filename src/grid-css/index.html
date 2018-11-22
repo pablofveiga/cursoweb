@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid CSS</title>
+
+
+        <!-- OG -->
+    <meta property="og:title" content="Curso Web Peibol" />
+    <meta property="og:description" content="Tema 1 - Introducción a la web" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.pablofv.com/cursoweb/tema1/" />
+    <meta property="og:image" content="http://www.pablofv.com/cursoweb/pics/og-tema1.jpg" />
+	<meta property="og:image:type" content="image/jpeg" /> 
+	<meta property="og:image:width" content="200" /> 
+	<meta property="og:image:height" content="200" />    
+    <meta property="og:locale" content="es" />
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../css/styles.css?v=1.1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="js-page">
+    
+    <div class="wrapper">
+        <nav class="topMenu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="tema1/">HTML</a></li>
+                <li><a href="tema2/">CSS</a></li>
+                <li><a href="tema3/">JavaScript</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="mainHeader">
+        <h1 class="mainHeader__title">Grid CSS Completo</h1>
+    </header>
+    
+    <div class="wrapper">
+
+        <article class="sectionIntro">
+            <header>
+                <h2>Guía completa de Grid CSS.</h2>
+            </header>          
+        </article>
+
+        <article class="sectionIndex">
+            <header>
+                <h2>Índice de contenidos</h2>
+            </header>
+            <div class="section__content">
+                <ul class="normal-list">
+                    <li><a href="#">1.- Introducción histórica</a></li>
+                    <li>
+                        <a href="#js2">2.- Variables</a>
+                        <ul>
+                            <li><a href="#js2.1">2.1- Declaración de Variables</a></li>
+                            <li>
+                                <a href="#js2.2">2.2- Tipos de Variables y sus Métodos</a>
+                                <ul>
+                                    <li><a href="#js2.2.1">2.2.1- String</a></li>
+                                    <li><a href="#js2.2.2">2.2.2- Number</a></li>
+                                    <li><a href="#js2.2.3">2.2.3- Operaciones entre String y Number</a></li>
+                                    <li><a href="#js2.2.4">2.2.4- Boolean</a></li>
+                                    <li><a href="#js2.2.5">2.2.5- Array</a></li>
+                                    <li><a href="#js2.2.6">2.2.6- Object</a></li>                            
+                                </ul>
+                            </li>
+                            <li><a href="#js2.3">2.3- Scope de las varibles</strong></a></li>
+                            <li><a href="#js2.4">2.4- Asignación de valores por <strong>Destructuring</strong></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Funciones</a></li>
+                    <li><a href="#">Manejo de errores con try cath</a></li>
+                    <li><a href="#">Objeto Date()</a></li>
+                    <li>
+                        <a href="#">Estructuras de contol</a>
+                        <ul>
+                            <li><a href="#">IF...ELSE</a></li>
+                            <li><a href="#">Switch</a></li>
+                            <li><a href="#">FOR</a></li>
+                            <li><a href="#">While y Do While</a></li>
+                            <li><a href="#">ForEach</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Objeto Window</a></li>
+                </ul>
+            </div>
+        </article>
+
+
+        <!-- Conceptos básicos -->
+        <article>
+            <header>
+                <h3>Conceptos básicos</h3>
+            </header>
+
+            <!-- Grid Context -->
+            <section>
+                <header>
+                    <h4>Grid Context</h4>
+                </header>
+
+                <div class="articleContent">
+                    <p>Es la relación entre <strong>Grid Container</strong> y <strong>Grid Item</strong> (contenedor y elemento).</p>
+                    <pre class="language-css line-numbers">
+<code>// Declaración de GRID
+main {
+    display: grid;
+}</code></pre>     
+                </div>
+            </section>
+
+            <!-- Grid Line -->
+            <section>
+                <header>
+                    <h4>Grid Line</h4>
+                </header>
+
+                <div class="section__content">
+                    <p>
+                        El contenedor Grid tiene líneas horizontales (eje X) y verticales (eje Y).
+                    </p>
+                    <p>
+                        Podemos hacer referencia a una <strong>grid line</strong> por su número o por su nombre
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- Grid Track -->
+            <section>
+                <header>
+                    <h4>Grid Track</h4>
+                </header>
+
+                <div class="section__content">
+                    <p>
+                        Es el nombre genérico para cualquier <strong>grid-row</strong> o <strong>grid-column</strong>.
+                    </p>
+                    <p>
+                        Espacio horizontal o vertical entre dos <strong>grid-lines</strong> consecutivas.
+                    </p>
+                    <p>
+                        Define la altura de un grid-column o la anchura de un grid-row.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Grid Cell -->
+            <section>
+                <header>
+                    <h4>Grid Cell</h4>
+                </header>
+
+                <div class="section__content">
+                    <p>
+                        Es la intersección entre un <strong>grid-row</strong> y un <strong>grid-column</strong>.
+                    </p>
+                    <p>
+                        Está delimitado por cuatro <strong>grid-lines</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Grid Area -->
+            <section>
+                <header>
+                    <h4>Grid Area</h4>
+                </header>
+
+                <div class="section__content">
+                    <p>
+                        Es cualquier porción del grid contenida entre 4 grid lines.
+                    </p>
+                </div>
+            </section>
+        </article>
+
+
+
+
+        <!-- PROPIEDADES DEL CONTENEDOR -->
+        <article>
+            <header>
+                <h3>Propiedades del contenedor</h3>
+            </header>
+
+            <!-- DISPLAY -->
+            <section>
+                <header>
+                    <h4>Display</h4>
+                </header>
+                <div class="section__content">
+                    <p>
+                        Declara el contenedor grid.
+                    </p>
+                    <p>
+                        Valores:
+                        <ul>
+                            <li><strong>grid</strong></li>
+                            <li><strong>inline-grid</strong></li>
+                        </ul>
+                    </p>
+
+                    <pre class="language-css line-numbers">
+<code>// Declaración de GRID
+main {
+    display: grid | inline-grid;
+}</code></pre>     
+                </div>
+            </section>
+
+
+            <!-- GRID-TEMPLATE-COLUMNS & GRID-TEMPLATE-ROWS-->
+            <section>
+                <header>
+                    <h4>grid-template-columns</h4>
+                    <h4>grid-template-rows</h4>
+                </header>
+                <div class="section__content">
+                    <p>
+                        Define las filas y columnas del Grid Container.
+                    </p>
+                    <p>
+                        Parámetros:
+                        <ul>
+                            <li><strong>&lt;track-size&gt;</strong></li>
+                            <li><strong>&lt;track-name&gt;</strong></li>
+                        </ul>
+                    </p>
+                    <pre class="language-css line-numbers">
+<code>main {
+    grid-template-columns: &lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;
+    grid-template-rows: &lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;
+}</code></pre>     
+
+                    <p><strong>Ejemplo:</strong></p>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/template-columns-rows-01.svg" alt="">
+                        </div>    
+
+                        <pre class="language-css line-numbers">
+<code>main {
+    grid-template-columns: 40px 50px auto 50px 40px;
+    grid-template-rows: 25% 100px auto;
+}</code></pre>                         
+                    </div>
+
+                    <p>También podemmos poner nombres a las <strong>líneas.</strong> <span class="cursive">[nombre]</span> </p>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/template-column-rows-02.svg" alt="">
+                        </div>    
+
+                        <pre class="language-css line-numbers">
+<code>main {
+    grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+}</code></pre>                         
+                    </div>
+
+                    <p>Una línea puede tener más de un nombre:</p>
+                    <pre class="language-css line-numbers">
+<code>main {
+    grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+}</code></pre> 
+
+                    <p>Si tenemos partes repetidas, podemos usar la notación <strong><code>repeat()</code></strong></p>
+                    <pre class="language-css line-numbers">
+<code>main {
+    grid-template-columns: repeat(3, 20px [col-start]);
+}</code></pre> 
+                    <p>Que sería igual que:</p>
+                    <pre class="language-css line-numbers">
+<code>main {
+    grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
+}</code></pre>                     
+
+                    <p style="color: red;">NO ENTENDIDO!!!</p>
+                    <p style="color: red;" >If multiple lines share the same name, they can be referenced by their line name and count.</p>
+                    <pre class="language-css line-numbers">
+<code>.item  {
+    grid-column-start: col-start 2;
+}</code></pre>     
+
+                    <p>La unidad de medida <strong><code>fr</code></strong> indica 1 fracción del contenedor.</p>
+                    <p>Si la utilizamos junto con otras medidas (px, em, ...), se recalcula y funciona perfectamente.</p>
+                    <pre class="language-css line-numbers">
+<code>.container   {
+    grid-template-columns: 1fr 1fr 1fr;     /* tres tercios */
+}
+.container2 {
+    grid-template-columns: 1fr 100px 1fr;   /* 100px entre dos fracciones iguales */
+}
+</code></pre>     
+
+                </div>
+            </section>
+
+            <!-- GRID-TEMPLATE-AREAS -->
+            <section>
+                <header>
+                    <h4>grid-template-areas</h4>
+                </header>
+                <div class="section__content">
+                    <p>Define el Grid Template llamando a las <strong>grid-area</strong> definidas.</p>
+                    <p>Las grid-areas las hemos definido con <strong>grid-template-rows</strong> y <strong>grid-template-columns</strong></p>
+                    <p>Si repetimos el nombre de un area (ej. "cabecera"), la cabecera ocupará tanto espacio como las veces que se repiten (colspan | rowspan)</p>
+                    <p>Un punto <strong> . </strong> significa que la celda está vacía.</p>
+                    <p>
+                        Valores:
+                        <ul>
+                            <li><strong>nombre del grid-area:</strong> especificado con la propiedad <a href="#"><code>grid-area</code></a> (propiedad del item)</li>
+                            <li><strong>.</strong> : significa una celda vacía</li>
+                            <li><strong>none</strong> : sin definir grid-area</li>
+                        </ul>
+                    </p>
+                    <pre class="language-css line-numbers">
+<code>main {
+        grid-template-areas: "&lt;grid-area-name&gt; | . | none | ..." "...";
+}</code></pre>     
+                    <p>Veamos un ejemplo:</p>
+                    <div class="codeWithImage">
+                            <div class="sampleImage">
+                                <img src="../pics/grid-css/dddgrid-template-areas.svg" alt="">
+                            </div>    
+    
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+grid-area: header;
+}
+.item-b {
+grid-area: main;
+}
+.item-c {
+grid-area: sidebar;
+}
+.item-d {
+grid-area: footer;
+}
+
+.container {
+grid-template-columns: 50px 50px 50px 50px;
+grid-template-rows: auto;
+grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}</code></pre>                         
+                    </div>
+
+                    <p>Notice that you're not naming lines with this syntax, just areas. </p>
+                    <p>When you use this syntax the lines on either end of the areas are actually getting named automatically. </p>
+                    <p>If the name of your grid area is <b><em>foo</em></b>, the name of the area's starting row line and starting column line will be <b><em>foo</em>-start</b>, and the name of its last row line and last column line will be <b><em>foo</em>-end</b>. </p>
+                    <p>This means that some lines might have multiple names, such as the far left line in the above example, which will have three names: header-start, main-start, and footer-start.</p>
+                </div>
+            </section>
+
+
+
+            <!-- GRID-TEMPLATE -->
+            <section>
+                    <header>
+                        <h4>grid-template</h4>
+                    </header>
+                    <div class="section__content">
+                        <p>Es la forma corta para: <code>grid-template-rows</code>, <code>grid-template-columns</code> y <code>grid-template-areas</code></p>
+                        <p>NO es una propiedad recomendada, en su lugar es mejor usar la propiedad compacta <code>grid</code> como explicaremos más adelante.</p>
+                        <p>Valores:</p>
+                        <ul>
+                            <li><strong><code>none</code></strong>: deja las 3 propiedades a su valor inicial.</li>
+                            <li><strong><code>&lt;grid-template-rows&gt;</code> / <code>&lt;grid-template-columns&gt;</code></strong>: Asigna valores a <code>grid-template-columns</code> y a <code>grid-template-rows</code> respectivamente y deja <code>grid-template-areas</code> a 0.</li>                            
+                        </ul>
+                        <pre class="language-css line-numbers">
+<code>.container {
+  grid-template: none | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;;
+}</code></pre>    
+                        <p>También acepta una síntaxis un poco más compleja para definir los tres:</p>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    grid-template:
+        [row1-start] "header header header" 25px [row1-end]
+        [row2-start] "footer footer footer" 25px [row2-end]
+        / auto 50px auto;
+}</code></pre>    
+                        <p>Esto equivaldría a:</p>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
+    grid-template-columns: auto 50px auto;
+    grid-template-areas: 
+        "header header header" 
+        "footer footer footer";
+}</code></pre>   
+
+                        <p><strong>NOTA IMPORTANTE:</strong></p>
+                        <p>Como la propiedad <code>grid-template</code> no resetea las propiedades implícitas del grid (estas son: <code>grid-auto-columns</code>, <code>grid-auto-rows</code> y <code>grid-auto-flow</code>, y es lo que se suele emplear en la mayoría de los casos, <strong>se recomienda usar la propiedad <code>grid</code> en lugar de <code>grid-template</code>.</strong></p>
+
+                    </div>
+            </section>
+
+
+        </article>
+
+
+
+
+
+    </div><!--   END OF WRAPPER -->
+
+
+    <script src="../js/prism.js"></script>
+    <script src="../js/interface.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

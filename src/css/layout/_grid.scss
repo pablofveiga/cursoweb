@@ -124,6 +124,13 @@ ul.normal-list {
 	} 
 }
 
+// STANDARD LIST
+section li,
+article li {
+	padding-left: 1em;
+	line-height: 1.3em;
+}
+
 // SHOW SCROLL BARS IN PHONES
 ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -143,6 +150,15 @@ ul.normal-list {
     border-radius: 10px;  
     background-color: #ffffff; 
 }
+
+
+
+// Typography specials:
+.cursive {
+	font-style: italic;
+}
+
+
 
 
 // ANCHORS FIX
