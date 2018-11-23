@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Grid CSS</title>
@@ -69,7 +69,7 @@
                                     <li><a href="#js2.2.6">2.2.6- Object</a></li>                            
                                 </ul>
                             </li>
-                            <li><a href="#js2.3">2.3- Scope de las varibles</strong></a></li>
+                            <li><a href="#js2.3">2.3- Scope de las varibles</a></li>
                             <li><a href="#js2.4">2.4- Asignación de valores por <strong>Destructuring</strong></a></li>
                         </ul>
                     </li>
@@ -181,9 +181,6 @@ main {
             </section>
         </article>
 
-
-
-
         <!-- PROPIEDADES DEL CONTENEDOR -->
         <article>
             <header>
@@ -199,14 +196,11 @@ main {
                     <p>
                         Declara el contenedor grid.
                     </p>
-                    <p>
-                        Valores:
-                        <ul>
-                            <li><strong>grid</strong></li>
-                            <li><strong>inline-grid</strong></li>
-                        </ul>
-                    </p>
-
+                    <p>Valores:</p>
+                    <ul>
+                        <li><strong>grid</strong></li>
+                        <li><strong>inline-grid</strong></li>
+                    </ul>
                     <pre class="language-css line-numbers">
 <code>// Declaración de GRID
 main {
@@ -214,7 +208,6 @@ main {
 }</code></pre>     
                 </div>
             </section>
-
 
             <!-- GRID-TEMPLATE-COLUMNS & GRID-TEMPLATE-ROWS-->
             <section>
@@ -226,13 +219,12 @@ main {
                     <p>
                         Define las filas y columnas del Grid Container.
                     </p>
-                    <p>
-                        Parámetros:
-                        <ul>
-                            <li><strong>&lt;track-size&gt;</strong></li>
-                            <li><strong>&lt;track-name&gt;</strong></li>
-                        </ul>
-                    </p>
+                    <p>Parámetros:</p>
+                    <ul>
+                        <li><strong>&lt;track-size&gt;</strong></li>
+                        <li><strong>&lt;track-name&gt;</strong></li>
+                    </ul>
+                    
                     <pre class="language-css line-numbers">
 <code>main {
     grid-template-columns: &lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;
@@ -315,25 +307,23 @@ main {
                     <p>Las grid-areas las hemos definido con <strong>grid-template-rows</strong> y <strong>grid-template-columns</strong></p>
                     <p>Si repetimos el nombre de un area (ej. "cabecera"), la cabecera ocupará tanto espacio como las veces que se repiten (colspan | rowspan)</p>
                     <p>Un punto <strong> . </strong> significa que la celda está vacía.</p>
-                    <p>
-                        Valores:
-                        <ul>
-                            <li><strong>nombre del grid-area:</strong> especificado con la propiedad <a href="#"><code>grid-area</code></a> (propiedad del item)</li>
-                            <li><strong>.</strong> : significa una celda vacía</li>
-                            <li><strong>none</strong> : sin definir grid-area</li>
-                        </ul>
-                    </p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><strong>nombre del grid-area:</strong> especificado con la propiedad <a href="#"><code>grid-area</code></a> (propiedad del item)</li>
+                        <li><strong>.</strong> : significa una celda vacía</li>
+                        <li><strong>none</strong> : sin definir grid-area</li>
+                    </ul>
                     <pre class="language-css line-numbers">
 <code>main {
         grid-template-areas: "&lt;grid-area-name&gt; | . | none | ..." "...";
 }</code></pre>     
                     <p>Veamos un ejemplo:</p>
                     <div class="codeWithImage">
-                            <div class="sampleImage">
-                                <img src="../pics/grid-css/dddgrid-template-areas.svg" alt="">
-                            </div>    
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/dddgrid-template-areas.svg" alt="">
+                        </div>    
     
-                            <pre class="language-css line-numbers">
+                        <pre class="language-css line-numbers">
 <code>.item-a {
 grid-area: header;
 }
@@ -356,7 +346,6 @@ grid-template-areas:
     "footer footer footer footer";
 }</code></pre>                         
                     </div>
-
                     <p>Notice that you're not naming lines with this syntax, just areas. </p>
                     <p>When you use this syntax the lines on either end of the areas are actually getting named automatically. </p>
                     <p>If the name of your grid area is <b><em>foo</em></b>, the name of the area's starting row line and starting column line will be <b><em>foo</em>-start</b>, and the name of its last row line and last column line will be <b><em>foo</em>-end</b>. </p>
@@ -364,35 +353,33 @@ grid-template-areas:
                 </div>
             </section>
 
-
-
             <!-- GRID-TEMPLATE -->
             <section>
-                    <header>
-                        <h4>grid-template</h4>
-                    </header>
-                    <div class="section__content">
-                        <p>Es la forma corta para: <code>grid-template-rows</code>, <code>grid-template-columns</code> y <code>grid-template-areas</code></p>
-                        <p>NO es una propiedad recomendada, en su lugar es mejor usar la propiedad compacta <code>grid</code> como explicaremos más adelante.</p>
-                        <p>Valores:</p>
-                        <ul>
-                            <li><strong><code>none</code></strong>: deja las 3 propiedades a su valor inicial.</li>
-                            <li><strong><code>&lt;grid-template-rows&gt;</code> / <code>&lt;grid-template-columns&gt;</code></strong>: Asigna valores a <code>grid-template-columns</code> y a <code>grid-template-rows</code> respectivamente y deja <code>grid-template-areas</code> a 0.</li>                            
-                        </ul>
-                        <pre class="language-css line-numbers">
+                <header>
+                    <h4>grid-template</h4>
+                </header>
+                <div class="section__content">
+                    <p>Es la forma corta para: <code>grid-template-rows</code>, <code>grid-template-columns</code> y <code>grid-template-areas</code></p>
+                    <p>NO es una propiedad recomendada, en su lugar es mejor usar la propiedad compacta <code>grid</code> como explicaremos más adelante.</p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><strong><code>none</code></strong>: deja las 3 propiedades a su valor inicial.</li>
+                        <li><strong><code>&lt;grid-template-rows&gt;</code> / <code>&lt;grid-template-columns&gt;</code></strong>: Asigna valores a <code>grid-template-columns</code> y a <code>grid-template-rows</code> respectivamente y deja <code>grid-template-areas</code> a 0.</li>                            
+                    </ul>
+                    <pre class="language-css line-numbers">
 <code>.container {
   grid-template: none | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;;
 }</code></pre>    
-                        <p>También acepta una síntaxis un poco más compleja para definir los tres:</p>
-                        <pre class="language-css line-numbers">
+                    <p>También acepta una síntaxis un poco más compleja para definir los tres:</p>
+                    <pre class="language-css line-numbers">
 <code>.container {
     grid-template:
         [row1-start] "header header header" 25px [row1-end]
         [row2-start] "footer footer footer" 25px [row2-end]
         / auto 50px auto;
 }</code></pre>    
-                        <p>Esto equivaldría a:</p>
-                        <pre class="language-css line-numbers">
+                    <p>Esto equivaldría a:</p>
+                    <pre class="language-css line-numbers">
 <code>.container {
     grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
     grid-template-columns: auto 50px auto;
@@ -400,15 +387,522 @@ grid-template-areas:
         "header header header" 
         "footer footer footer";
 }</code></pre>   
-
-                        <p><strong>NOTA IMPORTANTE:</strong></p>
-                        <p>Como la propiedad <code>grid-template</code> no resetea las propiedades implícitas del grid (estas son: <code>grid-auto-columns</code>, <code>grid-auto-rows</code> y <code>grid-auto-flow</code>, y es lo que se suele emplear en la mayoría de los casos, <strong>se recomienda usar la propiedad <code>grid</code> en lugar de <code>grid-template</code>.</strong></p>
-
-                    </div>
+                    <p><strong>NOTA IMPORTANTE:</strong></p>
+                    <p>Como la propiedad <code>grid-template</code> no resetea las propiedades implícitas del grid (estas son: <code>grid-auto-columns</code>, <code>grid-auto-rows</code> y <code>grid-auto-flow</code>, y es lo que se suele emplear en la mayoría de los casos, <strong>se recomienda usar la propiedad <code>grid</code> en lugar de <code>grid-template</code>.</strong></p>
+                </div>
             </section>
 
+            <!-- GRID-COLUMN-GAP & GRID-COLUMN-GAP -->
+            <section>
+                <header>
+                    <h4>grid-column-gag y grid-row-gap</h4>
+                </header>
+                <div class="section__content">
+                    <p>Define el tamaño de las grid-linse.</p>
+                    <p>Son los espacios entre celdas.</p>
 
-        </article>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/dddgrid-gap.svg" alt="">
+                        </div>    
+                        <pre class="language-css line-numbers">
+<code>.container {
+    grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px; 
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+}</code></pre>                         
+                    </div>
+                    <p>Los espacios son creados entre las filas y columnas, no en los extremos externos.</p>
+                    <p>NOTA!!!: El prefijo <code>grid-</code> será eliminado, y pasará a ser <code>column-gap</code> y <code>row-gap</code>.</p>
+                </div>
+            </section>
+
+            <!-- GRID-GAP -->
+            <section>
+                <header>
+                    <h4>grid-gap</h4>
+                </header>
+                <div class="section__content">
+                    <p>Es la forma compacta para <code>grid-column-gag</code> y <code>grid-row-gap</code>.</p>  
+        
+                    <pre class="language-css line-numbers">
+<code>.container {
+    grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px; 
+    grid-gap: 15px 10px;
+}</code></pre>                     
+                    <p>Si no hay valores para <code>grid-row-gag</code>, este toma el valor de <code>grid-column-gag</code>.</p>
+                    <p>NOTA!!!: El prefijo <code>grid-</code> será eliminado, y pasará a ser <code>gap</code> en lugar de  <code>grid-gap</code>.</p>
+                </div>
+            </section>
+
+            <!-- JUSTIFY-ITEMS -->
+            <section>
+                <header>
+                    <h4>justify-items (rows)</h4>
+                </header>
+                <div class="section__content">
+                    <p>Alinéa los items de las celdas en el eje horizontal (las filas).</p>
+                    <p>Opuesto a  <code>align-items</code> que alinéa los items en las columnas.</p>
+
+                    <p>Valores:</p>
+                    <ul>
+                        <li><code>start</code>: Al principio de la celda.</li>
+                        <li><code>end</code>: Al final de la celda.</li>
+                        <li><code>center</code>: Centrada en la celda.</li>
+                        <li><code>stretch</code>: Rellena toda la celda (valor por defecto).</li>
+                    </ul>                  
+        
+                    <pre class="language-css line-numbers">
+<code>.container {
+    justify-items: start | end | center | stretch;
+}</code></pre>                     
+                    <p>Veamos unos ejemplos prácticos:</p>
+                    
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-items-start.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-items: start;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-items-end.svg" alt="">
+                        </div>    
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-items: end;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-items-center.svg" alt="">
+                        </div>            
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-items: center;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                            <div class="sampleImage">
+                                <img src="../pics/grid-css/justify-items-stretch.svg" alt="">
+                            </div>
+                            <pre class="language-css line-numbers">
+<code>.container {
+    justify-items: stretch;
+}</code></pre>                         
+                    </div>
+                    <p>Estos valores pueden ser modificados individualmente, en lugar de por track, con la propiedad <code>justify-self</code> del grid-element.</p>
+                </div>
+            </section>
+
+            <!-- ALIGN-ITEMS -->
+            <section>
+                <header>
+                    <h4>align-items (columns)</h4>
+                </header>
+                <div class="section__content">
+                    <p>Alinéa los items de las celdas en el eje vertical (las columnas).</p>
+                    <p>Opuesto a  <code>justify-items</code> que alinéa los items en las filas.</p>
+
+                    <p>Valores:</p>
+                    <ul>
+                        <li><code>start</code>: Al "techo" de la celda.</li>
+                        <li><code>end</code>: Al "suelo" de la celda.</li>
+                        <li><code>center</code>: Centrada en la celda.</li>
+                        <li><code>stretch</code>: Rellena toda la celda (valor por defecto).</li>
+                    </ul>
+                    <pre class="language-css line-numbers">
+<code>.container {
+        align-items: start | end | center | stretch;
+}</code></pre>                     
+                    <p>Veamos unos ejemplos prácticos:</p>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-items-start.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-items: start;
+}</code></pre>                         
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-items-end.svg" alt="">
+                        </div>    
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-items: end;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-items-center.svg" alt="">
+                        </div>            
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-items: center;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-items-stretch.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-items: stretch;
+}</code></pre>                         
+                    </div>
+                    <p>Estos valores pueden ser modificados individualmente, en lugar de por track, con la propiedad <code>align-self</code> del grid-element.</p>
+                </div>
+            </section>
+
+            <!-- PLACE-ITEMS -->
+            <section>
+                <header>
+                    <h4>place-items</h4>
+                </header>
+                <div class="section__content">
+                    <p>Es la forma compacta que abarca <code>align-items</code> y <code>justify-items</code>.</p>
+
+                    <pre class="language-css line-numbers">
+<code>.container {
+        display: grid;
+        place-items: start center;
+}</code></pre>    
+                    <p>Esto sería lo mismo que:</p>
+                    <pre class="language-css line-numbers">
+<code>.container {
+    display: grid;
+    align-items: start;
+    justify-items: center;
+}</code></pre>    
+                    <p>Si solo se da un valor, se tomará éste para ambas propiedades.</p>
+
+                    <p>Esta propiedad tiene mucho juego. Para indagar más en ella, se recomiendan los siguientes links: </p>
+                    <p>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/place-items" target="_blank">Mozilla Developer Web Docs</a>
+                    </p>
+                    <p>
+                        <a href="https://css-tricks.com/almanac/properties/p/place-items/" target="_blank">Artículo de CSS tricks para place-itmems</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- JUSTIFY-CONTENT -->
+            <section>
+                <header>
+                    <h4>justify-content</h4>
+                </header>
+                <div class="section__content">
+                    <p>En ocasiones, por ejemplo cuando usamos unidades como pixels, nuestro grid es menor que el grid container, y queremos posicionarlo dentro de él.</p>
+                    <p><code>justify-content</code> alinéa horizontalmente el grid dentro del grid container.</p>
+                    <p>Puede tener los siguientes valores:</p>
+                    <ul>
+                        <li><code>start</code>: al principio (horizontal) del grid. (a la izquierda).</li>
+                        <li><code>end</code>: al final (horizontal) del grid. (a la derecha).</li>
+                        <li><code>center</code>: centrado horizontalmente en el grid.</li>
+                        <li><code>stretch </code>: redimensiona el grid para que ocupe el 100% del ancho</li>
+                        <li><code>space-around</code>: igual espacio entre columnas, y distribuye el restante espacio en los extremos.</li>
+                        <li><code>space-between</code>: las columnas extremas están pegadas a los bordes y distribuye el espacio entre las columnas interiores</li>
+                        <li><code>space-evenly</code>: el mismo espacio entre todas las columnas y las columnas extremas con los bordes del contenedor.</li>
+                    </ul>
+
+                    
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-content-start.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-content: start;
+}</code></pre>                         
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-content-end.svg" alt="">
+                        </div>    
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-content: end;	
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-content-center.svg" alt="">
+                        </div>            
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-content: center;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-content-stretch.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-content: stretch;
+}</code></pre>                         
+                    </div>
+                    
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-content-space-around.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-content: space-around;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-content-space-between.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-content: space-between;
+}</code></pre>                         
+                    </div>
+                    
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-content-space-evenly.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    justify-content: space-evenly;
+}</code></pre>                         
+                    </div>
+
+                </div>
+            </section>            
+
+            <!-- JUSTIFY-CONTENT -->
+            <section>
+                <header>
+                    <h4>align-content</h4>
+                </header>
+                <div class="section__content">
+                    <p>En ocasiones, por ejemplo cuando usamos unidades como pixels, nuestro grid es menor que el grid container, y queremos posicionarlo dentro de él.</p>
+                    <p><code>align-content</code> alinéa verticalmente el grid dentro del grid container.</p>
+                    <p>Puede tener los siguientes valores:</p>
+                    <ul>
+                        <li><code>start</code>: al principio (vertical) del grid. (arriba).</li>
+                        <li><code>end</code>: al final (vertical) del grid. (abajo).</li>
+                        <li><code>center</code>: centrado verticalmente en el grid.</li>
+                        <li><code>stretch </code>: redimensiona el grid para que ocupe el 100% del alto</li>
+                        <li><code>space-around</code>: igual espacio entre filas, y distribuye el restante espacio en los extremos.</li>
+                        <li><code>space-between</code>: las filas extremas están pegadas a los bordes y distribuye el espacio entre las filas interiores</li>
+                        <li><code>space-evenly</code>: el mismo espacio entre todas las filas y las filas extremas con los bordes del contenedor.</li>
+                    </ul>
+
+                    
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-content-start.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-content: start;
+}</code></pre>                         
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-content-end.svg" alt="">
+                        </div>    
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-content: end;	
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-content-center.svg" alt="">
+                        </div>            
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-content: center;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-content-stretch.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-content: stretch;
+}</code></pre>                         
+                        </div>
+                        
+                        <div class="codeWithImage">
+                            <div class="sampleImage">
+                                <img src="../pics/grid-css/align-content-space-around.svg" alt="">
+                            </div>
+                            <pre class="language-css line-numbers">
+<code>.container {
+    align-content: space-around;
+}</code></pre>                         
+                    </div>
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-content-space-between.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-content: space-between;
+}</code></pre>                         
+                    </div>
+                    
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-content-space-evenly.svg" alt="">
+                        </div>
+                        <pre class="language-css line-numbers">
+<code>.container {
+    align-content: space-evenly;
+}</code></pre>                         
+                    </div>
+                </div>
+            </section>
+
+            <!-- PLACE-CONTENT -->
+            <section>
+                <header>
+                    <h4>place-content</h4>
+                </header>
+                <div class="section__content">
+                    <p>Es la forma compacta que abarca <code>align-content</code> y <code>justify-content</code>.</p>
+
+                    <pre class="language-css line-numbers">
+    <code>.container {
+            display: grid;
+            place-content: start center;
+    }</code></pre>    
+                    <p>Esto sería lo mismo que:</p>
+                    <pre class="language-css line-numbers">
+    <code>.container {
+        display: grid;
+        align-content: start;
+        justify-content: center;
+    }</code></pre>    
+                    <p>Edge no soporta esta propiedad. Son unos mierdas.</p>
+                </div>
+            </section>
+
+            <!-- GRID-AUTO-COLUMNS & GRID-AUTO-ROWS -->
+            <section>
+                <header>
+                    <h4>grid-auto-columns & grid-auto-rows</h4>
+                </header>
+                <div class="section__content">
+                    <p>Especifica las dimensiones de los tracks autogenerados (o "implicit grid tracks").</p>
+                    <p>Ver <a href="https://css-tricks.com/difference-explicit-implicit-grids/" target="_blank">este artículo de CSS tricks sobre tracks implícitos y explícitos</a></p>
+                    <p>Los tracks implicitos son creados cuando hay más items que celdas, o cuando un item is posicionado fuera del grid explícito.</p>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/grid-auto-columns-rows-01.svg" alt="">
+                        </div>
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.container {
+    grid-template-columns: 60px 60px;
+    grid-template-rows: 90px 90px;
+}</code></pre>                         
+                            <p>Con esto tendríamos un container normal y corriente.</p>
+                        </div>
+                    </div>
+                    <p>Vamos a liarla un poco declarando líneas que no existen en nuestro grid.</p>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/grid-auto-columns-rows-02.svg" alt="">
+                        </div>
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    }
+    .item-b {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}}</code></pre>              
+                            <p>La liada es que hemos dicho que el <code>.item-b</code> vaya de la column-line 5 a la 6, y no hemos declarado esas líneas.</p>
+                            <p>Las líneas 4,5 y 6 se han creado, y la anchura de las que no usamos (3 a 4 y 4 a 5) sería de 0.</p>
+                            <p>Si queremos darle un ancho fijo a esas columnas autogeneradas, usamos la propiedad <code>grid-auto-columns</code>. </p>
+                        </div>
+                    </div>                  
+
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/grid-auto-columns-rows-03.svg" alt="">
+                        </div>
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.container {
+    grid-auto-columns: 60px;
+}</code></pre>                         
+                            <p>Con esto fijamos el ancho de cualquier track autogenerado en 60px.</p>
+                        </div>
+                    </div>
+
+                    <p>El procedimiento para <code>grid-auto-rows</code> es idéntico.</p>
+                </div>
+            </section>
+
+            <!-- GRID-AUTO-FLOW (incompleto) -->
+            <section>
+                <header>
+                    <h4>grid-auto-flow</h4>
+                </header>
+                <div class="section__content">
+                    <p>If you have grid items that you don't explicitly place on the grid, the auto-placement algorithm kicks in to automatically place the items. </p>
+                    <p>This property controls how the auto-placement algorithm works.</p>
+                    <p>grid-auto-flow acepts those values:</p>
+                    <ul>
+                        <li><code>row</code> - tells the auto-placement algorithm to fill in each row in turn, adding new rows as necessary (default)</li>
+                        <li><code>column</code> - tells the auto-placement algorithm to fill in each column in turn, adding new columns as necessary</li>
+                        <li><code>dense</code> - tells the auto-placement algorithm to attempt to fill in holes earlier in the grid if smaller items come up later</li>
+                    </ul>
+                    <p>CONTINUE LATER!!!</p>
+                </div>
+            </section>
+
+            <!-- GRID (incompleto) -->
+            <section>
+                <header>
+                    <h4>grid</h4>
+                </header>
+                <div class="section__content">
+                    <p>La forma compacta que abarca:</p>
+                    <ul>
+                        <li><code>grid-template-rows</code></li>
+                        <li><code>grid-template-columns</code></li>
+                        <li><code>grid-template-areas</code></li>
+                        <li><code>grid-auto-rows</code></li>
+                        <li><code>grid-auto-columnms</code></li>
+                        <li><code>grid-auto-flow</code></li>
+                    </ul>        
+                    <p>CONTINUE LATER!!!</p>
+                </div>
+            </section>
+
+        </article>  <!-- FINAL DE PROPIEDADES DEL CONTAINER -->
 
 
 
