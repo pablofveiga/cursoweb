@@ -905,6 +905,207 @@ grid-template-areas:
         </article>  <!-- FINAL DE PROPIEDADES DEL CONTAINER -->
 
 
+        <!-- PROPIEDADES DEL ITEM -->
+        <article>
+            <header>
+                <h3>Propiedades del grid-item</h3>
+            </header>
+
+            <p>Importante:</p>
+            <p>Las propiedades: <code>float</code> , <code>display: inline-block</code>, <code>display: table-cell</code>, <code>vertical-align</code> and <code>column-*</code></p>
+
+
+            <!-- 
+                grid-column-start
+                grid-column-end
+                grid-row-start
+                grid-row-end 
+            -->
+            <section>
+                <header>
+                    <h4>
+                        grid-column-start<br>
+                        grid-column-end<br>
+                        grid-row-start<br>
+                        grid-row-end 
+                    </h4>
+                </header>
+                <div class="section__content">
+                    <p>Determina la posición del item en el grid refiriendose a líneas específicas.</p>
+                    <p><code>grid-column-start</code> / <code>grid-row-start</code> es donde empieza el item.</p>
+                    <p><code>grid-column-end</code> / <code>grid-row-end</code> es donde termina el item.</p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><b>&lt;line&gt;</b>: puede ser un número o un nombre, refiriéndose al número o nombre de línea.</li>
+                        <li><b>span &lt;number&gt;</b>: el item se expanderá "n" número de tracks.</li>
+                        <li><b>span &lt;name&gt;</b>: el item se expanderá hasta la línea con nombre "name".</li>
+                        <li><b>&lt;auto&gt;</b>: Indica auto-posicionamiento, un span automático, o un span de uno por defecto.</li>
+                    </ul>
+                    <pre class="language-css line-numbers">
+<code>.item {
+    grid-column-start: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+    grid-column-end: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+    grid-row-start: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+    grid-row-end: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+}</code></pre>  
+                    <p>Veamos unos ejemplos</p>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/grid-column-row-start-end-01.svg" alt="">
+                        </div>    
+    
+                        <pre class="language-css line-numbers">
+<code>.item-a {
+    grid-column-start: 2;
+    grid-column-end: five;
+    grid-row-start: row1-start
+    grid-row-end: 3;
+}</code></pre>                         
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/grid-column-row-start-end-02.svg" alt="">
+                        </div>    
+    
+                        <pre class="language-css line-numbers">
+<code>.item-b {
+  grid-column-start: 1;
+  grid-column-end: span col4-start;
+  grid-row-start: 2
+  grid-row-end: span 2
+}</code></pre>                         
+                    </div>
+
+                    <p>Si no declaramos <code>grid-column-end</code> o <code>grid-row-end</code> el item se expanderá un track por defecto.</p>
+                    <p>Los items se pueden solapar entre ellos. Usa <code>z-index</code> para controlar su comportamiento.</p>
+                </div>
+            </section>    
+
+
+
+            <!-- 
+                grid-column
+                grid-row
+            -->
+            <section>
+                <header>
+                    <h4>
+                        grid-column<br>
+                        grid-row
+                    </h4>
+                </header>
+                <div class="section__content">
+                    <p>Es la forma compacta para <code>grid-column-start</code> + <code>grid-column-end</code> y para <code>grid-row-start</code> + <code>grid-row-end</code> </p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><b>&lt;start-line&gt; / &lt;end-line&gt;</b>: aceptan los mismos valores que la versión extendida, incluido el <code>span</code>.</li>                        
+                    </ul>
+                    <pre class="language-css line-numbers">
+<code>.item {
+    grid-column: &lt;start-line&gt; / &lt;end-line&gt; | &lt;start-line&gt; / span &lt;value&gt;;
+    grid-row: &lt;start-line&gt; / &lt;end-line&gt; | &lt;start-line&gt; / span &lt;value&gt;;              
+}</code></pre>  
+                </div>
+                <p>Veamos un ejemplo práctico:</p>
+                <div class="codeWithImage">
+                    <div class="sampleImage">
+                        <img src="../pics/grid-css/grid-column-row.svg" alt="">
+                    </div>        
+                    <div class="sampleCode">
+                        <pre class="language-css line-numbers">
+<code>.item-c {
+    grid-column: 3 / span 2;
+    grid-row: third-line / 4;
+}</code></pre>                         
+                        <p>Al igual que con el modo extendido, si no declaramos una línea final, se expandirá 1 track.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- grid-area -->
+            <section>
+                <header>
+                    <h4>grid-area</h4>
+                </header>
+                <div class="section__content">
+                    <p>Asigna un nombre al item para poder ser referenciado con la propiedad <code>grid-template-areas</code> del container.</p>
+                    <p>También es una forma ultra compacta para: <code>grid-row-start</code> + <code>grid-column-start</code> + <code>grid-row-end</code> + <code>grid-column-end</code>.</p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><b>&lt;name&gt;</b>: Un nombre a nuestra elección.</li>                        
+                        <li><b>&lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;</b>: pueden ser números o nombres de líneas.</li>                        
+                    </ul>
+                    <pre class="language-css line-numbers">
+    <code>.item {
+            grid-area: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;;
+          
+    }</code></pre>  
+                </div>
+                <p>Veamos un ejemplo práctico:</p>
+                <div class="codeWithImage">
+                    <div class="sampleImage">
+                        <img src="../pics/grid-css/grid-area.svg" alt="">
+                    </div>        
+                    <div class="sampleCode">
+                        <pre class="language-css line-numbers">
+<code>/* Asignamos un nombre al item */
+.item-d {
+    grid-area: header
+}
+/* 
+usamos la forma más compacta para: 
+grid-row-start + grid-column-start + grid-row-end + grid-column-end 
+*/
+.item-d {
+    grid-area: 1 / col4-start / last-line / 6
+}</code></pre>                         
+                        <p>Al igual que con el modo extendido, si no declaramos una línea final, se expandirá 1 track.</p>
+
+                    </div>
+                </div>
+            </section>
+    
+
+            <!-- justify-self -->
+            <section>
+                <header>
+                    <h4>justify-self</h4>
+                </header>
+                <div class="section__content">
+
+                </div>
+            </section>
+
+
+    
+
+            <!-- align-self -->
+            <section>
+                <header>
+                    <h4>align-self</h4>
+                </header>
+                <div class="section__content">
+
+                </div>
+            </section>
+
+
+    
+
+            <!-- place-self -->
+            <section>
+                <header>
+                    <h4>place-self</h4>
+                </header>
+                <div class="section__content">
+
+                </div>
+            </section>
+
+
+    
+
+
 
 
 
