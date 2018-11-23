@@ -44,7 +44,9 @@
         <article class="sectionIntro">
             <header>
                 <h2>Guía completa de Grid CSS.</h2>
-            </header>          
+            </header>
+            <p>Esta guía no es original. En su mayoría es un corta y pega de varios artículos y que utilizo personalmente a modo de apuntes, y la dejo pública para que cualquier otra persona pueda sacar provecho de ésta.</p>
+            <p>La mayoría de información está sacada del <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">grandísimo artículo de CSS Tricks sobre Grid layout</a> de <a target="_blank" href="https://css-tricks.com/author/caiman/">Chris House</a> </p>
         </article>
 
         <article class="sectionIndex">
@@ -53,14 +55,14 @@
             </header>
             <div class="section__content">
                 <ul class="normal-list">
-                    <li><a href="#">1.- Introducción histórica</a></li>
+                    <li><a href="#">1.- Conceptos básicos</a></li>
                     <li>
-                        <a href="#js2">2.- Variables</a>
-                        <ul>
+                        <a href="#js2">2.- Propiedades del contenedor</a>
+                <!--    <ul>
                             <li><a href="#js2.1">2.1- Declaración de Variables</a></li>
                             <li>
                                 <a href="#js2.2">2.2- Tipos de Variables y sus Métodos</a>
-                                <ul>
+                                 <ul>
                                     <li><a href="#js2.2.1">2.2.1- String</a></li>
                                     <li><a href="#js2.2.2">2.2.2- Number</a></li>
                                     <li><a href="#js2.2.3">2.2.3- Operaciones entre String y Number</a></li>
@@ -71,23 +73,18 @@
                             </li>
                             <li><a href="#js2.3">2.3- Scope de las varibles</a></li>
                             <li><a href="#js2.4">2.4- Asignación de valores por <strong>Destructuring</strong></a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-
-                    <li><a href="#">Funciones</a></li>
-                    <li><a href="#">Manejo de errores con try cath</a></li>
-                    <li><a href="#">Objeto Date()</a></li>
                     <li>
-                        <a href="#">Estructuras de contol</a>
-                        <ul>
+                        <a href="#">3.- Propiedades del grid-item</a>
+                        <!-- <ul>
                             <li><a href="#">IF...ELSE</a></li>
                             <li><a href="#">Switch</a></li>
                             <li><a href="#">FOR</a></li>
                             <li><a href="#">While y Do While</a></li>
                             <li><a href="#">ForEach</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li><a href="#">Objeto Window</a></li>
                 </ul>
             </div>
         </article>
@@ -865,7 +862,7 @@ grid-template-areas:
                 </div>
             </section>
 
-            <!-- GRID-AUTO-FLOW (incompleto) -->
+            <!-- GRID-AUTO-FLOW (sin traducir) -->
             <section>
                 <header>
                     <h4>grid-auto-flow</h4>
@@ -879,11 +876,84 @@ grid-template-areas:
                         <li><code>column</code> - tells the auto-placement algorithm to fill in each column in turn, adding new columns as necessary</li>
                         <li><code>dense</code> - tells the auto-placement algorithm to attempt to fill in holes earlier in the grid if smaller items come up later</li>
                     </ul>
-                    <p>CONTINUE LATER!!!</p>
+                    
+                    <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.container {
+    grid-auto-flow: row | column | row dense | column dense;
+}</code></pre>
+                    </div>
+
+                    <p>Note that <code>dense</code> only changes the visual order of your items and might cause them to appear out of order, which is bad for accessibility.</p>
+
+                    <p>Ejemplo práctico:</p>
+                    <div class="sampleCode">
+                        <pre class="language-html line-numbers">
+<code>&lt;!-- HTML --&gt;
+&lt;section class="container"&gt;
+    &lt;div class="item-a"&gt;item-a&lt;/div&gt;
+    &lt;div class="item-b"&gt;item-b&lt;/div&gt;
+    &lt;div class="item-c"&gt;item-c&lt;/div&gt;
+    &lt;div class="item-d"&gt;item-d&lt;/div&gt;
+    &lt;div class="item-e"&gt;item-e&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        <pre class="language-css line-numbers">
+<code>/* CSS */
+.container {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px;
+    grid-template-rows: 30px 30px;
+    grid-auto-flow: row;
+}</code></pre>
+                        <p>Hemos definido un grid con 5 columnas y 2 filas. La propiedad <code>grid-auto-flow</code> está en <code>row</code>, que es también la default.</p>
+                        <p>Vamos a definir solo dos elementos del grid, y obervemos el <code>grid-auto-flow</code></p>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/grid-auto-flow-01.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.container {
+    grid-auto-flow: row;    
+}
+.item-a {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+.item-e {
+    grid-column: 5;
+    grid-row: 1 / 3;
+}</code></pre>
+                             <p>Los elementos fluyen de izquierda a derecha, de arriba a abajo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/grid-auto-flow-02.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.container {
+    grid-auto-flow: column;    
+}
+.item-a {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+.item-e {
+    grid-column: 5;
+    grid-row: 1 / 3;
+}</code></pre>          
+                            <p>Los elementos fluyen de arriba a abajo, de izquierda a derecha.</p>
+                        </div>
+                    </div>
+                   
                 </div>
             </section>
 
-            <!-- GRID (incompleto) -->
+            <!-- GRID (sin traducir el final) -->
             <section>
                 <header>
                     <h4>grid</h4>
@@ -898,7 +968,84 @@ grid-template-areas:
                         <li><code>grid-auto-columnms</code></li>
                         <li><code>grid-auto-flow</code></li>
                     </ul>        
-                    <p>CONTINUE LATER!!!</p>
+
+                    <p>Valores:</p>
+                    <ul>
+                        <li><b>none</b>: Pone todas las propiedades a sus valores iniciales.</li>
+                        <li><b>&lt;grid-template&gt;</b>: funciona igual que <code>grid-template</code></li>
+                        <li>
+                            <b>&lt;grid-template-rows&gt; / [auto-flow && dense?] &lt;grid-auto-columns&gt;?</b>: 
+                            <ul>
+                                <li>Pone la propiedad <code>grid-template-rows</code> al valor especificado</li>
+                                <li>Si la propiedad <code>auto-flow</code> está a la derecha de la barra "/", ésta se fija en <code>column</code>. </li>
+                                <li>Si se añade la propiedad <code>dense</code>, el algoritmo <code>auto-placement</code> se fija en <code>dense</code></li>
+                                <li>Si se omite <code>grid-auto-columnms</code>, esta propiedad se fija como <code>auto</code></li>
+                            </ul>                        
+                        <li><b>[auto-flow && dense?] &lt;grid-auto-columns&gt;? / &lt;grid-template-columns&gt;</b>:
+                            <ul>
+                                <li>Pone la propiedad <code>grid-template-columns</code> al valor especificado</li>
+                                <li>Si la propiedad <code>auto-flow</code> está a la izquierda de la barra "/", ésta se fija en <code>row</code>. </li>
+                                <li>Si se añade la propiedad <code>dense</code>, el algoritmo <code>auto-placement</code> se fija en <code>dense</code></li>
+                                <li>Si se omite <code>grid-auto-columnms</code>, esta propiedad se fija como <code>auto</code></li>
+                            </ul>                        
+                        </li>
+                    </ul>
+                    <p>Veamos unos ejemplos con códigos equivalentes:</p>
+                    <pre class="language-css line-numbers">
+<code>.container {
+    grid: 100px 300px / 3fr 1fr;
+}
+/* Esto sería igual que: */
+.container {
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 3fr 1fr;
+}</code></pre>  
+                    <pre class="language-css line-numbers">
+<code>.container {
+    grid: auto-flow / 200px 1fr;
+}
+/* Esto sería igual que: */
+.container {
+    grid-auto-flow: row;
+    grid-template-columns: 200px 1fr;
+}</code></pre>  
+                    <pre class="language-css line-numbers">
+<code>.container {
+    grid: auto-flow dense 100px / 1fr 2fr;
+}
+/* Esto sería igual que: */
+.container {
+    grid-auto-flow: row dense;
+    grid-auto-rows: 100px;
+    grid-template-columns: 1fr 2fr;
+}</code></pre>  
+                    <pre class="language-css line-numbers">
+<code>.container {
+    grid: 100px 300px / auto-flow 200px;
+}
+/* Esto sería igual que: */
+.container {
+    grid-template-rows: 100px 300px;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+}</code></pre>  
+
+                    <p>Existe un modo ultracompacto.</p>
+                    <p>It also accepts a more complex but quite handy syntax for setting everything at once. You specify grid-template-areas, grid-template-rows and grid-template-columns, and all the other sub-properties are set to their initial values. What you're doing is specifying the line names and track sizes inline with their respective grid areas. This is easiest to describe with an example:</p>
+                    <pre class="language-css line-numbers">
+<code>.container {
+    grid:   [row1-start] "header header header" 1fr [row1-end]
+            [row2-start] "footer footer footer" 25px [row2-end]
+            / auto 50px auto;
+}
+/* Esto sería igual que: */
+.container {
+    grid-template-areas: 
+      "header header header"
+      "footer footer footer";
+    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 25px [row2-end];
+    grid-template-columns: auto 50px auto;
+}</code></pre>
                 </div>
             </section>
 
@@ -913,7 +1060,6 @@ grid-template-areas:
 
             <p>Importante:</p>
             <p>Las propiedades: <code>float</code> , <code>display: inline-block</code>, <code>display: table-cell</code>, <code>vertical-align</code> and <code>column-*</code></p>
-
 
             <!-- 
                 grid-column-start
@@ -980,8 +1126,6 @@ grid-template-areas:
                     <p>Los items se pueden solapar entre ellos. Usa <code>z-index</code> para controlar su comportamiento.</p>
                 </div>
             </section>    
-
-
 
             <!-- 
                 grid-column
@@ -1066,18 +1210,73 @@ grid-row-start + grid-column-start + grid-row-end + grid-column-end
             </section>
     
 
-            <!-- justify-self -->
+            <!-- JUSTIFY-SELF -->
             <section>
                 <header>
                     <h4>justify-self</h4>
                 </header>
                 <div class="section__content">
+                    <p>Posiciona el item horizontalmente dentro de la celda.</p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><b>start</b>: hacia la izquierda </li>
+                        <li><b>end</b>: hacia la derecha </li>
+                        <li><b>center</b>: centrado </li>
+                        <li><b>stretch</b>: ocupando el 100% del ANCHO (valor por defecto)</li>
+                    </ul>
+                    <pre class="language-css line-numbers">
+<code>.item {
+    justify-self: start | end | center | stretch;
+}</code></pre>  
+                    <p>Veamos algunos ejemplos:</p>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-self-start.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    justify-self: start;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-self-end.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    justify-self: end;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-self-center.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    justify-self: center;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/justify-self-stretch.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    justify-self: stretch;
+}</code></pre>
+                        </div>
+                    </div>
 
+                    <p>Para alinear horizontalmente todos los items, usamos la propiedad <code>justify-items</code> del grid container.</p>
                 </div>
             </section>
-
-
-    
 
             <!-- align-self -->
             <section>
@@ -1085,12 +1284,67 @@ grid-row-start + grid-column-start + grid-row-end + grid-column-end
                     <h4>align-self</h4>
                 </header>
                 <div class="section__content">
+                    <p>Posiciona el item verticalmente dentro de la celda.</p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><b>start</b>: hacia arriba </li>
+                        <li><b>end</b>: hacia abajo </li>
+                        <li><b>center</b>: centrado verticalmente</li>
+                        <li><b>stretch</b>: ocupando el 100% del ALTO (valor por defecto)</li>
+                    </ul>
+                    <pre class="language-css line-numbers">
+<code>.item {
+    align-self: start | end | center | stretch;
+}</code></pre>  
+                    <p>Veamos algunos ejemplos:</p>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-self-start.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    align-self: start;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-self-end.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    align-self: end;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-self-center.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    align-self: center;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/align-self-stretch.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+    align-self: stretch;
+}</code></pre>
+                        </div>
+                    </div>
 
+                    <p>Para alinear verticalmente todos los items, usamos la propiedad <code>align-items</code> del grid container.</p>
                 </div>
             </section>
-
-
-    
 
             <!-- place-self -->
             <section>
@@ -1098,12 +1352,39 @@ grid-row-start + grid-column-start + grid-row-end + grid-column-end
                     <h4>place-self</h4>
                 </header>
                 <div class="section__content">
-
+                    <p>Es la forma compacta que abarca <code>align-self</code> y <code>justify-self</code> en una sola regla.</p>
+                    <p>Valores:</p>
+                    <ul>
+                        <li><b>auto</b>: la alineación por defecto.</li>
+                        <li><b>&lt;align-self&gt; / &lt;justify-self&gt;</b></li>
+                    </ul>
+                    <p>Veamos algunos ejemplos:</p>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/place-self-center.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+        place-self: center;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="codeWithImage">
+                        <div class="sampleImage">
+                            <img src="../pics/grid-css/place-self-center-stretch.svg" alt="">
+                        </div>        
+                        <div class="sampleCode">
+                            <pre class="language-css line-numbers">
+<code>.item-a {
+        place-self: center stretch;
+}</code></pre>
+                        </div>
+                    </div>
+                    <p>En estos momentos, Edge no soporta la propiedad <code>place-self</code>.</p>
                 </div>
             </section>
 
-
-    
 
 
 
