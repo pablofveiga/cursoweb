@@ -846,6 +846,9 @@ case "2":
 case "3": 
     cantidad = base * 1.35;
     break;           
+default:
+    console.log("No cumple ninguna condición anterior")
+    break;
 }</code></pre>                
                 </div>
             </section>
@@ -862,7 +865,16 @@ case "3":
 for( let i = 0; i&lt;10; i++) {
     console.log(`Hola por ${i} vez`);
 }
-    // DETENER UN FOR
+// ## VARIAR EL FLUJO CON "continue" Y "break"
+    // SALTAR EN EL BUCLE (continue)
+for(let i = 0; i&lt;10; i++) {
+    if(i==5) {
+        console.log("voy en el 5");
+        continue;   // Esto hace que se vuelva al FOR y se salte las órdenes que tiene debajo (el console.log)
+    }
+    console.log(i);
+}
+    // DETENER UN FOR (break)
 for(let i = 0; i&lt;10; i++) {
     if(i==5) {
         console.log("en 4 rompo el bucle");
@@ -870,7 +882,7 @@ for(let i = 0; i&lt;10; i++) {
     }
     console.log(i);
 }
-    // NUMERO PAR/IMPAR
+// EJEMPLO NUMERO PAR/IMPAR
 for(let i = 0; i&lt;10; i++) {
     if(i%2==0) {
         console.log(`${i} es un numero par`);
@@ -890,14 +902,13 @@ for(let i = 0; i&lt;10; i++) {
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
                
                     <pre class="language-javascript line-numbers">
-<code>        // WHILE
+<code>// WHILE
 let i = 0;
 while (i &lt;10) {
     if(i===5) {
         console.log("Sale cinco en letra, y me salto lo de debajo para reiniciar el while");
         i++;
-        continue;
-        
+        continue;   // TAMBIEN PODEMOS USAR continue Y break        
     }
     console.log(i);
     i++;
@@ -915,20 +926,36 @@ do {
 
             <!-- forEach -->
             <section>
-                    <header>
-                        <h4>forEach</h4>
-                    </header>
+                <header>
+                    <h4>forEach</h4>
+                </header>
 
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
-                    
-                    <pre class="language-javascript line-numbers">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                
+                <pre class="language-javascript line-numbers">
 <code>// FOREACH
-    // podemos utilizar index para obtener el índice
-tareas.forEach(function(tarea, index){
-    console.log(`${index}:  ${tarea}`);
+const tareasPendientes = ['Tarea','Comer','Proyecto','Cenar'];
+tareasPendientes.forEach(function(tareaPendiente) {
+    console.log(`${tareaPendiente}`);
 });
 
-// MAP para recorrer arrays
+    // podemos pasar parámetros, como "index" para obtener el índice
+tareas.forEach(function(tareaPendiente, index){
+    console.log(`${index}:  ${tareaPendiente}`);
+});</code></pre>
+            </section>            
+
+
+            <!-- MAP -->
+            <section>
+                <header>
+                    <h4>MAP</h4>
+                </header>
+
+                <p>Con MAP podemos recorrer un array.</p>
+                
+                    <pre class="language-javascript line-numbers">
+<code>// MAP para recorrer arrays
 const carrito = [
     {id: 1, producto: "coche"},
     {id: 2, producto: "libro"},
@@ -941,14 +968,15 @@ const nombreProducto = carrito.map(function(carrito){
 })
 
 console.log(nombreProducto);</code></pre>
-                </section>            
+                </section>    
+
 
             <!-- for... in -->
             <section>
                 <header>
                     <h4>for... in</h4>
                 </header>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                <p>Podemos mostrar un objeto</p>
                 
                 <pre class="language-javascript line-numbers">
 <code>// FOR IN
@@ -958,19 +986,101 @@ const automovil = {
     anio: 1987
 }
 for (let auto in automovil) {
-    console.log(`${auto} : ${automovil[auto]}`)
+    console.log(`${auto} : ${automovil[auto]}`);    // imprime la clave y el valor
 }</code></pre>
             </section>
         </article>        
 
         <article>
             <header>
-                <h4>Objeto Window</h4>
+                <h3>Objeto Window</h3>
             </header>
             <div class="article__content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, quam tempore dolore, quo, assumenda officiis fugit inventore laborum sunt consectetur deleniti? Hic atque maxime odio! Inventore earum aliquid fuga voluptates.</p>
+                <p>El window object es nuestra ventana de navegación.</p>
+                <p>Contiene mucha información: idioma, dimensiones, navegador, etc...</p>
+                <p>Por ejemplo, el console.log forma parte del window object; puedes escribir console.log("hola") ó window.console.log("hola")   </p>
+            
+                <p>Algunos métodos que no vamos a ver por cansinos son:</p>
+                <ul>
+                    <li>alert</li>
+                    <li>prompt</li>
+                    <li>confirm</li>
+                </ul>
+
+                <p>Métodos para dimensiones:</p>
+                <pre class="language-javascript line-numbers">
+<code>// OBJETO WINDOW: MÉTODOS ÚTILES
+let altura = window.outerHeight;    // Altura de la ventana (incluye la consola y toda la parafernalia del navegador)
+let anchura = window.outerWidth;    // Anchura de la ventana (con la interfaz del navegador) 
+
+let altura = window.outerHeight;    // Altura de la ventana (sin la interfaz del navegador)
+let anchura = window.outerWidth;    // Anchura de la ventana (sin la interfaz del navegador) 
+
+let ubicacion = window.location         // url completa
+let ubicacion2 = window.location.host    // se pueden pedir diferentes parámetros del location
+window.location.href = "http://www.google.com"         // redireccionar
+
+window.history.go(-3);  // volver atras en el navegador
+window.navigator.language;  // idioma</code></pre>                
             </div>
         </article>
+
+        <!-- SCOPE DE LAS VARIABLES -->
+        <article>
+            <header>
+                <h3>Scope</h3>
+            </header>
+            <div class="article__content">
+                <p>El scope de las variables es de vital importancia.</p>
+                <p>La introducción de "let" y "const" han facilitado las cosas.</p>
+                <pre class="language-javascript line-numbers">
+<code>// SCOPE DE LAS VARIABLES
+var a = "a";
+let b = "b";
+const c = "c";
+
+// Scope de la función
+function funcionScope() {
+    var a = "A";
+    let b = "B";
+    const c = "C";
+    console.log("FUNCION: " + a,b,c);   // devuelve: FUNCION: A B C
+}
+
+// Scope de Bloque
+if(true) {
+    var a = "AA";
+    let b = "BB";
+    const c = "CC";
+    console.log("BLOQUE: " + a,b,c);    // devuelve: BLOQUE: AA BB CC
+}
+
+console.log("GLOBALES: " + a,b,c);  // devuelve: GLOBALES: AA b c</code></pre>                     
+            </div>
+        </article>
+
+        <div class="sectionSeparator">
+            <img src="../pics/doom.jpg" alt="El Doom fue un juegazo, el DOM es otra cosa" width="300">
+        </div>
+
+        <!-- EL DOM -->
+        <article>
+            <header>
+                <h3>DOM: Document Object Model</h3>
+            </header>
+            <div class="article__content">
+                <p>El scope de las variables es de vital importancia.</p>
+                <p>La introducción de "let" y "const" han facilitado las cosas.</p>
+                <pre class="language-javascript line-numbers">
+<code>
+        
+    </code></pre>                     
+                </div>
+            </article>
+    
+    
+
+
 
         <hr>
         <article>
@@ -985,6 +1095,7 @@ var primernombre;   // dirty</code></pre>
         </article>
 
 
+        
 
     </div><!--   END OF WRAPPER -->
 
