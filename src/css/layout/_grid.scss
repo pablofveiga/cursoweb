@@ -159,6 +159,12 @@ article li {
 }
 
 
+// PRE¬CODE MODIFIERS
+pre {
+	&.scrolling {
+		max-height: 24em;
+	}
+}
 
 
 // ANCHORS FIX

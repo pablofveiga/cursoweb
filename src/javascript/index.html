@@ -1068,15 +1068,336 @@ console.log("GLOBALES: " + a,b,c);  // devuelve: GLOBALES: AA b c</code></pre>
             <header>
                 <h3>DOM: Document Object Model</h3>
             </header>
+
             <div class="article__content">
-                <p>El scope de las variables es de vital importancia.</p>
-                <p>La introducción de "let" y "const" han facilitado las cosas.</p>
+                <img src="../pics/dom.gif" alt="document object model">                
+                
                 <pre class="language-javascript line-numbers">
-<code>
-        
-    </code></pre>                     
+<code>// DOM
+let elemento;
+elemento = document;            // Todo todito todo
+elemento = document.all;        // Devuelve un HTMLAllCollection
+elemento = document.all[10];    // Devuelve un elemento en concreto
+elemento = document.head;       // Devuelve el elemento &lt;head&gt;
+elemento = document.body;       // Devuelve el cuerpo del documento
+elemento = document.domain;     // Devuelve el dominio
+elemento = document.URL;        // Devuelve la url
+elemento = document.characterSet    // Nos devuelve la codificación de caracterers (UTF-8, ISO-...)
+
+elemento = document.forms       // Devuelve todos los formularios del documento
+elemento = document.forms[0]    // Devuelve un formulario en concreto
+elemento = document.forms[0].id    // Devuelve la id de ese formulario en concreto
+elemento = document.forms[0].className  // Nos devuelve la clase
+elemento = document.forms[0].classList  // Si hay muchas clases, nos devuelve un "DOMTkenList"
+elemento = document.forms[0].classList[0]  // Accede a una clase en concreto
+
+elemento = document.images;     // Devuelve las imágenes del documento (HTMLCollection) , con sus clases y atributos
+elemento = document.images[3];  // Devuelve una imagen en concreto
+elemento = document.images[2].src;  // Devuelve un atributo (src) de la imagen en concreto (devuelve el src con el dominio y todo)
+elemento = document.images[2].getAttribute("src");  // Devuelve el atributo (src) de la imagen en concreto sin el dominio
+
+elemento = document.scripts     // Devuelve los scripts del documento
+
+console.log(elemento);
+</code></pre>
+
+                <p>Convertir un HTMLCollection en un Array</p>
+                <pre class="language-javascript line-numbers">
+<code>// HTMLCollection --> Array
+let imagenes = document.images;
+let imagenesArray = Array.from(imagenes);
+
+// Vamos a listarlas
+imagenesArray.forEach(function(imagen) {
+    console.log(imagen);
+})
+
+</code></pre>
+            
+
+            <!-- SELECCIONAR ELEMENTOS -->
+            <section>
+                <header>
+                    <h4>Seleccionar Elementos</h4>
+                </header>
+                <div class="section__content">
+                        <pre class="language-javascript line-numbers">
+<code>// Seleccionar Elementos
+// getElementById
+let elemento = document.getElementById("cabecera");
+elemento.id;    // devuelve la ID
+elemento.className;    // devuelve la clase
+elemento.textContent;    // devuelve el texto que tenga
+elemento.innerText;    // también devuelve el texto que tenga
+elemento.innerText = "Nuevo texto";    // modifica el texto que tenga
+elemento.style.color = "#fc0";  // cambia propiedades css
+
+// getElementsbyClassName
+let enlaces = getElementsbyClassName("enlace"); // nos devuelve todos los elementos de clase "enlace" en HTMLCollection
+
+// querySelector
+const encabezado = document.querySelector("#encabezado");
+const encabezado = document.querySelector("#principal a:first-child");  // podemos usar todo tipo de selectores CSS
+let imagen = document.querySelector("img");     // si hay varias imágenes, nos devuelve la primera
+
+// se pueden usar conjuntamente:
+let listaEnlaces = document.getElementById("principal").querySelector(".navegacion").getElementsbyClassName("enlace");
+
+// getElementByTagName   (llamar a una &lt;etiqueta&gt; HTML)
+let links = document.getElementsByTagName("a");
+links[23].color = "#fcc";
+let enlaces = Array.from(links);
+enlaces.forEach(function(enlace){
+    console.log(enlace.textContent);
+})
+
+// querySelectorAll
+const enlaces = document.querySelectorAll("#principal .enlace");
+console.log(enlaces);   // Devuelve un NodeList con los enlaces
+enlaces[1].style.color = "red";</code></pre>                    
                 </div>
-            </article>
+            </section>
+
+            <!-- Traversing -->
+            <section>
+                <header>
+                    <h4>Traversing</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-html line-numbers">
+<code>&lt;!-- CÓDIGO HTML --&gt;
+&lt;nav id="principal" class="menu"&gt;
+    &lt;a class="enlace" href="#"&gt;Enlace 1&lt;/a&gt;
+    &lt;a class="enlace" href="#"&gt;Enlace 2&lt;/a&gt;
+    &lt;a class="enlace" href="#"&gt;Enlace 3&lt;/a&gt;
+    &lt;a class="enlace" href="#"&gt;Enlace 4&lt;/a&gt;
+    &lt;a class="enlace" href="#"&gt;Enlace 5&lt;/a&gt;
+&lt;/nav&gt;</code></pre>     
+
+                    <pre class="language-javascript line-numbers">
+<code>// CÓDIGO JAVASCRIPT
+const navegacion = document.querySelector("#principal");
+
+navegacion.childNodes;  // devuelve los nodos. Incluye incluso hasta los espacios entre etiquetas
+navegacion.children;    // No devuelve los espacios en blanco, como sí lo hace childNodes
+navegacion.children[0].nodeName     // devuelve el tipo de nodo  (nos diría "A" o "NAV", que es un enlace &lt;a&gt; o &lt;nav&gt; )
+navegacion.children[0].nodeType     // devuelve el tipo de nodo:
+//  1 = Elementos
+//  2 = Atributos
+//  3 = Text Node
+//  8 = Comentarios
+//  9 = Documentos
+// 10 = Doctype
+
+// Se pueden anidar .children varias veces, y acceder a propiedades
+navegacion.children[1].children[0].textContent = "nuevo texto";
+
+// Acceder al primer y último elemento:
+navegacion.lastElementChild
+navegacion.firstElementChild
+
+// Contar número de hijos
+navegacion.childElementCount;  // Devuelve un número
+
+const enlaces = document.querySelectorAll(".enlace");
+enlaces[0];     // primer enlace
+enlaces[0].parentNode;     // sube un nivel --> va al nav#principal
+enlaces[0].parentElement;     // RECOMENDADO: igualmente sube un nivel --> va al nav#principal
+enlaces[0].parentElement.parentElement;     // Sube otro nivel por encima del nav  
+
+const cursos = document.querySelectorAll(".card");
+cursos[0];
+cursos[0].parentElemnt.parentElemnt.parentElemnt.children[0].textContent = "Hola";
+
+// volviendo a los enlaces:
+const enlaces = document.querySelectorAll(".link");
+enlaces[4].previousSibiling;    // devuelve el espacio en blanco (nodo)
+enlaces[4].previousElementSibiling  // devuelve el elemento previo al mismo nivel
+enlaces[4].previousElementSibiling.previousElementSibiling  // devuelve el elemento previo al previo al mismo nivel
+enlaces[0].nextElementSibiling  // el elemento siguiente
+</code></pre>     
+
+                    <pre class="language-javascript line-numbers">
+<code>// CREAR Elementos
+const enlace = document.createElement("a");     // Creamos un elemento &lt;a&gt;
+enlace.className = "enlace";                    // le añadimos una clase
+        enlace.classList.add("enlace");                 // le añadimos una clase (mmétodo 2)
+enlace.id = "nuevoId";                          // añador ID;
+enlace.setAttribute("href","#");                // Añadir atributos
+enlace.textContent = "Nuevo Enlace";            // Añadir texto
+enlace.appendChild(document.createTextNode("Nuevo Enlace"));    // Añadir nodo de texto (método 2)
+
+// Agregar al HTML
+document.querySelector(".contenedor").appendChild(enlace);
+
+// REEMPLAZAR UN ELEMENTO POR OTRO
+const nuevoEncabezado = document.createElement("h2");   // creo elemento
+nuevoEncabezado.id = "encabezado";  // le doy una id
+nuevoEncabezado.appendChild(document.createTextNode("Este es el nuevo encabezado"));    // añadimos un nodo de texto
+    // reemplazando
+const anterior = document.querySelector("#encabezado");
+const elementoPadre = document.querySelector("#lista-cursos");
+elementoPadre.replaceChild(nuevoEncabezado, anterior);
+
+// ELIMINAR ELEMENTOS DEL DOM
+const enlaces = document.querySelectorAll(".enlace");
+const navegacion = document.querySelector("nav#principal");
+
+enlaces[0].remove();    // Eliminamos el primer elemento desde sí mismo
+navegacion.removeChild(enlaces[0]);     // Eliminar desde el padre
+
+// OBTENER UNA CLASE css
+const primerLi = document.querySelector(".enlace");
+let elemento;
+elemento = primerLi.className;          // devuelve la primera clase
+elemento = primerLi.classList;          // devuelve todas las clases
+elemento = primerLi.classList.add("nueva-clase");       // añade una clase
+elemento = primerLi.classList.remove("nueva-clase");    // elimina una clase
+
+
+// LEER Atributos
+primerLi.getAttribute("href");      // nos da el enlace
+
+// AÑADIR/MODIFICAR ATRIBUTOS
+primerLi.setAttribute("href","#");      // especificamos el enlace a #
+
+// ELIMINAR ATRIBUTOS
+primerLi.removeAttribute("data-id");
+
+// COMPROBAR SI TIENE ATRIBUTOS
+primerLi.hasAttribute("data-id");   // boolean
+</code></pre>
+                </div>
+            </section>
+
+            <!-- EVENT LISTENERS -->
+            <section>
+                <header>
+                    <h4>Event Listeners</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// EVENT LISTENERS
+
+</code></pre>                    
+                </div>
+            </section>
+
+            <!-- LocalStorage -->
+            <section>
+                <header>
+                    <h4>LocalStorage</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// LocalStorage
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+            <!-- Objetos -->
+            <section>
+                <header>
+                    <h4>Objetos</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// Objetos
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+            <!-- Clases -->
+            <section>
+                <header>
+                    <h4>Clases</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// Clases
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+            <!-- Ajax y XMLHTTPRequest -->
+            <section>
+                <header>
+                    <h4>Ajax y XMLHTTPRequest</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// Ajax y XMLHTTPRequest
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+            <!-- JavaScript Asíncrono o Async JS -->
+            <section>
+                <header>
+                    <h4>JavaScript Asíncrono o Async JS</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// JavaScript Asíncrono o Async JS
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+            <!-- Fetch API -->
+            <section>
+                <header>
+                    <h4>Fetch API</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// Fetch API
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+            <!-- Arrow Functions -->
+            <section>
+                <header>
+                    <h4>Arrow Functions</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// Arrow Functions
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+            <!-- Async Await -->
+            <section>
+                <header>
+                    <h4>Async Await</h4>
+                </header>
+                <div class="section__content">
+                    <pre class="language-javascript line-numbers">
+    <code>// Async Await
+
+</code></pre>                    
+                </div>
+            </section>
+                
+
+    
+            </div>
+        </article>
     
     
 
