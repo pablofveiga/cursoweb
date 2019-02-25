@@ -1087,8 +1087,8 @@ elemento = document.characterSet    // Nos devuelve la codificación de caracter
 elemento = document.forms       // Devuelve todos los formularios del documento
 elemento = document.forms[0]    // Devuelve un formulario en concreto
 elemento = document.forms[0].id    // Devuelve la id de ese formulario en concreto
-elemento = document.forms[0].className  // Nos devuelve la clase
-elemento = document.forms[0].classList  // Si hay muchas clases, nos devuelve un "DOMTkenList"
+elemento = document.forms[0].className  // Nos devuelve las clases  (modificando con className podemos afectar a todas las clases:  className = ""; borra todas las clases)
+elemento = document.forms[0].classList  // Si hay muchas clases, nos devuelve un "DOMTkenList"  (añadir o quitar con classList no afecta a las otras clases: classList.add("foo") )
 elemento = document.forms[0].classList[0]  // Accede a una clase en concreto
 
 elemento = document.images;     // Devuelve las imágenes del documento (HTMLCollection) , con sus clases y atributos
@@ -1357,16 +1357,16 @@ el.addEventListener("change",obtenerEvento);   // avisa cuando se cambia en un e
                     <h4>Event Bubbling</h4>
                     <pre class="language-html line-numbers">
 <code>&lt;div class=&quot;contenedor&quot;&gt;
-&lt;div class=&quot;caja caja1&quot;&gt;
-    ESTA ES LA CAJA SUPERIOR
-    &lt;div class=&quot;caja caja2&quot;&gt;
-        &eacute;sta est&aacute; dentro
+    &lt;div class=&quot;caja caja1&quot;&gt;
+        ESTA ES LA CAJA SUPERIOR
+        &lt;div class=&quot;caja caja2&quot;&gt;
+            &eacute;sta est&aacute; dentro
 
-        &lt;div class=&quot;caja caja3&quot;&gt;
-            &eacute;sta es la m&aacute;s profunda
+            &lt;div class=&quot;caja caja3&quot;&gt;
+                &eacute;sta es la m&aacute;s profunda
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
                     <pre class="language-javascript line-numbers">
@@ -1410,16 +1410,29 @@ function eliminarElemento(e) {
                 </div>
             </section>
 
-            <!-- LocalStorage -->
+            <!-- LocalStorage y SessionStorage -->
             <section>
                 <header>
-                    <h4>LocalStorage</h4>
+                    <h4>LocalStorage y SessionStorage</h4>
                 </header>
                 <div class="section__content">
                     <pre class="language-javascript line-numbers">
-    <code>// LocalStorage
+<code>// LocalStorage
+// LocalStorage persiste después de cerrar el navegador
+localStorage.setItem("nombre","Pablo");
 
-</code></pre>                    
+// Alñadir a Sesion Storage: No persiste al cerrar el navegador
+sessionStorage.setItem("edad",38);
+
+// Borrar algo del local storage
+localStorage.removeItem("nombre");
+
+// Obtener valor
+localStorage.setItem("color","azul");   //setItem agrega o modifica un valor
+localStorage.getItem("color")
+
+// Borrar todo el localstorage
+localStorage.clear();</code></pre>
                 </div>
             </section>
                 

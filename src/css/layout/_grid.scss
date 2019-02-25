@@ -73,25 +73,7 @@ article {
 	}
 }
 
-.normal-list {
-	padding-left: 2em;
-	list-style-type: none;
-	margin-bottom: 1.5em;
 
-	li {
-		margin: 6px 0;
-	}
-}
-
-// code, pre {
-// 	font-family: monospace;
-// 	font-size: 1.3em;
-// }
-// pre {
-//     max-width: 100%;
-//     overflow: auto;
-//     padding-bottom: 16px;
-// }
 .verde1 {
 	color: green;
 }
@@ -107,8 +89,13 @@ article {
 }
 
 ul.normal-list {
+	padding-left: 2em;
+	list-style-type: none;
+	// margin-bottom: 1.5em;
+
 	>li {
 		padding-left: 1.5em;
+		line-height: 1em;
 
 		>ul {
 			padding-left: 1.5em;
@@ -121,14 +108,22 @@ ul.normal-list {
 				}
 			}
 		}
+		// GLOBAL IN LIST
+		li {
+			margin: 0.3em 0;			
+		}
+		a {
+			display: block;
+			font-size: 0.85em;
+		}
 	} 
 }
 
 // STANDARD LIST
 section li,
 article li {
-	padding-left: 1em;
-	line-height: 1.3em;
+	// padding-left: 1em;
+	// line-height: 1.3em;
 }
 
 // SHOW SCROLL BARS IN PHONES
