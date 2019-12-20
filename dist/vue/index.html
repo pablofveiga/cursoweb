@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vue JS</title>
+
+
+        <!-- OG -->
+    <meta property="og:title" content="Curso Web Peibol" />
+    <meta property="og:description" content="Tema 3 - Introducción a Vue.js" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.pablofv.com/cursoweb/tema1/" />
+    <meta property="og:image" content="http://www.pablofv.com/cursoweb/pics/og-tema1.jpg" />
+	<meta property="og:image:type" content="image/jpeg" /> 
+	<meta property="og:image:width" content="200" /> 
+	<meta property="og:image:height" content="200" />    
+    <meta property="og:locale" content="es" />
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../css/styles.css?v=1.1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body id="js-page">
+    
+    <div class="wrapper">
+        <nav class="topMenu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="tema1/">HTML</a></li>
+                <li><a href="tema2/">CSS</a></li>
+                <li><a href="tema3/">JavaScript</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="mainHeader">
+        <h1 class="mainHeader__title">Vue JS</h1>
+    </header>
+    
+    <div class="wrapper">
+
+        <article class="sectionIntro">
+            <header>
+                <h2>Introducción al framework Vue JS.</h2>
+            </header>
+
+            <div class="sectionContent">
+                <p>En este tema abracaremos el truculento mundo del JavaScript</p>
+            </div>           
+        </article>
+
+        <article class="sectionHistoria">
+            <header>
+                <h3>Introducción histórica.</h3>
+            </header>
+
+            <div class="sectionContent">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, repellat. Laboriosam, maxime. Dicta laudantium sapiente minus! A ab dolore enim sapiente molestiae explicabo nihil cumque quae quidem! Nemo, necessitatibus suscipit.</p>
+            </div>           
+        </article>
+
+        <!-- DOM -->
+        <article id="js2">
+            <header>
+                <h3>Vue y el DOM</h3>
+            </header>
+
+            <!-- Hola Mundo -->
+            <section>
+                <header>
+                    <h4>Hola Mundo en Vue</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Vamos a hacer un simple data-binding:</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="216" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="ExaNdEg" style="height: 216px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Primera App en Vue">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/ExaNdEg">
+                          Primera App en Vue</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>  
+                    </div>         
+
+                </div>
+            </section>     
+
+            <!-- Data Binding y Método -->
+            <section>
+                <header>
+                    <h4>Mi primer método con data binding</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Data-binding a tiempo real:</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="vYEyVpp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="02 - Starging Vue">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/vYEyVpp">
+                          02 - Starging Vue</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+
+
+            <!-- Métodos -->
+            <section>
+                <header>
+                    <h4>Methods</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Veamos un simple método con una directiva, v-on</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="PowbxWr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="03 - Ejercicio 2">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/PowbxWr">
+                          03 - Ejercicio 2</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- ejercicio -->
+            <section>
+                <header>
+                    <h4>Ejercicio con errores</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="WNboLjZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="04 - Ejercicio 4 con errores">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/WNboLjZ">
+                          04 - Ejercicio 4 con errores</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- ejercicio corregido -->
+            <section>
+                <header>
+                    <h4>Corrección del ejercicio. V-Bind</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="vYEyVpp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="02 - Starging Vue">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/vYEyVpp">
+                          02 - Starging Vue</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- RAW HTML -->
+            <section>
+                <header>
+                    <h4>Raw HTML</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="XWJNOpb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="06 - RAW html">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/XWJNOpb">
+                          06 - RAW html</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- Ejercicio Resumen -->
+            <section>
+                <header>
+                    <h4>Ejercicio Resumen</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Ejercicio con un poco de todo</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="465" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYmOXM" style="height: 465px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="06 - Apendice 1 - Ejercicio resumen resuelto">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmOXM">
+                          06 - Apendice 1 - Ejercicio resumen resuelto</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- Event Listeners -->
+            <section>
+                <header>
+                    <h4>Event Listeners</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="LYEboMz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="07 - Event Listeners">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/LYEboMz">
+                          07 - Event Listeners</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- Event Modifiers -->
+            <section>
+                <header>
+                    <h4>Event Modifiers</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="gObLNdY" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="08 - Event Modifiers">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/gObLNdY">
+                          08 - Event Modifiers</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- Keyboard Events -->
+            <section>
+                <header>
+                    <h4>Keyboard Events</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="360" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYmowJ" style="height: 360px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="09 - Keyboard Events">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmowJ">
+                          09 - Keyboard Events</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>                 
+
+            <!-- Escribir Javascript en los templates -->
+            <section>
+                <header>
+                    <h4>Escribir Javascript en los templates</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="360" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYmowJ" style="height: 360px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="09 - Keyboard Events">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmowJ">
+                          09 - Keyboard Events</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+
+            <!-- Two way binding. V-Model -->
+            <section>
+                <header>
+                    <h4>Two way binding. V-Model</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="KKwapJP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="11 - Two way binding: v-model">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/KKwapJP">
+                          11 - Two way binding: v-model</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+
+            <!-- Introducción a methods, computed, watch -->
+            <section>
+                <header>
+                    <h4>Introducción a methods, computed, watch</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="400" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYPLNQ" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="12.1 - Planteamiendo de methods, computed, watch">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYPLNQ">
+                          12.1 - Planteamiendo de methods, computed, watch</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+              
+            <!-- Computed -->
+            <section>
+                <header>
+                    <h4>Computed</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="460" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="povRwey" style="height: 460px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="12.2 - Computed (II parte)">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/povRwey">
+                          12.2 - Computed (II parte)</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+                            
+            <!-- Watch Properties -->
+            <section>
+                <header>
+                    <h4>Watch Properties</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="530" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="NWPdwKV" style="height: 530px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="13.- Watch Properties">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/NWPdwKV">
+                          13.- Watch Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+                            
+            <!-- Clases CSS dinámicas -->
+            <section>
+                <header>
+                    <h4>Clases CSS dinámicas</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="300" data-theme-id="default" data-default-tab="css,result" data-user="pablofv" data-slug-hash="RwNpbXM" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.1 - Clases CSS dinámicas">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/RwNpbXM">
+                          14.1 - Clases CSS dinámicas</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+                         
+            <!-- CSS dinámico: objetos -->
+            <section>
+                <header>
+                    <h4>CSS dinámico: objetos</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="360" data-theme-id="default" data-default-tab="css,result" data-user="pablofv" data-slug-hash="JjoWjRy" style="height: 360px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.2.- CSS dinámico: objetos">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/JjoWjRy">
+                          14.2.- CSS dinámico: objetos</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+                         
+            <!-- CSS Dinámico - Sin CSS -->
+            <section>
+                <header>
+                    <h4>CSS Dinámico - Sin CSS</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="380" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="LYEWEya" style="height: 380px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.4.- CSS Dinámico - Sin CSS">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/LYEWEya">
+                          14.4.- CSS Dinámico - Sin CSS</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>
+                         
+            <!-- Ejercicio - Reactive Properties -->
+            <section>
+                <header>
+                    <h4>Ejercicio - Reactive Properties</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="460" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="abzJmMx" style="height: 460px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Ejercicio 23 - Reactive Properties">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/abzJmMx">
+                          Ejercicio 23 - Reactive Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>         
+
+                </div>
+            </section>   
+
+
+
+
+              
+        </article>
+
+
+        
+
+    </div><!--   END OF WRAPPER -->
+
+
+    <script src="../js/prism.js"></script>
+    <script src="../js/interface.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
