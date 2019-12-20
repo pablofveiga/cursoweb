@@ -25,23 +25,11 @@
 </head>
 <body class="tema1-2">
 
+	<?php include ("../partials/main_menu.php"); ?>
 
-<div class="wrapper">
-	<nav class="topMenu">
-		<ul>
-			<li><a href="../">Inicio</a></li>
-			<li><a href="../tema1/">Tema 1</a></li>
-			<li><a href="../tema2/">Tema 2</a></li>
-			<li><a href="../tema3/">Tema 3</a></li>
-			<li><a href="../contacto/">Contacto</a></li>
-		</ul>
-	</nav>
-</div>
-
-<?php include ("../partials/responsive-menu.php"); ?>
 
 	<header class="main-header">
-		<h1><span>Tema 3 - Luz y Color</span></h1>
+		<h1><span>CSS - Luz y Color</span></h1>
 		<img src="../pics/hackerman.jpg" alt="Hackerman empezó en este curso, y luego hackeó el tiempo">
 	</header>
 
@@ -188,6 +176,11 @@ li { font-size: 1.4em; } /* =14px? */
 </div>
 
 
+
+
+<div id="subir">
+	<a href="#arriba"><span></span></a>
+</div>
 
 
 

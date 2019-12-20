@@ -31,8 +31,8 @@ article {
 code {
     font-family: monospace;
     // font-size: 1.1em;
-    font-size: 0.9em;
-    background-color: #ffdeb2;
+    // font-size: 0.9em;
+    // background-color: #ffdeb2;
 }
 
 .codeWithImage {    // NOT RESPONSIVE
@@ -51,4 +51,23 @@ code {
         margin-left: 1em;
     }
 
+}
+
+.inlineCode {
+    display: inline-block;
+    font-size: 1.1em;
+}
+
+.codePen {
+    margin-bottom: 2em;
+}
+
+.scrolled {
+
+    &-x {
+        overflow-x: scroll;
+    }
+    &-y {
+
+    }
 }

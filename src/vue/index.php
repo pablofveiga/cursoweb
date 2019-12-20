@@ -27,17 +27,8 @@
 </head>
 <body id="js-page">
     
-    <div class="wrapper">
-        <nav class="topMenu">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="tema1/">HTML</a></li>
-                <li><a href="tema2/">CSS</a></li>
-                <li><a href="tema3/">JavaScript</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
+    <?php include ("../partials/main_menu.php"); ?>
+    
 
     <header class="mainHeader">
         <h1 class="mainHeader__title">Vue JS</h1>
@@ -550,6 +541,14 @@
         
 
     </div><!--   END OF WRAPPER -->
+
+
+
+<div id="subir">
+    <a href="#arriba"><span></span></a>
+</div>
+
+    
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>  
     <script src="../js/prism.js"></script>

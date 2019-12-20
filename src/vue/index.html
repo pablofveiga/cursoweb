@@ -74,84 +74,221 @@
             <!-- Hola Mundo -->
             <section>
                 <header>
-                    <h4>Hola Mundo en Vue</h4>
+                    <h4>Vue Templates</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Vamos a hacer un simple data-binding:</p>
+                    <p>En este ejemplo, vamos a ver un template de Vue donde pasaremos un dato a la notación <strong>{{ }}</strong></p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="216" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="ExaNdEg" style="height: 216px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Primera App en Vue">
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/ExaNdEg">
                           Primera App en Vue</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>  
+                        </p>                          
                     </div>         
+
+                    <p>Los elementos del objeto <strong>data</strong> se acceden directamente mediante la notación <strong>{{ }}</strong></p>
 
                 </div>
             </section>     
 
-            <!-- Data Binding y Método -->
+            <!-- Métodos -->
             <section>
                 <header>
-                    <h4>Mi primer método con data binding</h4>
+                    <h4>Métodos en el template</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Data-binding a tiempo real:</p>
+                    <p>Si en nuestro template queremos mostrar el resultado de una función, usaremos el objeto <strong>methods</strong> en nuestra instancia de Vue.</p>
+                    <p>En el html, lo mostraríamos así: <code class="inlineCode">&lt;p&gt;{{ miFuncion() }}&lt;/p&gt;</code></p>
+                    <p>Esto retornaría algo que puede ser colocado en el DOM, es decir, <strong>algo que puede ser convertido a un string</strong> (nada de objetos complejos, ni valores de retorno) </p>
+                    <p>Estos valores representados entre <strong>{{ }}</strong> deben estar en el objeto <strong>data</strong> o en el objeto <strong>methods</strong> de nuestra instancia de Vue.</p>
 
                     <div class="codePen">
-                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="vYEyVpp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="02 - Starging Vue">
-                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/vYEyVpp">
-                          02 - Starging Vue</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="gObmKrm" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="1.5.- Vue Templates: Methods">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/gObmKrm">
+                          1.5.- Vue Templates: Methods</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>         
                     </div>         
 
                 </div>
             </section>   
 
 
-            <!-- Métodos -->
+
+
+            <!-- Methods. Acceso a datos -->
             <section>
                 <header>
-                    <h4>Methods</h4>
+                    <h4>Methods. Acceso a datos</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Veamos un simple método con una directiva, v-on</p>
+                    <p>En el ejemplo anterior hemos utilizado una función. Pero si quisieramos en esa función acceder a los elementos de <strong>data</strong>, por ejemplo el elemento "title", usaremos la notación <code class="inlineCode">this.</code>, quedando como <code class="inlineCode">this.title</code></p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="gObmKgW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="1.6.- Métodos: Acceso a datos">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/gObmKgW">
+                          1.6.- Métodos: Acceso a datos</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                 
+                    </div>
+                </div>
+            </section>   
+
+
+
+
+
+
+
+            <!-- Métodos -->
+<!--             <section>
+                <header>
+                    <h4>Methods. Acceso a datos</h4>
+                </header>
+                <div class="articleContent">
+                    <p>En el ejemplo anterior hemos utilizado una función. Pero si quisieramos en esa función acceder a los elementos de <strong>data</strong>, por ejemplo el elemento "title", usaremos la notación <code class="inlineCode">this.</code>, quedando como <code class="inlineCode">this.title</code></p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="PowbxWr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="03 - Ejercicio 2">
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/PowbxWr">
                           03 - Ejercicio 2</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
             </section>   
+ -->
+
+
+
+
               
             <!-- ejercicio -->
             <section>
                 <header>
-                    <h4>Ejercicio con errores</h4>
+                    <h4>Templates: Acceso a datos: datos HTML</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Imaginemos que queremos almacenar y representar un dato en formato html, como por ejemplo, un enlace, o un atributo <code class="inlineCode">title</code> de una imagen.</p>
+                    <p>Si utilizamos los atributos HTML, como por ejemplo <code class="inlineCode">href</code> o <code class="inlineCode">title</code> e intentamos usar un template de vue {{ }} dentro de ellos, nos dará un error.</p>
 
                     <div class="codePen">
-                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="WNboLjZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="04 - Ejercicio 4 con errores">
+                        <p class="codepen" data-height="310" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="WNboLjZ" style="height: 310px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="04 - Ejercicio 4 con errores">
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/WNboLjZ">
                           04 - Ejercicio 4 con errores</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                        
+                    </div>         
+
+                    <p>Dentro de los atributos HTML nunca usaremos templates de Vue.</p>
+                    <p>Para eso, usaremos la propiedad <code class="inlineCode">v-bind:</code> + el atributo.</p>
+                    <p>Así podríamos usar <code class="inlineCode">v-bind:href="...."</code> o <code class="inlineCode">v-bind:title="...."</code>.</p>
+                    <p>Veamos un ejemplo de uso correcto del atributo <strong>v-bind</strong>.</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="qBEqgWb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="05 - Corregir errores del ejercicio 4">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/qBEqgWb">
+                          05 - Corregir errores del ejercicio 4</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                     
+                    </div>    
+
+                    <p>Como nota importante, la forma corta de <code class="inlineCode">v-bind:attributo=""</code> sería <code class="inlineCode">:attributo=""</code>.</p> 
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="QWwpxZJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="05.5 - Shorthand de v-bind">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/QWwpxZJ">
+                          05.5 - Shorthand de v-bind</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>      
+                </div>
+            </section>
+
+
+
+            <!-- Entendiendo las Directivas de Vue.js -->
+            <section>
+                <header>
+                    <h4>Entendiendo las Directivas de Vue.js</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Una directiva es una insctrucción donde colocamos código. Le dice a Vue que "bindee" algo de mi "data".</p>
+                    <p>v-bind toma un argumento (href, title, etc...), y éste espera un atributo que quiere "bindear".</p>
+                    <p>v-bind : <i>argumento</i> <i>dato,funcion,...</i></p>
+                    <p>De este modo, podemos pasar datos dinámicamente a nuestros atributos HTML</p>
+                </div>
+            </section>   
+
+
+            <!-- Bloquear re-renderizado con v-once -->
+            <section>
+                <header>
+                    <h4>Bloquear re-renderizado con v-once</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Con la directiva <code class="inlineCode">v-once</code>, el elemento a bindear sólo se renderizará una vez, independientemente de como cambie posteriormente, ya sea con métodos o funciones.</p>
+                    <p><strong>v-once</strong> es muy recomendado para tomar el valor inicial de un dato.</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="350" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="XWJNOpb" style="height: 350px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="06 - RAW html">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/XWJNOpb">
+                          06 - RAW html</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                    
                     </div>         
 
                 </div>
             </section>   
+                            
+
+            <!-- RAW HTML -->
+            <section>
+                <header>
+                    <h4>Raw HTML</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Por defecto, Vue no renderiza HTML, solo renderiza texto</p>
+                    <p>¿Cómo meteríamos un bloque de código HTML en un template?</p>
+                    <p>Para eso no utilizamos la notación <strong>{{ }}</strong>, sino la directiva <strong>v-html="nuestroDatoHTML"</strong></p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="JjoWBdE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="6.54 - RAW HTML">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/JjoWBdE">
+                          6.54 - RAW HTML</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                     
+                    </div>         
+
+                </div>
+            </section>   
+
+
+
+
               
+            <!-- Ejercicio Resumen -->
+            <section>
+                <header>
+                    <h4>Resumen Templates Vue</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Ejercicio con un poco de todo</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="465" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYmOXM" style="height: 465px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="06 - Apendice 1 - Ejercicio resumen resuelto">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmOXM">
+                          06 - Apendice 1 - Ejercicio resumen resuelto</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                        
+                    </div>         
+
+                </div>
+            </section>   
+
+
             <!-- ejercicio corregido -->
             <section>
                 <header>
@@ -165,52 +302,14 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/vYEyVpp">
                           02 - Starging Vue</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
             </section>   
               
-            <!-- RAW HTML -->
-            <section>
-                <header>
-                    <h4>Raw HTML</h4>
-                </header>
-                <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
 
-                    <div class="codePen">
-                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="XWJNOpb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="06 - RAW html">
-                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/XWJNOpb">
-                          06 - RAW html</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
-                          on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                    </div>         
 
-                </div>
-            </section>   
-              
-            <!-- Ejercicio Resumen -->
-            <section>
-                <header>
-                    <h4>Ejercicio Resumen</h4>
-                </header>
-                <div class="articleContent">
-                    <p>Ejercicio con un poco de todo</p>
-
-                    <div class="codePen">
-                        <p class="codepen" data-height="465" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYmOXM" style="height: 465px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="06 - Apendice 1 - Ejercicio resumen resuelto">
-                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmOXM">
-                          06 - Apendice 1 - Ejercicio resumen resuelto</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
-                          on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-                    </div>         
-
-                </div>
-            </section>   
               
             <!-- Event Listeners -->
             <section>
@@ -225,8 +324,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/LYEboMz">
                           07 - Event Listeners</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -245,8 +343,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/gObLNdY">
                           08 - Event Modifiers</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -265,8 +362,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmowJ">
                           09 - Keyboard Events</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -285,8 +381,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmowJ">
                           09 - Keyboard Events</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -305,8 +400,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/KKwapJP">
                           11 - Two way binding: v-model</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -326,8 +420,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYPLNQ">
                           12.1 - Planteamiendo de methods, computed, watch</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -346,8 +439,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/povRwey">
                           12.2 - Computed (II parte)</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -366,8 +458,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/NWPdwKV">
                           13.- Watch Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -386,8 +477,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/RwNpbXM">
                           14.1 - Clases CSS dinámicas</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -406,8 +496,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/JjoWjRy">
                           14.2.- CSS dinámico: objetos</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -426,8 +515,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/LYEWEya">
                           14.4.- CSS Dinámico - Sin CSS</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -446,8 +534,7 @@
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/abzJmMx">
                           Ejercicio 23 - Reactive Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        </p>                        
                     </div>         
 
                 </div>
@@ -464,7 +551,7 @@
 
     </div><!--   END OF WRAPPER -->
 
-
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>  
     <script src="../js/prism.js"></script>
     <script src="../js/interface.js"></script>
     <script src="../js/app.js"></script>
