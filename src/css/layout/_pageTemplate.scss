@@ -15,7 +15,7 @@
 // HEADERS
 h2 { font: 600 2em/2.15em $font-medium;  }
 h3 { font: 600 1.65em/1.8em $font-medium;  }
-h4 { font: 400 1.5em/1.1em $font-medium; }
+h4 { font: 400 1.5em/1.1em $font-medium; text-decoration: underline; }
 h5 { font-size: 1.3em; }
 
 
@@ -24,7 +24,11 @@ article {
     margin: 0 0 1.85em;
 }
 
-// paragraphs and text
+// PARAGRAPHS AND TEXT
+
+
+// FINE STYLING
+i { font-style: italic; }
 
 
 // CODES
@@ -59,7 +63,7 @@ code {
 }
 
 .codePen {
-    margin-bottom: 2em;
+    margin: 1em 0 2em;
 }
 
 .scrolled {
@@ -71,3 +75,100 @@ code {
 
     }
 }
+
+// DELETE LATER ON
+@font-face {
+  font-family: "Apercu-Regular";
+  src: url("../temp/apercu-regular.woff") format("woff"),
+    url("../temp/apercu-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Apercu-Bold";
+  src: url("../temp/apercu-bold.ttf") format("truetype"),
+    url("../temp/apercu-bold.woff") format("woff"),
+    url("../temp/apercu-bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Apercu-Italic";
+  src: url("../temp/apercu-italic.ttf") format("truetype"),
+    url("../temp/apercu-italic.woff") format("woff"),
+    url("../temp/apercu-italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Apercu-Medium";
+  src: url("../temp/apercu-medium.ttf") format("truetype"),
+    url("../temp/apercu-medium.woff") format("woff"),
+    url("../temp/apercu-medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BauLF-Bold";
+  src: url("../temp/BauLF-Bold.ttf") format("truetype"),
+    url("../temp/BauLF-Bold.woff") format("woff"),
+    url("../temp/BauLF-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#vasquiat {
+    &>* {
+        font-family: "Apercu-Regular";
+    }
+._mainHeader {
+
+
+    &__supBar {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+
+        p {
+            padding: 9px 0;
+
+            a {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__central {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &__leftMenu {}
+        &__rightMenu {}
+
+        .asideMenu {
+            display: flex;
+
+            a {
+                display: block;
+                font-size: 12px;
+                color: #000;
+            }            
+        }
+
+        }
+    }
+
+
+    &__logo {
+
+        img {
+
+        }
+    }
+}
+
+
+
+

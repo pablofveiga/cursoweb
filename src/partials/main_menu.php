@@ -1,5 +1,6 @@
 <?php
-	$ruta = "http://localhost/cursoweb/dist/";
+	// $ruta = "http://localhost/cursoweb/dist/";
+	$ruta = "http://cursoweb.pablofv.com/";
 	//var_dump( $_SERVER['DOCUMENT_ROOT']);
 	// $ruta = $_SERVER['DOCUMENT_ROOT'];
 ?>

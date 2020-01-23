@@ -69,6 +69,7 @@
                 </header>
                 <div class="articleContent">
                     <p>En este ejemplo, vamos a ver un template de Vue donde pasaremos un dato a la notación <strong>{{ }}</strong></p>
+                    <p>Esta notación se llama <strong>Interpolación</strong> o <strong>String Interpolation</strong>.</p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="216" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="ExaNdEg" style="height: 216px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Primera App en Vue">
@@ -78,7 +79,7 @@
                         </p>                          
                     </div>         
 
-                    <p>Los elementos del objeto <strong>data</strong> se acceden directamente mediante la notación <strong>{{ }}</strong></p>
+                    <p>En el campo <strong>data</strong> de nuestra instancia de Vue amalcenamos información, a la que se puede acceder directamente mediante la interpolación <strong>{{ }}</strong></p>
 
                 </div>
             </section>     
@@ -89,7 +90,7 @@
                     <h4>Métodos en el template</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Si en nuestro template queremos mostrar el resultado de una función, usaremos el objeto <strong>methods</strong> en nuestra instancia de Vue.</p>
+                    <p>Si en nuestro template queremos mostrar el resultado de una función, usaremos el campo (key) <strong>methods</strong> en nuestra instancia de Vue.</p>
                     <p>En el html, lo mostraríamos así: <code class="inlineCode">&lt;p&gt;{{ miFuncion() }}&lt;/p&gt;</code></p>
                     <p>Esto retornaría algo que puede ser colocado en el DOM, es decir, <strong>algo que puede ser convertido a un string</strong> (nada de objetos complejos, ni valores de retorno) </p>
                     <p>Estos valores representados entre <strong>{{ }}</strong> deben estar en el objeto <strong>data</strong> o en el objeto <strong>methods</strong> de nuestra instancia de Vue.</p>
@@ -114,7 +115,7 @@
                     <h4>Methods. Acceso a datos</h4>
                 </header>
                 <div class="articleContent">
-                    <p>En el ejemplo anterior hemos utilizado una función. Pero si quisieramos en esa función acceder a los elementos de <strong>data</strong>, por ejemplo el elemento "title", usaremos la notación <code class="inlineCode">this.</code>, quedando como <code class="inlineCode">this.title</code></p>
+                    <p>En el ejemplo anterior hemos utilizado una función. Pero si quisieramos en esa función acceder a los elementos de <strong>data</strong>, por ejemplo el elemento "title", usaremos la notación <code class="inlineCode"><strong>this.</strong></code>, quedando como <code class="inlineCode"><strong>this.title</strong></code></p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="gObmKgW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="1.6.- Métodos: Acceso a datos">
@@ -242,8 +243,9 @@
                 </header>
                 <div class="articleContent">
                     <p>Por defecto, Vue no renderiza HTML, solo renderiza texto</p>
+                    <p>¿Y si quiero almacenar algo como "&lt;p&gt;hola&lt;/p&gt;"?</p>
                     <p>¿Cómo meteríamos un bloque de código HTML en un template?</p>
-                    <p>Para eso no utilizamos la notación <strong>{{ }}</strong>, sino la directiva <strong>v-html="nuestroDatoHTML"</strong></p>
+                    <p>Para eso no utilizamos la notación <strong>{{ }}</strong>, sino la directiva <strong>v-html="</strong><i>nuestroDatoHTML</i><strong>"</strong></p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="JjoWBdE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="6.54 - RAW HTML">
@@ -281,7 +283,7 @@
 
 
             <!-- ejercicio corregido -->
-            <section>
+<!--             <section>
                 <header>
                     <h4>Corrección del ejercicio. V-Bind</h4>
                 </header>
@@ -297,7 +299,7 @@
                     </div>         
 
                 </div>
-            </section>   
+            </section>    -->
               
 
 
@@ -308,7 +310,39 @@
                     <h4>Event Listeners</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>En este ejemplo vamos a ver la directiva <strong>v-on</strong>.</p>
+                    <p>Si con <strong>v-bind</strong> conectábamos algo en nuestro template para pasarle información, <strong>v-on</strong> funciona al revés, es decir, escuchamos algo que espera recibir algo de nuestro template. Lo que esperamos recibir, es un <strong>evento</strong> al que queremos escuchar, por ejemplo: <strong>v-on:click</strong></p>
+                    <p>A parte de <strong>click</strong>, podemos usar muchos más eventos del DOM que veremos más adelante (mouseenter, mouseleave, submit, ...).</p>
+                    <p>El parámetro que le enviamos a nuestro event listener, es la función que se debe ejecutar: <strong>v-on:click="increase"</strong>, siendo increase el nombre de la función.</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="GRgzYgO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Introducción a Event Listeners">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/GRgzYgO">
+                          Introducción a Event Listeners</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>      
+
+                    <p>Vamos a complicar un poco el código.</p>
+                    <p>Los eventos por defecto, como por ejemploel evento <strong>click</strong>, guardan cierta información.</p>
+                    <p>En el caso de algunos eventos de ratón, podemos obtener las coordinadas X e Y de su posición. Esta información está dentro del <strong>"Event Object"</strong> y podemos acceder a ella.</p>
+                    <p>Nuestra función tendrá como argumento <strong>event</strong> ó <strong>e</strong> y accederemos a la información de este objeto con ella, en nuestro caso, las coordenadas.</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="BayMqqM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Event Listeners 2 - Accediendo al objeto Event">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/BayMqqM">
+                          Event Listeners 2 - Accediendo al objeto Event</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>      
+
+
+                    <h5>Pasando argumentos con los eventos</h5>
+
+                    <p>Supongamos que en nuestro botón, en vez de incrementarse por uno, queremos que se incremente por 2, o por 3.</p>
+                    <p>Para eso, simplemente le pasamos un argumento a nuestra función "increase"; es decir: <strong>"increase(2)"</strong></p>
+                    <p>Y si además, quisiéramos pasarle la información del "Event Object" (coordenadas, etc...), le pasaríamos un segundo parámetro, usando la palabra reservada <strong>$event</strong>, es decir: <strong>"increase(2,$event)"</strong> </p>
+
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="LYEboMz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="07 - Event Listeners">
@@ -327,7 +361,13 @@
                     <h4>Event Modifiers</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Imaginemos que queremos que nuestro Event Listener deje de propagarse en una determiada zona.</p>
+
+                    <p>Podríamos hacerlo de un modo chapucero, creando un método para esa área y aplicarle un <strong>stopPropagation()</strong>.</p>
+                    <p>Si hicieramos esto, estaríamos creando un método nuevo, y no es el mejor modo de hacerlo. Con un <strong>Event Modifier</strong>.</p>
+                    <p>Para eso, después del event listener, ponemos un punto (.) y la palabra "stop", es decir: <strong>v-on:mousemove.stop=" "</strong>, con el valor " " vacío.</p>
+                    <p>La palabra <strong>stop</strong> es como un <strong>stopPropagation()</strong>, pero hay más modifiers, como por ejemplo <strong>prevent</strong>.</p>
+                    <p>Podemos encadenar modifiers, como por ejemplo: <strong>v-on:click.stop.prevent=" "</strong>.</p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="gObLNdY" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="08 - Event Modifiers">
@@ -339,6 +379,54 @@
 
                 </div>
             </section>   
+
+
+              
+            <!-- Lista de Event Modifiers -->
+            <section>
+                <header>
+                    <h4>Listado de Event Modifiers</h4>
+                </header>
+                <div class="articleContent">
+                    <p>En Vue existen varios event modifiers:</p>
+                    <ul>
+                        <li><strong>.stop</strong></li>
+                        <li><strong>.prevent</strong></li>
+                        <li><strong>.capture</strong></li>
+                        <li><strong>.self</strong></li>
+                        <li><strong>.once</strong></li>
+                        <li><strong>.capture</strong></li>
+                    </ul>
+                    <pre class="language-html line-numbers"><code>&lt;!-- the click event's propagation will be stopped --&gt; 
+&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt; 
+
+&lt;!-- the submit event will no longer reload the page --&gt; 
+&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt; 
+
+&lt;!-- modifiers can be chained --&gt; 
+&lt;a v-on:click.stop.prevent=&quot;doThat&quot;&gt;&lt;/a&gt; 
+
+&lt;!-- just the modifier --&gt; 
+&lt;form v-on:submit.prevent&gt;&lt;/form&gt; 
+
+&lt;!-- use capture mode when adding the event listener --&gt;
+&lt;!-- i.e. an event targeting an inner element is handled here before being handled by that element --&gt; 
+&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt; 
+
+&lt;!-- only trigger handler if event.target is the element itself --&gt; 
+&lt;!-- i.e. not from a child element --&gt; 
+&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;
+</code></pre>
+
+
+                    <p>
+                        Puedes encontrar la documentación aquí: <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">lista de event modifiers</a>.
+                    </p>
+                        
+                </div>
+            </section>   
+
+
               
             <!-- Keyboard Events -->
             <section>
@@ -346,7 +434,8 @@
                     <h4>Keyboard Events</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Además de los <strong>event modifiers</strong> tenemos <strong>key modifiers</strong> para eventos de teclado.</p>
+                    <p>Veamos un ejemplo con un input, que escuche el evento <strong>keyup</strong>, y lance un <i>alert</i> si pulsa la tecla "enter".</p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="360" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYmowJ" style="height: 360px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="09 - Keyboard Events">
@@ -359,20 +448,50 @@
                 </div>
             </section>                 
 
+
+
+              
+            <!-- Lista de Key Modifiers -->
+            <section>
+                <header>
+                    <h4>Listado de Key Modifiers</h4>
+                </header>
+                <div class="articleContent">
+                    <p>En Vue existen dos tipos de key modifiers:</p>
+                    <p><strong>Key Codes Modifiers:</strong> generalmente escuchan el presionado de una tecla</p>
+                    <p><strong>System Modifier Keys:</strong> escuchan presionado de teclas de sistema y/o ratón.</p>
+                    </ul>
+                    <pre class="language-html line-numbers"><code>
+</code></pre>
+
+                    <p style="color: red;font-size: 1.2em">Esta sección está inacabada</p>
+
+                    <p>
+                        Puedes encontrar la documentación aquí: <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">lista de Key Modifiers</a>.
+                    </p>
+                        
+                </div>
+            </section>   
+
+
+
             <!-- Escribir Javascript en los templates -->
             <section>
                 <header>
                     <h4>Escribir Javascript en los templates</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Hemos de tener en cuenta, que podemos escribir javascript en varias partes de nuestro código Vue, siempre y cuando sea de una sola expresión (nada de chorros inmensos de código).</p>
+                    <p>Por ejemplo, en el siguiente ejercicio, puedo duplicar el botón con la función <strong>increase()</strong> y simplemente poner una expresión de javascript como <strong>counter++</strong>.</p>
+                    <p>Igualmente, podemos hacer que en nuestro template el contador salga triplicado: <strong>{{ counter * 3 }}</strong></p>
+                    <p>Incluso podríamos poner un condicional: <strong>{{ counter * 2 > 10 ? "Mayor de 10" : "Menor de 10" }}</strong></p>
 
                     <div class="codePen">
-                        <p class="codepen" data-height="360" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYmowJ" style="height: 360px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="09 - Keyboard Events">
-                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYmowJ">
-                          09 - Keyboard Events</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="ZEYwVYo" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Escribir Javascript en nuestro template">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/ZEYwVYo">
+                          Escribir Javascript en nuestro template</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>                        
+                        </p>
                     </div>         
 
                 </div>
@@ -384,7 +503,8 @@
                     <h4>Two way binding. V-Model</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Hemos visto como extraer datos, con el <strong>string interpolation {{ }}</strong>, hemos escuchado a eventos, como por ejemplo con <strong>v-on:keyup</strong>; pero ¿y si los queremos usar a la vez?</p>
+                    <p>Para eso necesitamos la directiva <strong>v-model</strong>, que comunicará en dos sentidos este elemento (nuestro input), con lo que le indiquemos entre las comillas "", en nuestro caso, el name: <strong>v-model="name"</strong> </p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="KKwapJP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="11 - Two way binding: v-model">
