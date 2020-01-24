@@ -42,9 +42,66 @@
             </header>
 
             <div class="sectionContent">
-                <p>En este tema abracaremos el truculento mundo del JavaScript</p>
+                <p>En este tema abarcaremos el truculento mundo del Vue.js</p>
+                <p>Ajusta el respaldo y prepara café.</p>
             </div>           
         </article>
+
+
+        <article class="sectionIntro">
+            <header>
+                <h2>Indice de Contenidos</h2>
+            </header>
+
+            <div class="sectionContent">
+                <div class="temario">
+                    <ol class="normal-list">
+                        <li><a href="#">Indice</a></li>
+                        <li><a href="#">Introducción histórica</a></li>
+                        <li>
+                            <a href="#">Tema 1: Vue  el DOM</a>
+                            <ol>
+                                <li><a href="#">Vue Templates</a></li>
+                                <li><a href="#">Métodos</a></li>
+                                <li><a href="#">Métodos. Acceso a datos.</a></li>
+                                <li><a href="#">Templates. Acceso a datos HTML.</a></li>
+                                <li><a href="#">Entendiendo las Directivas de Vue.js.</a></li>
+                                <li><a href="#">Bloquear re-renderizado con v-once</a></li>
+                                <li><a href="#">RAW HTML</a></li>
+                                <li><a href="#">Ejercicio Resumen</a></li>
+                                <li><a href="#">Event Listeners</a></li>
+                                <li><a href="#">Event Modifiers</a></li>
+                                <li><a href="#">Listado de Event Modifiers</a></li>
+                                <li><a href="#">Keyboard Events</a></li>
+                                <li>
+                                    <a href="#">Lista de Key Modifiers</a>
+                                    <ol>
+                                        <li>
+                                            <a href="#">System Keys Modifiers</a>
+                                            <ol>
+                                                <li><a href="#">Combinaciones con .exact</a></li>
+                                                <li><a href="#">Mouse buttons modifiers</a></li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li><a href="#">Escribir Javascript en los templates</a></li>
+                                <li><a href="#">Two way binding. V-Model</a></li>
+                                <li><a href="#">Introducción a methods, computed, watch</a></li>
+                                <li><a href="#">Computed</a></li>
+                                <li><a href="#">Watch Properties</a></li>
+                                <li><a href="#">Clases CSS dinámicas</a></li>
+                                <li><a href="#">CSS dinámico: objetos</a></li>
+                                <li><a href="#">CSS Dinámico - Sin CSS</a></li>
+                                <li><a href="#">Ejercicio - Reactive Properties</a></li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>           
+        </article>
+
+
 
         <article class="sectionHistoria">
             <header>
@@ -52,7 +109,8 @@
             </header>
 
             <div class="sectionContent">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, repellat. Laboriosam, maxime. Dicta laudantium sapiente minus! A ab dolore enim sapiente molestiae explicabo nihil cumque quae quidem! Nemo, necessitatibus suscipit.</p>
+                <p>Hace ya algún tiempo, nació Vue.js.</p>
+                <p>Hoy tú lo estás estudiando.</p>
             </div>           
         </article>
 
@@ -101,13 +159,9 @@
                           1.5.- Vue Templates: Methods</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>         
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
-
-
-
 
             <!-- Methods. Acceso a datos -->
             <section>
@@ -127,14 +181,9 @@
                 </div>
             </section>   
 
-
-
-
-
-
-
             <!-- Métodos -->
-<!--             <section>
+        <!--             
+            <section>
                 <header>
                     <h4>Methods. Acceso a datos</h4>
                 </header>
@@ -151,13 +200,10 @@
 
                 </div>
             </section>   
- -->
+        -->
 
-
-
-
-              
-            <!-- ejercicio -->
+            
+            <!-- Templates: Acceso a datos: datos HTML -->
             <section>
                 <header>
                     <h4>Templates: Acceso a datos: datos HTML</h4>
@@ -199,8 +245,6 @@
                 </div>
             </section>
 
-
-
             <!-- Entendiendo las Directivas de Vue.js -->
             <section>
                 <header>
@@ -213,7 +257,6 @@
                     <p>De este modo, podemos pasar datos dinámicamente a nuestros atributos HTML</p>
                 </div>
             </section>   
-
 
             <!-- Bloquear re-renderizado con v-once -->
             <section>
@@ -230,12 +273,10 @@
                           06 - RAW html</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                    
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
                             
-
             <!-- RAW HTML -->
             <section>
                 <header>
@@ -253,14 +294,9 @@
                           6.54 - RAW HTML</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                     
-                    </div>         
-
+                    </div>     
                 </div>
-            </section>   
-
-
-
-
+            </section>
               
             <!-- Ejercicio Resumen -->
             <section>
@@ -276,8 +312,7 @@
                           06 - Apendice 1 - Ejercicio resumen resuelto</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
 
@@ -302,7 +337,8 @@
             </section>    -->
               
 
-
+            <hr>
+            <hr>
               
             <!-- Event Listeners -->
             <section>
@@ -336,13 +372,11 @@
                         </p>
                     </div>      
 
-
                     <h5>Pasando argumentos con los eventos</h5>
 
                     <p>Supongamos que en nuestro botón, en vez de incrementarse por uno, queremos que se incremente por 2, o por 3.</p>
                     <p>Para eso, simplemente le pasamos un argumento a nuestra función "increase"; es decir: <strong>"increase(2)"</strong></p>
                     <p>Y si además, quisiéramos pasarle la información del "Event Object" (coordenadas, etc...), le pasaríamos un segundo parámetro, usando la palabra reservada <strong>$event</strong>, es decir: <strong>"increase(2,$event)"</strong> </p>
-
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="LYEboMz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="07 - Event Listeners">
@@ -350,8 +384,7 @@
                           07 - Event Listeners</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
               
@@ -375,11 +408,9 @@
                           08 - Event Modifiers</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
-
 
               
             <!-- Lista de Event Modifiers -->
@@ -417,16 +448,12 @@
 &lt;!-- i.e. not from a child element --&gt; 
 &lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;
 </code></pre>
-
-
                     <p>
                         Puedes encontrar la documentación aquí: <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">lista de event modifiers</a>.
                     </p>
                         
                 </div>
             </section>   
-
-
               
             <!-- Keyboard Events -->
             <section>
@@ -447,9 +474,6 @@
 
                 </div>
             </section>                 
-
-
-
               
             <!-- Lista de Key Modifiers -->
             <section>
@@ -461,19 +485,70 @@
                     <p><strong>Key Codes Modifiers:</strong> generalmente escuchan el presionado de una tecla</p>
                     <p><strong>System Modifier Keys:</strong> escuchan presionado de teclas de sistema y/o ratón.</p>
                     </ul>
-                    <pre class="language-html line-numbers"><code>
-</code></pre>
+                    <h5>Key Modifiers</h5>
+                    <pre class="language-html line-numbers"><code>&lt;!-- only call `vm.submit()` when the `key` is `Enter` --&gt; 
+&lt;input v-on:keyup.enter=&quot;submit&quot;&gt;</code></pre>
 
-                    <p style="color: red;font-size: 1.2em">Esta sección está inacabada</p>
+                    <p>La lista de alias para las teclas es esta:</p>
+                    <ul>
+                        <li><code>.enter</code></li>
+                        <li><code>.tab</code></li>
+                        <li><code>.delete</code> (captura ambas teclas “Delete” y “Backspace”)</li>
+                        <li><code>.esc</code></li>
+                        <li><code>.space</code></li>
+                        <li><code>.up</code></li>
+                        <li><code>.down</code></li>
+                        <li><code>.left</code></li>
+                        <li><code>.right</code></li>
+                    </ul>
+
+                    <p>Se puede usar cualquier <i>Key Name</i> después del evento <strong>(on, up, leave...)</strong> usando la notación <i>kebab case</i></p>
+                    <pre class="language-html line-numbers"><code>&lt;input v-on:keyup.page-down=&quot;onPageDown&quot;&gt;</code></pre>
+
+
+                    <h5>System Keys Modifiers (Modificadores para teclas de sistema)</h5>
+                    <p>Puede usar los siguientes modificadores para activar eventos listeners de raton o teclado solo cuando se presiona la tecla modificadora correspondiente:</p>
+
+                    <ul>
+                        <li><code>.ctrl</code></li>
+                        <li><code>.alt</code></li>
+                        <li><code>.shift</code></li>
+                        <li><code>.meta</code></li>
+                    </ul>
+
+                    <p><code>.meta</code> se refiere a las teclas ⊞ en windows o ⌘ en linux.</p>
+
+                    <br>
+
+                    <h6>Combinaciones: <strong><code>.exact</code></strong> modifier</h6>
+                    <p><code>.exact</code> controla la combinación exacta de varios <i>system modifiers</i>: </p>
+                    <pre class="language-html line-numbers"><code>&lt;!-- this will fire even if Alt or Shift is also pressed --&gt; 
+&lt;button v-on:click.ctrl=&quot;onClick&quot;&gt;A&lt;/button&gt; 
+
+&lt;!-- this will only fire when Ctrl and no other keys are pressed --&gt; 
+&lt;button v-on:click.ctrl.exact=&quot;onCtrlClick&quot;&gt;A&lt;/button&gt; 
+
+&lt;!-- this will only fire when no system modifiers are pressed --&gt; 
+&lt;button v-on:click.exact=&quot;onClick&quot;&gt;A&lt;/button&gt;</code></pre>
+
+
+                    <h6>Modificadores de botones de ratón</h6>
+                    <p>Exclusivos para pulsaciones de ratón:</p>
+                    <ul>
+                        <li><code>.left</code></li>
+                        <li><code>.right</code></li>
+                        <li><code>.middle</code></li>
+                    </ul>
 
                     <p>
                         Puedes encontrar la documentación aquí: <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">lista de Key Modifiers</a>.
-                    </p>
-                        
+                    </p>                        
                 </div>
             </section>   
 
 
+            <hr>
+            <hr>
 
             <!-- Escribir Javascript en los templates -->
             <section>
@@ -495,7 +570,11 @@
                     </div>         
 
                 </div>
-            </section>   
+            </section>
+
+
+            <hr>
+            <hr>
 
             <!-- Two way binding. V-Model -->
             <section>
@@ -512,8 +591,7 @@
                           11 - Two way binding: v-model</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
               
@@ -532,8 +610,7 @@
                           12.1 - Planteamiendo de methods, computed, watch</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
               
@@ -551,8 +628,7 @@
                           12.2 - Computed (II parte)</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
                             
@@ -570,8 +646,7 @@
                           13.- Watch Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
                             
@@ -589,8 +664,7 @@
                           14.1 - Clases CSS dinámicas</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
                          
@@ -608,8 +682,7 @@
                           14.2.- CSS dinámico: objetos</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
                          
@@ -627,8 +700,7 @@
                           14.4.- CSS Dinámico - Sin CSS</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>
                          
@@ -646,23 +718,14 @@
                           Ejercicio 23 - Reactive Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
-                    </div>         
-
+                    </div>
                 </div>
             </section>   
-
-
-
-
               
         </article>
-
-
-        
+      
 
     </div><!--   END OF WRAPPER -->
-
-
 
 <div id="subir">
     <a href="#arriba"><span></span></a>

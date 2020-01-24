@@ -88,7 +88,7 @@ article {
     margin: 1em 0;
 }
 
-ul.normal-list {
+.normal-list {
 	padding-left: 2em;
 	list-style-type: none;
 	// margin-bottom: 1.5em;
@@ -97,13 +97,13 @@ ul.normal-list {
 		padding-left: 1.5em;
 		line-height: 1em;
 
-		>ul {
+		>ul,ol {
 			padding-left: 1.5em;
 
 			>li {
 				padding-left: 1.5em;
 
-				>ul {
+				>ul,ol {
 					padding-left: 1.5em;
 				}
 			}
@@ -115,6 +115,7 @@ ul.normal-list {
 		a {
 			display: block;
 			font-size: 0.85em;
+			color: #2173c7;
 		}
 	} 
 }
