@@ -1,3 +1,6 @@
+body {
+	position: relative;
+}
 .wrapper {
 	width: 1280px;
 	margin: auto;
@@ -32,6 +35,16 @@ section {
 		line-height: 1.3em;
 		margin: 8px 0;
 	}
+}
+
+aside.sidebar {
+    position: fixed;
+    top: 370px;
+    left: 20px;
+    background-color: tan;
+    width: 260px;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 

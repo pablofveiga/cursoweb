@@ -27,14 +27,18 @@
 </head>
 <body id="js-page">
     
-    <?php include ("../partials/main_menu.php"); ?>
-    
+<?php include ("../partials/main_menu.php"); ?>
 
-    <header class="mainHeader">
-        <h1 class="mainHeader__title">Vue JS</h1>
-    </header>
-    
-    <div class="wrapper">
+
+<header class="mainHeader">
+    <h1 class="mainHeader__title">Vue JS</h1>
+</header>
+
+<div class="wrapper">
+
+    <main class="mainContent">
+            
+        
 
         <article class="sectionIntro">
             <header>
@@ -411,7 +415,6 @@
                     </div>
                 </div>
             </section>   
-
               
             <!-- Lista de Event Modifiers -->
             <section>
@@ -584,6 +587,8 @@
                 <div class="articleContent">
                     <p>Hemos visto como extraer datos, con el <strong>string interpolation {{ }}</strong>, hemos escuchado a eventos, como por ejemplo con <strong>v-on:keyup</strong>; pero ¿y si los queremos usar a la vez?</p>
                     <p>Para eso necesitamos la directiva <strong>v-model</strong>, que comunicará en dos sentidos este elemento (nuestro input), con lo que le indiquemos entre las comillas "", en nuestro caso, el name: <strong>v-model="name"</strong> </p>
+                    <p>De este modo, cuando cambiemos el valor del input, este actualizará el valor de la propiedad "name", y lo mostrará en el template.</p>
+                    <p>En cuanto al <strong>data-binding</strong> ya hemos visto: <strong>interpolación</strong> con {{ }}, la síntasis <strong>v-bind</strong> para <i>bindear</i> atributos, la síntasis <strong>v-on</strong> para escuchar eventos, y ahora estamos viendo la síntasis <strong>v-model</strong> para poder hacer todo esto al mismo tiempo.</p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="KKwapJP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="11 - Two way binding: v-model">
@@ -602,8 +607,92 @@
                     <h4>Introducción a methods, computed, watch</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Veamos un ejemplo muy sencillo para ver la <strong>reactividad</strong> de los elementos.</p>
+                    <div class="codePen">
+                        <p class="codepen" data-height="340" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="oNgVjxd" style="height: 340px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Reactivity 1">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/oNgVjxd">
+                          Reactivity 1</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>  
 
+                    <p>Ahora imaginemos que la variable <i>counter</i> la vamos a usar en un montón de sitios diferentes de nuestro código y otras propiedades van a depender de nuestro contador.</p>
+
+                    <p>Vamos a ampliar nuestro código agregando otro botón para restar al contador.</p>                    
+                    <p>Como podremos comprobar, nuestro código va a funcionar, pero tenemos duplicada la lína que nos dice si es mayor o menor que 5, ya que se repite en ambos métodos.</p>
+                    <div class="codePen">
+                        <p class="codepen" data-height="415" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="eYmXpgv" style="height: 415px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Reactivity 2">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/eYmXpgv">
+                          Reactivity 2</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>  
+
+                    <p>Vamos a probar otra opción.</p>
+                    <p>Vamos a eliminar nuestros métodos y simplemente incrementar o reducir nuestro contador en la llamada <strong>v-on:click</strong>.</p>
+                    <p>El elemento <strong>result</strong> no lo podemos poner como expresión en <strong>data</strong>, ya que <strong>data no es reactiva</strong>.</p>
+                    <p>Para este fin, <strong>result</strong> lo pondremos dentro de <strong>methods</strong>, y en nuestro template lo llamaremos mediante la notación <strong>{{ result() }}</strong>.</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="310" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="ZEYPbJK" style="height: 310px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Reactivity 3">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/ZEYPbJK">
+                          Reactivity 3</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>
+
+                    <p>Pero la opción anterior tiene un fallo.</p>
+                    <p>Que pasaría si añado un tercer botón, que hace algo completamente distinto con nuestro contador, como por ejemplo</p>
+
+                    <div class="codePen noMargin--bottom" style="margin-bottom: 0">
+                        <p class="codepen" data-height="330" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="OJPGrNP" style="height: 330px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Reactivity 4">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/OJPGrNP">
+                          Reactivity 4</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>
+
+                    <p>El método <strong>result()</strong> se ejecutará cada vez que se actualice la página, como por ejemplo, cuando alguna de las propiedades de <strong>data</strong> cambien.</p>
+                    <p>Pero Vue.js no sabe si la función <strong>result()</strong> usa alguna de los datos que hemos cambiado. En nuestro ejemplo, podemos cambiar el <strong>secondCounter</strong>, y Vue actualizará <strong>result()</strong> sin necesidad de hacerlo.</p>
+                    <p>Es decir, Vue no sabe si el <strong>secondCounter</strong> va a influir al método, pero lo ejecuta de todos modos.</p>
+                    <p>En ocasiones tendremos funciones mucho más complejas que no queremos ni necesitan ser re-ejecutadas.</p>
+                    <p>Para eso, tenemos una nueva propiedad para nuestra instancia de Vue: <strong>computed</strong>.</p>
+
+                    <p>La propiedad u objeto <strong>computed</strong> permite almacenar propiedades, como en nuestro caso <i>result</i>, que es una función que retorna un valor. En nuestro caso, retornará el valor "Greater 5" o "Smaller 5" como en el método <i>result()</i>.</p>
+
+                    <div class="codePen" style="margin-bottom: 0;">
+                        <p class="codepen" data-height="410" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="jOERdYv" style="height: 410px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Reactivity 5: Computed">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/jOERdYv">
+                          Reactivity 5: Computed</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>  
+
+                    <p>Aparentemente podríamos pensar que <strong>output</strong> y <strong>result</strong> solo se diferencian en el nombre, pero hay diferencias.</p>
+                    <p>Para empezar, las propiedades de computed las llamamos sin los paréntesis <strong>( )</strong>, no la llamo como una función, sino como a una propiedad almacenada en mi obejeto.</p>
+                    <p>Toda propiedad almacenada en computed se puede usar de ese modo.</p>
+
+                    <p>Para terminar, veamos mostrando en la consola, las diferencias entre <strong>methods</strong> y <strong>computed</strong>.</p>
+                    <p>Cuando pulsamos uno de los botones para el primer contador, veremos que se ejecutan tanto el <strong>method</strong>, como el <strong>computed</strong>, mientras que si pulsamos sobre el botón para el <i>segundo contador</i>, solo se ejecutará el <strong>method</strong>.</p>
+                    <p><strong>methods</strong> se ejecutará siempre que pase algo en el template. Nunca se debe usar para cachear un valor, ya que se estará recalculando constantemente.</p>
+                    <p><strong>computed</strong> debe usarse si por ejemplo,  queremos <i>"cachear"</i> el valor, ya que no va a estar recalculándose todo el rato.</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="460" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="dyPLaav" style="height: 460px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Reactivity 6: Showing on console the differences betwen methods and computed">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/dyPLaav">
+                          Reactivity 6: Showing on console the differences betwen methods and computed</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                    </div>
+
+                    <p>Recuerda que:</p>
+                    <p>Las propiedades computadas nos permiten hacer cálculos y transformaciones en nuestros datos.</p>
+                    <p>Las propiedades computadas se usan para transformar datos para nuestra capa de presentación; no deberían alterar o cambiar los datos existentes.</p>
+                    <p>Cuando queremos cambiar el valor de los datos, usamos <strong>methods</strong>.</p>
+                    <p>Cuando queremos cambiar la presentación de los datos, usamos <strong>computed</strong>.</p>
+
+
+<!-- 
                     <div class="codePen">
                         <p class="codepen" data-height="400" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="VwYPLNQ" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="12.1 - Planteamiendo de methods, computed, watch">
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwYPLNQ">
@@ -611,11 +700,14 @@
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
                     </div>
+ -->
+
+
                 </div>
             </section>   
               
             <!-- Computed -->
-            <section>
+<!--             <section>
                 <header>
                     <h4>Computed</h4>
                 </header>
@@ -630,7 +722,7 @@
                         </p>                        
                     </div>
                 </div>
-            </section>   
+            </section>    -->
                             
             <!-- Watch Properties -->
             <section>
@@ -638,17 +730,63 @@
                     <h4>Watch Properties</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Cuando estamos trabajando con dependencias <i>(dependencies)</i>, Vue tiene otra forma más de hacer estas cosas: <strong>watch</strong></p>
+                    <p>Con <strong>computed</strong> definimos una propiedad, y como una función le decimos a la lógica cómo debe ser <i>computada</i> esa propiedad.</p>
+                    <p>Con <strong>watch</strong> funciona un poco al revés.</p>
+                    <p>Como <i>key</i> decimos qué propiedad queremos observar <i>(watch)</i>, y como <i>value</i> el código que se ejecutará cuando esa propiedad cambie.</p>
+                    <p>En la función, especifico el código que se ejecutará cuando cambie el contador, y Vue le pasa el valor de ese cambio, como <i>value</i>.</p>
+                    <p>Es importante saber que <strong>computed necesita ser síncrono</strong>, mientras <strong>watch es siempre para taréas asíncronas</strong></p>
+                    <p>En nuestro ejemplo, vamos a resetear el contador pasados dos segundos.</p>
+                    <p>Para eso debemos almacenar una instancia de Vue en una instancia separada: <strong><code>var vm = this;</code></strong> y así tener acceso a todos los elementos y funciones de nuestra instancia.</p>
 
-                    <div class="codePen">
+
+                    <div class="codePen" style="margin-bottom: 0;">
                         <p class="codepen" data-height="530" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="NWPdwKV" style="height: 530px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="13.- Watch Properties">
                           <span>See the Pen <a href="https://codepen.io/pablofv/pen/NWPdwKV">
                           13.- Watch Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>                        
                     </div>
+
+                    <p>Como podemos observar, con <strong>watch</strong> no estamos definiendo el valor de ninguna propiedad, no tiene ningún <strong>return</strong> ni esta definiendo el valor de ninguna propiedad para ser recalculada. Estamos especificando un código que se ejecutará cuando una propiedad (definida como <i>key</i>) cambia.</p>
                 </div>
             </section>   
+
+            <section>
+                <header>
+                    <h4>Resumen de las opciones de la instancia de Vue</h4>
+                </header>
+                <div class="articleContent">
+                    <p>En la instancia de Vue, hemos visto hasta ahora:</p>
+                    <p><strong>el:</strong> Conectar con el DOM</p>
+                    <p><strong>data:</strong> Almacena datos para ser usados</p>
+                    <p><strong>methods:</strong> Métodos para la instancia de Vue</p>
+                    <p><strong>computed:</strong> Propiedades dependientes</p>
+                    <p><strong>watch:</strong> Ejecuta código sobre cambios en datos</p>
+                </div>
+            </section>
+
+
+            <!-- Ejercicio - Reactive Properties -->
+            <section>
+                <header>
+                    <h4>Ejercicio - Reactive Properties</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Veamos un ejercicio de resumen con <strong>reactive properties</strong></p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="460" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="abzJmMx" style="height: 460px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Ejercicio 23 - Reactive Properties">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/abzJmMx">
+                          Ejercicio 23 - Reactive Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                        
+                    </div>
+                </div>
+            </section>   
+              
+            <hr>
+            <hr>
                             
             <!-- Clases CSS dinámicas -->
             <section>
@@ -656,7 +794,12 @@
                     <h4>Clases CSS dinámicas</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>En el siguiente ejemplo, nuestro código javascript de Vue no contiene métodos, ni computed. Simplemente definimos el dato <i>attachRed</i> y le damos un valor inicial de <i>false</i>.</p>
+                    <p>Veamos lo que Vue puede hacer aquí.</p>
+                    <p>Para empezar, creamos un evento <strong>@click (ó v-on:click)</strong> que hará que al pulsar, el valor de <i>attachRed</i> se negará, es decir, pasará de false a true, o viceversa: <code>@click="attachRed = !attachRed"</code>  </p>
+                    <p>Si queremos hacer un <i>condicional</i> para usar la clase, debemos bindear <strong>:class (ó v-bind:class)</strong>, y como argumento le pasamos un objeto de javascipt: <code>{red: attachRed }</code>; este objeto tiene una <strong>clase CSS como key</strong> y <strong>como valor, la condición de si es true o false</strong>.</p>
+                    <p>Con nuestro código, le decimos que si la propiedad <i>attachRed</i> es <i>true</i>, le asigne <i>(bindee)</i> la clase <i>red</i>.</p>
+                    <p>Si copiamos ese código: <code>@class="{red: attachRed}"</code> en otro div, reaccionará del mismo modo.</p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="300" data-theme-id="default" data-default-tab="css,result" data-user="pablofv" data-slug-hash="RwNpbXM" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.1 - Clases CSS dinámicas">
@@ -671,10 +814,14 @@
             <!-- CSS dinámico: objetos -->
             <section>
                 <header>
-                    <h4>CSS dinámico: objetos</h4>
+                    <h4>Clases CSS dinámicas: usando objetos</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Hemos visto como cambiar clases CSS dinámicamente, pero ¿qué pasa si no queremos almacenar ese objeto: <code>@class="{red: attachRed}"</code> en nuestro HTML?</p>
+                    <p>Primero ampliemos ese objeto: <code>@class="{red: attachRed, blue: !attachRed}"</code></p>
+                    <p>Tengamos en mente que este objeto podría crecer y crecer, y no es bueno tenerlo en el HTML.</p>
+                    <p>Para eso vamos a nuestra instancia de Vue, y creamos una <strong>computed property</strong> que dependerá de <strong>attachRed</strong>.</p>
+                    <p>A esa propiedad la llamaremos <i>divClasses</i>, que es una función que me retornará un objeto javascript,  y es lo que usaremos en lugar de nuestro antiguo objeto javascript sobre el HTML.</p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="360" data-theme-id="default" data-default-tab="css,result" data-user="pablofv" data-slug-hash="JjoWjRy" style="height: 360px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.2.- CSS dinámico: objetos">
@@ -685,6 +832,37 @@
                     </div>
                 </div>
             </section>   
+
+
+            <!-- Clases CSS dinámicas: usando nombres -->
+            <section>
+                <header>
+                    <h4>Clases CSS dinámicas: usando nombres</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Algunas veces no quieres decidir si debemos o no añadir una clase, pero queremos calcular o decidir dinámicamente qué clase debe ser añadida.</p>
+                    <p>Vamos a crear un <strong>input</strong> y vamos a relacionar su valor con las clases con el ya visto <strong>v-model</strong>.</p>
+                    <p>Nuestro input quedará así: <code>&lt;input type="text" v-model="color"&gt;</code>, por lo que deberemos crear una propiedad <strong>color</strong> dentro del objeto <strong>data</strong> de nuestra instancia de Vue.</p>
+                    <p>A ese dato le podemos dar un valor inicial o no. En nuestro ejemplo le hemos puesto el valor <i>"green"</i>, que será la clase que utilizará por defecto.</p>
+                    <p>Nuestro div, para ser reactivo, quedará así: <code>&lt;div class="demo" :class="color"&gt;&lt;/div&gt;</code>, y cogerá las clases que le digamos desde nuestro input.</p>
+                    <p>Con esto no le estamos diciendo que ponga la clase con un <i>true</i> o <i>false</i>, sino que la estamos asignando directamente el nombre de una clase en el <strong>input</strong>, que es almacenada en la propiedad <strong>color</strong> a través del input en este caso.</p>
+                    <p>También podemos usar múltiples clases, usando la síntaxis de <strong>[ ]</strong>.</p>
+                    <p>Vamos a hacerlo en un cuarto div, y vamos a bindear: <strong>:class="[color, {red: attachRed}]"</strong></p>
+                    <p>Estamos creando un <strong>array de clases</strong> donde Vue las analiza y las fusiona en una lista de clases.</p>
+                    <p>Aquí Vue ve primero una clase: el valor de  <strong>color</strong>, y luego ve un objeto donde hay un par <i>key : value</i>, donde <i>key</i> es la clase, y <i>value</i> es la condición que se debe cumplir para tomar ese valor.</p>
+
+                    <div class="codePen">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="JjoWJep" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.3.- CSS dinamico. Objetos:  espacio de nombres">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/JjoWJep">
+                          14.3.- CSS dinamico. Objetos:  espacio de nombres</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>                       
+                    </div>
+                </div>
+            </section>   
+
+
+
                          
             <!-- CSS Dinámico - Sin CSS -->
             <section>
@@ -692,7 +870,16 @@
                     <h4>CSS Dinámico - Sin CSS</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Vamos a partir del ejemplo original, muy simplificado. Tres cajas, y ahora dos inputs.</p>
+                    <p>Anteriormente estábamos trabajando con clases CSS, ahora vamos a fijarnos en los estilos individuales: <i>style</i>.</p>
+                    <p>En la primera caja, vamos a bindear el estilo <strong>background-color</strong>. Para esto lo podríamos hacer de dos modos:</p>
+                    <p><code>:style="{'background-color': color}"</code></p>
+                    <p>o</p>
+                    <p><code>:style="{backgroundColor: color}"</code></p>
+                    <p>En ambos casos, (solo cambia la notación), estamos bindeando la propiedad <i>color</i> para asignarla al <i>background-color</i>.</p>
+                    <p>Pero ¿y si quisieramos pasarle más propiedades?</p>
+                    <p>Para eso, lo que vamos a pasarle es un objeto, y lo vamos a crear con una <strong>computed property</strong> llamada <i>myStyle</i>, que retornará un objeto, que usaremos en nuestro <strong>:style="myStyle"</strong></p>
+                    <p>En este objeto le vamos a pasar el <strong>color</strong>, y además la propiedad <strong>width</strong> que bindearemos en el segundo <i>input</i> con su <i>v-model="width"</i></p>
 
                     <div class="codePen">
                         <p class="codepen" data-height="380" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="LYEWEya" style="height: 380px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.4.- CSS Dinámico - Sin CSS">
@@ -704,28 +891,68 @@
                 </div>
             </section>
                          
-            <!-- Ejercicio - Reactive Properties -->
+
+
+
+                         
+            <!-- CSS Dinámico - Sin CSS, con Array Sintax -->
             <section>
                 <header>
-                    <h4>Ejercicio - Reactive Properties</h4>
+                    <h4>CSS Dinámico - Sin CSS, con Array Sintax</h4>
                 </header>
                 <div class="articleContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius</p>
+                    <p>Para ver la síntaxis de array, vamos a usar nuestro tercer div y vamos a bindear usando la síntaxis de array: <strong>:style="[  ]"</strong>.</p>
+                    <p>Crearemos una expresión como esta: <strong>:style="[myStyle, {height: width + 'px'}]"</strong></p>
+                    <p>Ahora nuestra tercera caja también cambiará en altura cuando la haga en anchura.</p>
 
-                    <div class="codePen">
-                        <p class="codepen" data-height="460" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="abzJmMx" style="height: 460px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Ejercicio 23 - Reactive Properties">
-                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/abzJmMx">
-                          Ejercicio 23 - Reactive Properties</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                    <div class="codePen" style="margin-bottom: 0">
+                        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="qBEGXJg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="14.5 - CSS Dinámico sin CSS, síntaxis de Array">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/qBEGXJg">
+                          14.5 - CSS Dinámico sin CSS, síntaxis de Array</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                           on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>                        
+                        </p>                 
+                    </div>
+
+                    <p>Hemos visto que hay diferentes síntaxis para pasar clases y estilos a nuestros elementos.</p>
+                    <p>Usando el bindeo de estilos con Vue, hará que este use automáticamente los prefijos para que funcionen en todos los navegadores.</p>
+                </div>
+            </section>
+
+
+
+            <!-- Ejercicio de Styling con Vue -->
+            <section>
+                <header>
+                    <h4>Ejercicio de Styling con Vue</h4>
+                </header>
+                <div class="articleContent">
+                    <p>Vamos a realizar un ejercicio resumen sobre <strong>styling</strong></p>
+                    <p>TODO: escribir planteamiento</p>
+
+
+                    <div class="codePen" style="margin-bottom: 0">
+                        <p class="codepen" data-height="800" data-theme-id="default" data-default-tab="html,result" data-user="pablofv" data-slug-hash="MWYdvNV" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Ejercicio de Styling resuelto">
+                          <span>See the Pen <a href="https://codepen.io/pablofv/pen/MWYdvNV">
+                          Ejercicio de Styling resuelto</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                          on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>              
                     </div>
                 </div>
-            </section>   
-              
-        </article>
-      
+            </section>
 
-    </div><!--   END OF WRAPPER -->
+
+
+        </article>
+    </main>
+
+    <aside class="sidebar">
+        <?php include("../partials/_vueAside.php") ?>        
+    </aside>
+
+
+</div><!--   END OF WRAPPER -->
+
+
 
 <div id="subir">
     <a href="#arriba"><span></span></a>
