@@ -154,7 +154,7 @@
                 <p>Si hacemos un <code>console.log(vm1)</code> de nuestra instancia, veremos sus métodos con sus getters y setters, y también veremos nuestra nueva propiedad <code>newProperty</code>, pero está añadida sin getters ni setters.</p>
 
                 <div class="codePen">
-                    <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="VwLwZdR" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Vue Instance - Data and Methods behaviour">
+                    <p class="codepen" data-height="684" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="VwLwZdR" style="height: 684px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Vue Instance - Data and Methods behaviour">
                       <span>See the Pen <a href="https://codepen.io/pablofv/pen/VwLwZdR">
                       The Vue Instance - Data and Methods behaviour</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
                       on <a href="https://codepen.io">CodePen</a>.</span>
@@ -171,16 +171,25 @@
 
             <div class="sectionContent">
                 <p>En el ejercicio anterior habíamos mostrado por consola nuestra instancia de Vue.</p>
-                <p>Vamos a centrarnos en estos elementos mostrados por consola:</p>
+                <p>Vamos a centrarnos en estos elementos mostrados por consola: <strong>$el</strong>, <strong>$data</strong> y <strong>$refs</strong></p>
                 <div class="imageContainer">
                     <img src="../../assets/pics/vue-pic001.png" alt="el componente data en la instancia de Vue">
                     <img src="../../assets/pics/vue-pic002.png" alt="el componente el en la instancia de Vue">
                 </div>
+                <p><strong>$el</strong> es bastante claro, y se refiere al elemento html en nuestro código.</p>
+                <p><strong>$data</strong> es un objeto que contiene las propiedades de los datos.</p>
+                <p>Con <strong>$data</strong> tenemos una forma alternativa para acceder a nuestros datos: <strong>vm.title</strong> es igual a <strong>vm.$data.title</strong></p>
+                <p>Asimismo, podemos guardar el valor del objeto <strong>data</strong> de la instancia de Vue en una variable aislada, y llamarla en nuestra instancia.</p>
+
 
                 <div class="codePen">
-                    
-
+                    <p class="codepen" data-height="580" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="LYVYZVv" style="height: 580px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Vue Instance - $el, $data y $refs">
+                      <span>See the Pen <a href="https://codepen.io/pablofv/pen/LYVYZVv">
+                      The Vue Instance - $el, $data y $refs</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                      on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
                 </div>
+                <p>Con este ejemplo, ponemos de manifiesto que Vue no es un entorno aislado, sino que puede interactuar con javascript normal, ya que en el fondo también es javascript.</p>
             </div>           
         </article>
 
@@ -191,12 +200,28 @@
             </header>
 
             <div class="sectionContent">
-                <p>En este tema abarcaremos el truculento mundo del Vue.js</p>
-                <p>Ajusta el respaldo y prepara café.</p>
+                <p>Otro elemento de nuestra instancia de Vue es <strong>$refs</strong></p>
+                <img src="../../assets/pics/vue-pic003.png" alt="el componente refs en la instancia de Vue">
+                <p>Con <strong>ref</strong> y <strong>$refs</strong> podemos acceder al elemento HTML de nuestra app mediante esta notación.</p>
+                <p>Con Vanilla o jQuery podríamos acceder a el elemento mediante un <code>querySelector</code>, pero vamos a usar refs, ya veréis qué fácil.</p>
+                <p>En este ejemplo, hemos puesto en el botón el código <strong>ref="myButton"</strong> para acceder a su contenido. He puesto <code>myButton</code> como podría poner cualquier cosa.</p>
+                <p><strong>ref</strong> es una <i>key</i>, y su valor es el parámetro <i>myButton</i> que le paso.</p>
+                <p>Para acceder al botón, dentro de nuesrta instancia de Vue, la llamaremos con <strong>$refs</strong>.</p>
+                <p>Si en nuestros métodos para ese botón, hacemos un <strong>console.log(this.$refs);</strong>, nos devolverá un objeto javascript</p>
+                <img src="../../assets/pics/vue-pic004.png" alt="el objeto resultante de mostrar por consola un $refs">
+                <p>Este es un objeto javascript, con <i>key</i> llamada myButton, y como <i>value</i> el elemento HTML que lo alberga, en este caso, un button.</p>
+                <p>Esto quiere decir, que puedo acceder a todas las propiedades del objeto, simplemente llamándole: <strong>console.log(this.$refs.myButton)</strong></p>
+                <p>Asimismo, podemos modificar las propiedades: <strong>this.$refs.myButton.innerText="Nuevo texto botón"</strong> cambiará el texto del botón.</p>
+                <p>El problema puede surgir cuando intentamos modificar desde fuera de la instancia de Vue, un elemento cuyo valor depende de la propia instancia.</p>
+                <p>En el ejemplo, el h1 tiene un valor <strong>{{title}}</strong> interpolado por Vue. Si intentamos cambiar este valor desde una parte aislada del código, por ejemplo, declarando <strong>vm1.$refs.heading.innerText = "Something else"</strong>fuera de la instancia de Vue, hemos de tener en cuenta que Vue siempre sobreescribirá ese valor, ya que forma parte de su template. Es decir, efectivamente estamos cambiando algo en el DOM, pero no lo estamos haciendo en el template de Vue.</p>
+                <p>Hemos de saber, que podemos acceder a las propiedades de los elementos fuera de la instancia de Vue, pero si los cambiamos desde fuera, estos no serán reactivos, y Vue siempre ejecutará su template por encima de éstos.</p>
 
                 <div class="codePen">
-                    
-
+                    <p class="codepen" data-height="600" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="abObyxJ" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Vue Instance - $refs">
+                      <span>See the Pen <a href="https://codepen.io/pablofv/pen/abObyxJ">
+                      The Vue Instance - $refs</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                      on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
                 </div>
             </div>           
         </article>
@@ -205,15 +230,9 @@
             <header>
                 <h2>Dónde aprender más de Vue API</h2>
             </header>
-
             <div class="sectionContent">
-                <p>En este tema abarcaremos el truculento mundo del Vue.js</p>
-                <p>Ajusta el respaldo y prepara café.</p>
-
-                <div class="codePen">
-                    
-
-                </div>
+                <p>La documentación detallada sobre la Vue API está en <a href="https://vuejs.org/api" target="_blank">éste enlace</a>.</p>
+                <p>Ahí encontraras información detallada.</p>
             </div>           
         </article>
 
@@ -224,12 +243,27 @@
             </header>
 
             <div class="sectionContent">
-                <p>En este tema abarcaremos el truculento mundo del Vue.js</p>
-                <p>Ajusta el respaldo y prepara café.</p>
+                <p>Fijémonos, que en nuestro ejemplo, le decimos a nuestra instancia donde debe ejecutarse mediante el código <strong>el: "#app1"</strong>.</p>
+                <p>Vamos a sacar ese elemento de nuestra instancia de Vue, y lo vamos a llamar después de declarar la variable vm1, mediante el código: <strong>vm1.$mount()</strong></p>
+                <p>Fijémonos en el dolar <strong>$</strong> de la expresión. Vue usa este prefijo <strong>$</strong> para sus propiedades y métodos nativos, como <strong>$mount()</strong>, en este caso.</p>
+                <p>Como parámetro, le pasamos el mismo que usaríamos en <strong>el: </strong>, es decir, el selector query: <strong>vm1.$mount("#app1");</strong></p>
+
+                <p>En este ejemplo, hemos creado un div con id "app3", y hemos creado una instancia de vue almacenada en una variable <strong>vm3 = new Vue({ ... })</strong>.</p>
+                <p>En esta nueva instancia, únicamente hemos declarado un <strong>template</strong>, cuyo contenido es un simple <i>h1</i> con un saludo.</p>
+                <p>Para renderizar este template, lo hacemos mediante el código <strong>vm3.$mount("#app3");</strong>.</p>
+                <pre class="language-javascript line-numbers"><code>vm3.$mount("#app3");</code></pre>   
+                <p>Una forma alternativa, sería llamar a la instancia y montarla sin parámetros, y luego montarla con javascript plano:</p>
+                <pre class="language-javascript line-numbers"><code>vm3.$mount();
+document.getElementById("app3").appendChild(vm3.$el);</code></pre>   
+                <p>Esta, para nada, es la forma habitual de hacerlo. Más adelante veremos los <strong>components</strong> que nos facilitarán la taréa.</p>
+
 
                 <div class="codePen">
-                    
-
+                    <p class="codepen" data-height="650" data-theme-id="default" data-default-tab="js,result" data-user="pablofv" data-slug-hash="ZEGErYW" style="height: 650px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Vue Instance - Mounting a template">
+                      <span>See the Pen <a href="https://codepen.io/pablofv/pen/ZEGErYW">
+                      The Vue Instance - Mounting a template</a> by Pablo (<a href="https://codepen.io/pablofv">@pablofv</a>)
+                      on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
                 </div>
             </div>           
         </article>
@@ -239,10 +273,7 @@
             <header>
                 <h2>Usando componentes</h2>
             </header>
-
             <div class="sectionContent">
-                <p>En este tema abarcaremos el truculento mundo del Vue.js</p>
-                <p>Ajusta el respaldo y prepara café.</p>
 
                 <div class="codePen">
                     
